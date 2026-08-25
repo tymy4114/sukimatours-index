@@ -260,7 +260,7 @@
 <div class="grid" id="grid"></div>
 <div class="empty" id="emptyMsg" style="display:none;">該当する記録が見つかりませんでした。条件を変えてお試しください。</div>
 
-<footer>SUKIMATOURS 全動画INDEX — 全354本を収録</footer>
+<footer>SUKIMATOURS 全動画INDEX — 全351本を収録（公開日が新しい順）</footer>
 
 <script>
 /* ▼▼▼ データ台帳。動画が増えたら1行追記するだけ。地方(region)は都道府県(pref)から自動判定されます ▼▼▼ */
@@ -269,1501 +269,32 @@ const REGION_ORDER = ["北海道","東北","関東","中部","関西","中国","
 
 const VIDEOS = [
   {
-    "title": "広兼邸【SUKIMA TOURS】岡山県高梁市",
-    "pref": "岡山県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "小説・ロケ・アニメ"
-    ],
-    "url": "https://www.youtube.com/watch?v=IFq0cQm-klU",
-    "id": "IFq0cQm-klU"
-  },
-  {
-    "title": "五島列島の教会群【SUKIMA TOURS】長崎県五島市",
-    "pref": "長崎県",
-    "region": "九州・沖縄",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=xHCUI5M0x7Q",
-    "id": "xHCUI5M0x7Q"
-  },
-  {
-    "title": "三徳山三佛寺投入堂！「日本一見に行くのが危険な国宝！」",
+    "title": "一人に墓が二つある！？日本各地に残る謎の「両墓制」とは！【鈑戸(たたらど)の両墓制・鳥取県」SUKIMA TOURSー鳥取県西伯郡大山町鈑戸",
     "pref": "鳥取県",
     "region": "中国",
     "type": "short",
     "tags": [
       "神社仏閣"
     ],
-    "url": "https://www.youtube.com/watch?v=lHc-AYhQlIw",
-    "id": "lHc-AYhQlIw"
+    "url": "https://www.youtube.com/watch?v=R86Wz91dBOs",
+    "id": "R86Wz91dBOs"
   },
   {
-    "title": "両宮山古墳【SUKIMA TOURS】岡山県赤磐市穂崎",
-    "pref": "岡山県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=wvjFXBXR6nc",
-    "id": "wvjFXBXR6nc"
-  },
-  {
-    "title": "現存１２天守「江戸時代から奇跡的に残る天守１２城をご覧あれ！」",
-    "pref": "複数",
-    "region": "全国",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=QNqLa-IBh1Q",
-    "id": "QNqLa-IBh1Q"
-  },
-  {
-    "title": "一本足の家「一本足で立つ不思議な家が滋賀の高島市にありました！」",
-    "pref": "滋賀県",
-    "region": "関西",
-    "type": "short",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=riQu8zbmgec",
-    "id": "riQu8zbmgec"
-  },
-  {
-    "title": "安治川トンネル　「大阪にある日本初の沈埋トンネル！」",
-    "pref": "大阪府",
-    "region": "関西",
-    "type": "short",
-    "tags": [
-      "廃墟・廃線"
-    ],
-    "url": "https://www.youtube.com/watch?v=YXEHT8K3mQc",
-    "id": "YXEHT8K3mQc"
-  },
-  {
-    "title": "美しい柱状節理が織りなす壮大な眺め！そして地球の磁場反転の証明地でもある！【兵庫県】玄武洞　ーSUKIMA TOURSー兵庫県豊岡市赤石",
-    "pref": "兵庫県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=w9w5LHRHvdU",
-    "id": "w9w5LHRHvdU"
-  },
-  {
-    "title": "生駒ケーブル「日本一古いケーブルカー！」",
-    "pref": "奈良県",
-    "region": "関西",
-    "type": "short",
-    "tags": [
-      "乗り物・交通"
-    ],
-    "url": "https://www.youtube.com/watch?v=5OmO3oLZs2c",
-    "id": "5OmO3oLZs2c"
-  },
-  {
-    "title": "明日香村の奇石群【SUKIMA TOURS】奈良県高市郡明日香村",
-    "pref": "奈良県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "遺跡・遺構"
-    ],
-    "url": "https://www.youtube.com/watch?v=ADTIQk21d6I",
-    "id": "ADTIQk21d6I"
-  },
-  {
-    "title": "天保山渡船場「水の都･大阪には無料の渡し船が８つもあるんです！」",
-    "pref": "大阪府",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "乗り物・交通"
-    ],
-    "url": "https://www.youtube.com/watch?v=vEgvo-75244",
-    "id": "vEgvo-75244"
-  },
-  {
-    "title": "黄泉比良坂「伊弉諾と伊奘冉、悲劇の場所が島根の松江にあった！」",
-    "pref": "島根県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=3cP4G2bvW6c",
-    "id": "3cP4G2bvW6c"
-  },
-  {
-    "title": "千葉都市モノレール",
-    "pref": "千葉県",
-    "region": "関東",
-    "type": "short",
-    "tags": [
-      "乗り物・交通"
-    ],
-    "url": "https://www.youtube.com/watch?v=OR1J2l0cWKc",
-    "id": "OR1J2l0cWKc"
-  },
-  {
-    "title": "現存１２天守「江戸時代から奇跡的に残る天守１２城をご覧あれ！」",
-    "pref": "複数",
-    "region": "全国",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=4guT-sVwnMo",
-    "id": "4guT-sVwnMo"
-  },
-  {
-    "title": "佐柳島「瀬戸内海に浮かぶネコの島！」",
-    "pref": "香川県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=9DsjdnbPPwg",
-    "id": "9DsjdnbPPwg"
-  },
-  {
-    "title": "紫電改保存館「国内で唯一現存する紫電改がみられる！」",
-    "pref": "高知県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=IWeqhVL9Ijw",
-    "id": "IWeqhVL9Ijw"
-  },
-  {
-    "title": "越前大仏「日本一大きい坐像の大仏さま！福井の実業家が私財を投じて建立した清大寺越前大仏！その額なんと380億円！日本一を誇る巨大な大仏さまは必見です！」",
-    "pref": "福井県",
-    "region": "中部",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=S7jSrOQ4558",
-    "id": "S7jSrOQ4558"
-  },
-  {
-    "title": "石鳥居「1000年前から立っている鳥居が山形にあった！しかも二つも！」",
-    "pref": "山形県",
-    "region": "東北",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=EmD4XklwHtw",
-    "id": "EmD4XklwHtw"
-  },
-  {
-    "title": "シ多曲屈「日本最古の道路標識！」",
-    "pref": "香川県",
-    "region": "四国",
-    "type": "short",
-    "tags": [
-      "乗り物・交通"
-    ],
-    "url": "https://www.youtube.com/watch?v=t39jOeDsGX8",
-    "id": "t39jOeDsGX8"
-  },
-  {
-    "title": "阿佐海岸鉄道「世界初！鉄道とバスのハイブリッド！」",
-    "pref": "徳島県",
-    "region": "四国",
-    "type": "short",
-    "tags": [
-      "乗り物・交通"
-    ],
-    "url": "https://www.youtube.com/watch?v=WQtqG7nnKQI",
-    "id": "WQtqG7nnKQI"
-  },
-  {
-    "title": "奥祖谷二重かずら橋　【SUKIMA TOURS】　徳島県三好市",
-    "pref": "徳島県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=KkRcm7zcuBQ",
-    "id": "KkRcm7zcuBQ"
-  },
-  {
-    "title": "紫電改展示館「国内で唯一現存する紫電改がみられる！」",
-    "pref": "高知県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=7lL66nTcDD4",
-    "id": "7lL66nTcDD4"
-  },
-  {
-    "title": "岐阜大仏「奈良、鎌倉と並ぶ日本三大大仏！それが岐阜大仏なのだ！」",
-    "pref": "岐阜県",
-    "region": "中部",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=J0PFJimwKDg",
-    "id": "J0PFJimwKDg"
-  },
-  {
-    "title": "常昌院「木製の兵隊さんが２００体以上！その謎に迫る！」",
-    "pref": "静岡県",
-    "region": "中部",
-    "type": "short",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=rlAC3sdzAuQ",
-    "id": "rlAC3sdzAuQ"
-  },
-  {
-    "title": "金田一耕助ミステリー遊歩道「ブロンズ像の驚愕の共通点とは⁉︎」",
-    "pref": "岡山県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "町歩き"
-    ],
-    "url": "https://www.youtube.com/watch?v=3TsN27lvbyw",
-    "id": "3TsN27lvbyw"
-  },
-  {
-    "title": "立山防空壕「太平洋戦争時に長崎県防空本部が置かれた場所。原爆投下後の救援救護や応急対応はここで指揮されました！」",
-    "pref": "長崎県",
-    "region": "九州・沖縄",
-    "type": "long",
-    "tags": [
-      "戦争遺構"
-    ],
-    "url": "https://www.youtube.com/watch?v=ZQqNt_LsLho",
-    "id": "ZQqNt_LsLho"
-  },
-  {
-    "title": "承教寺「狛犬ならぬ狛件(くだん)がいるお寺が港区にあった！」",
-    "pref": "東京都",
-    "region": "関東",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=i6P2bNFBcrY",
-    "id": "i6P2bNFBcrY"
-  },
-  {
-    "title": "階段国道「日本でココだけ！階段の国道があった！」",
-    "pref": "青森県",
-    "region": "東北",
-    "type": "long",
-    "tags": [
-      "乗り物・交通"
-    ],
-    "url": "https://www.youtube.com/watch?v=969m2DgTFvU",
-    "id": "969m2DgTFvU"
-  },
-  {
-    "title": "生き木地蔵「切り出していない生の木に彫刻された珍しいお地蔵さま！平家の落ち武者伝説が今も色濃く残る県境の山の中。そんな山中の一本の木に彫られているお地蔵さま。何故こんな山奥の木に彫られたのか！」",
-    "pref": "愛媛県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=rmz0DBkK3Ec",
-    "id": "rmz0DBkK3Ec"
-  },
-  {
-    "title": "安土城跡「たった3年で焼け落ちた幻の城！信長の夢のあと！」",
-    "pref": "滋賀県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=HpJmZi2WtBU",
-    "id": "HpJmZi2WtBU"
-  },
-  {
-    "title": "歩いてみたイエメン　Just Walked YEMEN 2013",
-    "pref": "イエメン",
-    "region": "海外",
-    "type": "long",
-    "tags": [
-      "町歩き"
-    ],
-    "url": "https://www.youtube.com/watch?v=K_Pjputp_6E",
-    "id": "K_Pjputp_6E"
-  },
-  {
-    "title": "水泥古墳【SUKIMA TOURS】奈良県御所市古瀬",
-    "pref": "奈良県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=c-IHwhxJ0t4",
-    "id": "c-IHwhxJ0t4"
-  },
-  {
-    "title": "海上保安資料館横浜館「銃撃戦を繰り広げたのち自爆して沈没した北朝鮮の不審船が横浜に展示されていました！」",
-    "pref": "神奈川県",
-    "region": "関東",
-    "type": "long",
-    "tags": [
-      "城・史跡",
-      "戦争遺跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=U1cfthgvwww",
-    "id": "U1cfthgvwww"
-  },
-  {
-    "title": "針尾送信所「１００年以上前に大正時代に建てられた3本の電波塔！ここからニイタカヤマノボレの暗号信号が送信されたのだ！」",
-    "pref": "長崎県",
-    "region": "九州・沖縄",
-    "type": "long",
-    "tags": [
-      "戦争遺構"
-    ],
-    "url": "https://www.youtube.com/watch?v=CMpUCrXdI8s",
-    "id": "CMpUCrXdI8s"
-  },
-  {
-    "title": "学童看板「朽ち果てた学生の看板がなぜか人気者に！」",
-    "pref": "鳥取県",
-    "region": "中国",
-    "type": "short",
-    "tags": [
-      "町歩き"
-    ],
-    "url": "https://www.youtube.com/watch?v=GW7esL8DVVk",
-    "id": "GW7esL8DVVk"
-  },
-  {
-    "title": "麦わらの一味！熊本に集結！",
-    "pref": "熊本県",
-    "region": "九州・沖縄",
-    "type": "long",
-    "tags": [
-      "小説・ロケ・アニメ"
-    ],
-    "url": "https://www.youtube.com/watch?v=JpKuE7opkA0",
-    "id": "JpKuE7opkA0"
-  },
-  {
-    "title": "100年以上も昔の昭和10年に作られた動く橋が筑後川にあった！【筑後川昇開橋・佐賀県/福岡県】SUKIMA TOURSー福岡県大川市／佐賀県佐賀市諸富町",
-    "pref": "福岡県",
-    "region": "九州・沖縄",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=kJILjuw80Ek",
-    "id": "kJILjuw80Ek"
-  },
-  {
-    "title": "広兼邸「映画八つ墓村の田治見家は岡山の山の中にあった！」",
-    "pref": "岡山県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "小説・ロケ・アニメ"
-    ],
-    "url": "https://www.youtube.com/watch?v=dULxEc-tb14",
-    "id": "dULxEc-tb14"
-  },
-  {
-    "title": "大津島「回天の島！人間魚雷の訓練基地が今も残る！」",
-    "pref": "広島県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "自然・絶景",
-      "戦争遺跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=6RgwRFVd-1A",
-    "id": "6RgwRFVd-1A"
-  },
-  {
-    "title": "広兼邸「映画八つ墓村の田治見家は岡山の山の中にあった！」",
-    "pref": "岡山県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "小説・ロケ・アニメ"
-    ],
-    "url": "https://www.youtube.com/watch?v=0WEKjdJboGU",
-    "id": "0WEKjdJboGU"
-  },
-  {
-    "title": "高屋神社「天空の鳥居！瀬戸内の海と浜辺を見下ろす絶景」",
-    "pref": "香川県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "神社仏閣",
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=Txg_-9oyd-E",
-    "id": "Txg_-9oyd-E"
-  },
-  {
-    "title": "法隆寺「現存する世界最古の木造建築！」",
-    "pref": "奈良県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=LwGzHxpg1zA",
-    "id": "LwGzHxpg1zA"
-  },
-  {
-    "title": "友ヶ島「和歌山県に浮かぶ無人島。そこは、現実にある「ラピュタ」の世界！」",
-    "pref": "和歌山県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=NU-pLBC8US0",
-    "id": "NU-pLBC8US0"
-  },
-  {
-    "title": "八角トンネル「映えると人気の廃線跡のトンネルだ！」",
-    "pref": "熊本県",
-    "region": "九州・沖縄",
-    "type": "long",
-    "tags": [
-      "城・史跡",
-      "廃墟・廃線"
-    ],
-    "url": "https://www.youtube.com/watch?v=xhON9wOo3YU",
-    "id": "xhON9wOo3YU"
-  },
-  {
-    "title": "本願寺伝道院「伝統的な京都の町家に突如現れる赤レンガの怪しい洋館。世界の宗教建築を融合させた、巨匠・伊東忠太の妖怪愛に溢れた異形の建造物を訪ねます。",
-    "pref": "京都府",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "神社仏閣",
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=tGm_pgpMrFY",
-    "id": "tGm_pgpMrFY"
-  },
-  {
-    "title": "大津島「回天の島！人間魚雷の訓練基地が今も残る！」",
-    "pref": "山口県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "自然・絶景",
-      "戦争遺跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=1pw52oru5mQ",
-    "id": "1pw52oru5mQ"
-  },
-  {
-    "title": "祖谷のかずら橋「秘境とよばれる祖谷の絶景スポット！祖谷川に架かる長さ45メートルの植物を編み込んで作られた橋！スリルあるその橋は渡る事ができるのです！」",
-    "pref": "徳島県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=kr-o8YVSGjQ",
-    "id": "kr-o8YVSGjQ"
-  },
-  {
-    "title": "カーレーター「日本一乗り心地のワルい乗り物！」",
-    "pref": "兵庫県",
-    "region": "関西",
-    "type": "short",
-    "tags": [
-      "公園・テーマパーク"
-    ],
-    "url": "https://www.youtube.com/watch?v=WSNxHTtYT30",
-    "id": "WSNxHTtYT30"
-  },
-  {
-    "title": "安土城跡「たった3年で焼け落ちた幻の城！信長の夢のあと！」",
-    "pref": "滋賀県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=vB4jX4bKE-Y",
-    "id": "vB4jX4bKE-Y"
-  },
-  {
-    "title": "阿波の土柱「雨と土が創り出した自然の芸術！世界三大土柱の一つ！」",
-    "pref": "徳島県",
-    "region": "四国",
-    "type": "short",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=TDo5o6eZlGg",
-    "id": "TDo5o6eZlGg"
-  },
-  {
-    "title": "松代象山 地下壕「太平洋戦争末期、日本の政府中枢機能を長野の山の中に移転する計画があった！」",
-    "pref": "長野県",
-    "region": "中部",
-    "type": "long",
-    "tags": [
-      "戦争遺構"
-    ],
-    "url": "https://www.youtube.com/watch?v=WN2PLzsB7ug",
-    "id": "WN2PLzsB7ug"
-  },
-  {
-    "title": "脇町「うだつが上がるのうだつって何？その答えはこの町にありました！」",
-    "pref": "徳島県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "町歩き"
-    ],
-    "url": "https://www.youtube.com/watch?v=bVisWB3pzPw",
-    "id": "bVisWB3pzPw"
-  },
-  {
-    "title": "埋没鳥居「桜島の大噴火で埋まってしまった鳥居が現在まで残されて居ました！」",
-    "pref": "鹿児島県",
-    "region": "九州・沖縄",
-    "type": "long",
-    "tags": [
-      "神社仏閣",
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=avbDQreVks0",
-    "id": "avbDQreVks0"
-  },
-  {
-    "title": "小金塚古墳",
-    "pref": "大阪府",
-    "region": "関西",
-    "type": "short",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=iCauJGV4bQo",
-    "id": "iCauJGV4bQo"
-  },
-  {
-    "title": "木造駅「遮光器土偶のシャコちゃんが駅舎になった！」",
-    "pref": "青森県",
-    "region": "東北",
-    "type": "short",
-    "tags": [
-      "廃墟・廃線"
-    ],
-    "url": "https://www.youtube.com/watch?v=l6Lmjz9D2R0",
-    "id": "l6Lmjz9D2R0"
-  },
-  {
-    "title": "舞洲工場「超芸術的な建物はゴミ焼却場だった！」",
-    "pref": "大阪府",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "公共施設"
-    ],
-    "url": "https://www.youtube.com/watch?v=KnhRM81dZCU",
-    "id": "KnhRM81dZCU"
-  },
-  {
-    "title": "空滝大不動尊「滝上に鎮座する不動明王はゆるキャラチックな愛らしいお姿でした！」",
-    "pref": "埼玉県",
-    "region": "関東",
-    "type": "long",
-    "tags": [
-      "神社仏閣",
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=kz-TgWOT1fQ",
-    "id": "kz-TgWOT1fQ"
-  },
-  {
-    "title": "鼻ぐり塚「その数なんと７００万以上！牛の鼻輪が山となった供養塚！」",
-    "pref": "岡山県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=8A1NALuO8Cw",
-    "id": "8A1NALuO8Cw"
-  },
-  {
-    "title": "花の窟神社「日本書紀にもある日本最古の神社です。社殿はなく、高さ約45ｍの巨大な岩窟がご神体となっているのです。ご祭神は伊弉冊尊（イザナミノミコト）と、その子供、軻遇突智尊（カグツチノミコト）です」",
-    "pref": "三重県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "神社仏閣",
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=kABaSHh8Ylo",
-    "id": "kABaSHh8Ylo"
-  },
-  {
-    "title": "阿佐海岸鉄道「世界初！鉄道とバスのハイブリッド！」",
-    "pref": "徳島県",
-    "region": "四国",
-    "type": "short",
-    "tags": [
-      "乗り物・交通"
-    ],
-    "url": "https://www.youtube.com/watch?v=0iPYjE4ZvNE",
-    "id": "0iPYjE4ZvNE"
-  },
-  {
-    "title": "国道駅「９０年以上も前から変わらぬ姿！昭和ノスタルジックな駅が横浜にあった！」",
-    "pref": "神奈川県",
-    "region": "関東",
-    "type": "long",
-    "tags": [
-      "廃墟・廃線",
-      "乗り物・交通"
-    ],
-    "url": "https://www.youtube.com/watch?v=x_rToH9Rg9c",
-    "id": "x_rToH9Rg9c"
-  },
-  {
-    "title": "大谷第一墳「まさにピラミッド！岡山の山奥に階段式古墳があった！」",
-    "pref": "岡山県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=JpokJumG7N8",
-    "id": "JpokJumG7N8"
-  },
-  {
-    "title": "第五福竜丸「水爆実験で被爆したマグロ漁船が東京夢の島に展示されています！」",
-    "pref": "東京都",
-    "region": "関東",
-    "type": "long",
-    "tags": [
-      "自然・絶景",
-      "戦争遺跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=WnQJq4G05V8",
-    "id": "WnQJq4G05V8"
-  },
-  {
-    "title": "大久野島「地図から消された毒ガスの島！」",
-    "pref": "広島県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "自然・絶景",
-      "戦争遺跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=bGXEGQbxRH0",
-    "id": "bGXEGQbxRH0"
-  },
-  {
-    "title": "鬼が踏み抜いたという巨大な岩が佐世保にあった！【眼鏡岩・長崎県】SUKIMA TOURSー長崎県佐世保市瀬戸越町 #奇景 ＃珍スポット",
-    "pref": "長崎県",
-    "region": "九州・沖縄",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=l2xII19hkF4",
-    "id": "l2xII19hkF4"
-  },
-  {
-    "title": "新開の森「織田信長の処刑場だった伝説が残る畑の中の小さな森！」",
-    "pref": "滋賀県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=doTVA9fommM",
-    "id": "doTVA9fommM"
-  },
-  {
-    "title": "熊山遺跡「岡山にもあった⁉︎階段ピラミッド！」",
-    "pref": "岡山県",
-    "region": "中国",
-    "type": "short",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=cwHPgnchuII",
-    "id": "cwHPgnchuII"
-  },
-  {
-    "title": "安閑神社「文字なのか絵なのか、謎の紋様が描かれた石が滋賀にあった！」",
-    "pref": "滋賀県",
-    "region": "関西",
-    "type": "short",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=hn8cS2_X6lE",
-    "id": "hn8cS2_X6lE"
-  },
-  {
-    "title": "片島魚雷発射試験場跡「大正から昭和の戦局を裏で支え続けた小さな島。国防の要であった魚雷の、最終的な実戦能力を決定づけた最重要拠点がここにあったのです」",
-    "pref": "長崎県",
-    "region": "九州・沖縄",
-    "type": "long",
-    "tags": [
-      "城・史跡",
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=_Z-9alWkmwg",
-    "id": "_Z-9alWkmwg"
-  },
-  {
-    "title": "石油の里【SUKIMA TOURS】新潟県新潟市秋葉区",
-    "pref": "新潟県",
-    "region": "中部",
-    "type": "long",
-    "tags": [
-      "町歩き"
-    ],
-    "url": "https://www.youtube.com/watch?v=jSlUP_YpfiY",
-    "id": "jSlUP_YpfiY"
-  },
-  {
-    "title": "武家屋敷「島原城に近い武家屋敷町は、通りの中央を流れる湧水の小川も当時の面影を残しています！」",
-    "pref": "長崎県",
-    "region": "九州・沖縄",
-    "type": "long",
-    "tags": [
-      "城・史跡",
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=O46hiBKjk7w",
-    "id": "O46hiBKjk7w"
-  },
-  {
-    "title": "別府タワー「タワー６兄弟の三男坊は別府のシンボルなのです！」",
-    "pref": "大分県",
-    "region": "九州・沖縄",
-    "type": "long",
-    "tags": [
-      "公園・テーマパーク"
-    ],
-    "url": "https://www.youtube.com/watch?v=6oStKaFg0pY",
-    "id": "6oStKaFg0pY"
-  },
-  {
-    "title": "大岩神社「堂本印象デザインの鳥居がある！」",
-    "pref": "京都府",
-    "region": "関西",
-    "type": "short",
-    "tags": [
-      "神社仏閣",
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=xOMJkbDRFyM",
-    "id": "xOMJkbDRFyM"
-  },
-  {
-    "title": "福崎町「町のいたる所に妖怪が潜んでいるという妖怪だらけの町が兵庫県にありました！」",
-    "pref": "兵庫県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "町歩き"
-    ],
-    "url": "https://www.youtube.com/watch?v=LbRE44QI3y4",
-    "id": "LbRE44QI3y4"
-  },
-  {
-    "title": "アフロ地蔵「ネットで話題のアフロ地蔵は「地蔵」ではありません！」",
-    "pref": "京都府",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=bfOBmOhpsZY",
-    "id": "bfOBmOhpsZY"
-  },
-  {
-    "title": "会津さざえ堂「世界唯一木造二重螺旋構造！」",
-    "pref": "福島県",
-    "region": "東北",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=gyhE33Zz8HQ",
-    "id": "gyhE33Zz8HQ"
-  },
-  {
-    "title": "鬼ヶ城「鬼ヶ城は三重県熊野市にある全長1.2㎞に及ぶ断崖絶壁！奇岩怪石！奇観の台地です！そこは昔の人が鬼が住む城と伝えた荒涼とした光景！息を呑むほどの自然の驚異！」",
-    "pref": "三重県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "城・史跡",
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=6hPTY1NvQ40",
-    "id": "6hPTY1NvQ40"
-  },
-  {
-    "title": "石舞台古墳「江戸時代にはすでに観光名所として知られていた石舞台古墳！巨石30個を積み上げて造られた石舞台古墳。その総重量は2,300トン！天井石だけでも約77トンもあります！」",
-    "pref": "奈良県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=WjcY1D42d5w",
-    "id": "WjcY1D42d5w"
-  },
-  {
-    "title": "八幡山古墳【SUKIMA TOURS】埼玉県行田市",
-    "pref": "埼玉県",
-    "region": "関東",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=rfy-EnBYFpQ",
-    "id": "rfy-EnBYFpQ"
-  },
-  {
-    "title": "松代象山地下壕【SUKIMA TOURS】長野県長野市松代町",
-    "pref": "長野県",
-    "region": "中部",
-    "type": "long",
-    "tags": [
-      "戦争遺構"
-    ],
-    "url": "https://www.youtube.com/watch?v=whf1j5xC5Kg",
-    "id": "whf1j5xC5Kg"
-  },
-  {
-    "title": "旧倉吉線廃線跡「日本一美しいと言われる廃線跡！」",
-    "pref": "鳥取県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "城・史跡",
-      "廃墟・廃線"
-    ],
-    "url": "https://www.youtube.com/watch?v=Say3EkXyhKg",
-    "id": "Say3EkXyhKg"
-  },
-  {
-    "title": "生駒ケーブル【SUKIMA TOURS】奈良県生駒市",
-    "pref": "奈良県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "乗り物・交通"
-    ],
-    "url": "https://www.youtube.com/watch?v=qjDoCkp-C8o",
-    "id": "qjDoCkp-C8o"
-  },
-  {
-    "title": "白川郷【SUKIMA TOURS】岐阜県大野郡白川村    Shirakawa-go - 29/Jan/2023  Winter",
-    "pref": "岐阜県",
-    "region": "中部",
-    "type": "long",
-    "tags": [
-      "町歩き",
-      "自然絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=RivooRukZes",
-    "id": "RivooRukZes"
-  },
-  {
-    "title": "吉見百穴【SUKIMA TOURS】埼玉県比企郡吉見町",
-    "pref": "埼玉県",
-    "region": "関東",
-    "type": "long",
-    "tags": [
-      "遺跡・遺構"
-    ],
-    "url": "https://www.youtube.com/watch?v=rOy3R7z6szk",
-    "id": "rOy3R7z6szk"
-  },
-  {
-    "title": "頭塔「奈良にあった階段式ピラミッド！この謎の塔の正体はなんだ！」",
-    "pref": "奈良県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=tBGURNAU_KI",
-    "id": "tBGURNAU_KI"
-  },
-  {
-    "title": "猿島【SUKIMA TOURS】神奈川県横須賀市",
-    "pref": "神奈川県",
-    "region": "関東",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=WIS4HtoIZ5o",
-    "id": "WIS4HtoIZ5o"
-  },
-  {
-    "title": "琵琶湖のほとりにひっそり佇む江戸時代に手掘りで掘られた放水路！【西野水道・滋賀県】　SUKIMA TOURSー滋賀県長浜市高月町西野",
-    "pref": "滋賀県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "遺跡・遺構"
-    ],
-    "url": "https://www.youtube.com/watch?v=4MzKZQPAQ2U",
-    "id": "4MzKZQPAQ2U"
-  },
-  {
-    "title": "玄武洞「柱状節理の最高傑作！そして地球の磁場反転の証明地でもあり、江戸時代は採石場跡だった。さらに「玄武岩」の名はここから付けられたのです！」",
-    "pref": "兵庫県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "城・史跡",
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=LK2osRi1E7A",
-    "id": "LK2osRi1E7A"
-  },
-  {
-    "title": "猿橋「日本三奇橋のひとつ！橋脚がない橋が渓谷を渡る」",
-    "pref": "山梨県",
-    "region": "関東",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=55v44DhLYnM",
-    "id": "55v44DhLYnM"
-  },
-  {
-    "title": "シャレコーベミュージアム「世界でココだけ！ドクロの博物館！」",
-    "pref": "兵庫県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=Bi6goiU-waU",
-    "id": "Bi6goiU-waU"
-  },
-  {
-    "title": "田倉牛神社「30万の牛の焼き物がご神体！」",
-    "pref": "岡山県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=sVKaV8D_gD4",
-    "id": "sVKaV8D_gD4"
-  },
-  {
-    "title": "明日香の奇石群「飛鳥時代の謎多き石造物が多数点在している奈良の明日香村！」",
-    "pref": "奈良県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "遺跡・遺構"
-    ],
-    "url": "https://www.youtube.com/watch?v=b5mprDjsddE",
-    "id": "b5mprDjsddE"
-  },
-  {
-    "title": "キリストの墓「日本にキリストの墓があった⁉️」",
-    "pref": "青森県",
-    "region": "東北",
-    "type": "short",
-    "tags": [
-      "遺跡・遺構"
-    ],
-    "url": "https://www.youtube.com/watch?v=JV2Jiu18_tU",
-    "id": "JV2Jiu18_tU"
-  },
-  {
-    "title": "銅閣寺【SUKIMA TOURS】京都府京都市東山区",
-    "pref": "京都府",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=Gvmjj_XDSB4",
-    "id": "Gvmjj_XDSB4"
-  },
-  {
-    "title": "白川郷「合掌作りが有名な世界遺産にも登録された集落」",
-    "pref": "岐阜県",
-    "region": "中部",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=CnkLtgyyN54",
-    "id": "CnkLtgyyN54"
-  },
-  {
-    "title": "岩谷観音堂やぐら群「古墳時代の横穴墓を再利用して造られたやぐら群。行基が一夜にして造ったともいわれている岩谷観音堂。この不思議な史跡を見に行ってみた。」",
-    "pref": "千葉県",
-    "region": "関東",
-    "type": "long",
-    "tags": [
-      "神社仏閣",
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=pxQ1cFNY8xc",
-    "id": "pxQ1cFNY8xc"
-  },
-  {
-    "title": "垂水遺跡「山寺の原点、名僧・円仁が山寺を建立する前に籠もった原点の場所！」",
-    "pref": "山形県",
-    "region": "東北",
-    "type": "long",
-    "tags": [
-      "神社仏閣",
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=lXnPAhRzu60",
-    "id": "lXnPAhRzu60"
-  },
-  {
-    "title": "河内風穴【SUKIMA TOURS】滋賀県犬上郡多賀町",
+    "title": "懐中電灯ひとつで入る漆黒の手掘り洞窟！江戸時代の村人がノミだけで220mの山を貫通させた衝撃の理由！【西野水道・滋賀県】SUKIMA TOURSー滋賀県長浜市高月町西野",
     "pref": "滋賀県",
     "region": "関西",
     "type": "long",
     "tags": [
       "自然・絶景"
     ],
-    "url": "https://www.youtube.com/watch?v=Vd0z7rCjKjY",
-    "id": "Vd0z7rCjKjY"
-  },
-  {
-    "title": "垂水遺跡【SUKIMA TOURS】山形県山形市山寺",
-    "pref": "山形県",
-    "region": "東北",
-    "type": "long",
-    "tags": [
-      "神社仏閣",
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=c3U7JQxVfBA",
-    "id": "c3U7JQxVfBA"
-  },
-  {
-    "title": "現存１２天守「日本人なら一度は訪れたい、江戸時代より以前に建てられ、戦火も地震も乗り越え、400年以上生き残った奇跡の12天守！日本にたった12しか残らなかった本物の天守、その全てを巡ります！」",
-    "pref": "複数",
-    "region": "全国",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=XjX9Y_l4JLA",
-    "id": "XjX9Y_l4JLA"
-  },
-  {
-    "title": "蓬莱橋「世界一長い木造の橋は静岡にあり！」",
-    "pref": "静岡県",
-    "region": "中部",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=XzkwbGq2TBI",
-    "id": "XzkwbGq2TBI"
-  },
-  {
-    "title": "安福寺横穴群【SUKIMA TOURS】大阪府柏原市",
-    "pref": "大阪府",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=Cpjy5hYDWHA",
-    "id": "Cpjy5hYDWHA"
-  },
-  {
-    "title": "牽牛子塚古墳【SUKIMA TOURS】奈良県高市郡明日香村",
-    "pref": "奈良県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=rrRhQ0RMaTI",
-    "id": "rrRhQ0RMaTI"
-  },
-  {
-    "title": "三津屋古墳【SUKIMA TOURS】群馬県北群馬郡吉岡町",
-    "pref": "群馬県",
-    "region": "関東",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=e3zkUaqwkj4",
-    "id": "e3zkUaqwkj4"
-  },
-  {
-    "title": "横浜市鶴見区の銭湯「安善湯」 【SUKIMA TOURS】神奈川県",
-    "pref": "神奈川県",
-    "region": "関東",
-    "type": "long",
-    "tags": [
-      "町歩き"
-    ],
-    "url": "https://www.youtube.com/watch?v=82OpHkSeFVI",
-    "id": "82OpHkSeFVI"
-  },
-  {
-    "title": "桃太郎神社「桃太郎の墓はここにある！犬キジ猿の墓も！おじいさんおばあさんまで！」",
-    "pref": "香川県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=G2y7IXMNEyg",
-    "id": "G2y7IXMNEyg"
-  },
-  {
-    "title": "熊山遺跡　【SUKIMA TOURS】　岡山県赤磐市",
-    "pref": "岡山県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=4mbbUL2iLQg",
-    "id": "4mbbUL2iLQg"
-  },
-  {
-    "title": "鬼ノ城「文献などには一切の記録がない謎の山城！全周約2.8kmにわたって山の上に巡る城壁！いつ誰がこの城を造ったのか！そんな謎の城を歩きます！」",
-    "pref": "岡山県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=gigAnzZqIJ4",
-    "id": "gigAnzZqIJ4"
-  },
-  {
-    "title": "鰐淵寺 浮浪の滝「かの武蔵坊弁慶が修行をしたとされる古刹！奥の院の蔵王堂がまさしくその修行の滝！出雲の数あるパワースポットでもここは別格！」",
-    "pref": "島根県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "神社仏閣",
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=FaqtK2bF9uw",
-    "id": "FaqtK2bF9uw"
-  },
-  {
-    "title": "旧日立航空機株式会社変電所「西の原爆ドーム、東の変電所」とも称される戦争遺跡！",
-    "pref": "東京都",
-    "region": "関東",
-    "type": "long",
-    "tags": [
-      "神社仏閣",
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=rkMtrQf-oPI",
-    "id": "rkMtrQf-oPI"
-  },
-  {
-    "title": "別子銅山【SUKIMA TOURS】愛媛県新居浜市",
-    "pref": "愛媛県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "遺跡・遺構"
-    ],
-    "url": "https://www.youtube.com/watch?v=wWw_Bk4h3Ak",
-    "id": "wWw_Bk4h3Ak"
-  },
-  {
-    "title": "尾去沢鉱山「もう直ぐ一般公開終了！日本最大の鉱山跡！」",
-    "pref": "秋田県",
-    "region": "東北",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=raq_9fWH9lc",
-    "id": "raq_9fWH9lc"
-  },
-  {
-    "title": "段の塚穴【SUKIMA TOURS】徳島県美馬市美馬町",
-    "pref": "徳島県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "自然・絶景",
-      "遺跡・遺構"
-    ],
-    "url": "https://www.youtube.com/watch?v=0zGAHe9krVI",
-    "id": "0zGAHe9krVI"
-  },
-  {
-    "title": "金田一耕助ミステリー遊歩道",
-    "pref": "岡山県",
-    "region": "中国",
-    "type": "short",
-    "tags": [
-      "町歩き",
-      "小説・ロケ・アニメ"
-    ],
-    "url": "https://www.youtube.com/watch?v=al1-qz3LxJ4",
-    "id": "al1-qz3LxJ4"
-  },
-  {
-    "title": "ぶつぶつ川「日本一短い川はたったの13.5ｍ！」",
-    "pref": "和歌山県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=xWpePW4RzO0",
-    "id": "xWpePW4RzO0"
-  },
-  {
-    "title": "チブサン古墳／オブサン古墳【SUKIMA TOURS】熊本県山鹿市城",
-    "pref": "熊本県",
-    "region": "九州・沖縄",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=W_P_LVrwY-c",
-    "id": "W_P_LVrwY-c"
-  },
-  {
-    "title": "三瓶温泉 亀の湯【SUKIMA TOURS】島根県大田市三瓶町",
-    "pref": "島根県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=lIISApl-SSU",
-    "id": "lIISApl-SSU"
-  },
-  {
-    "title": "総天然色！弘法大師像",
-    "pref": "熊本県",
-    "region": "九州・沖縄",
-    "type": "short",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=V1Yf0bdZBYM",
-    "id": "V1Yf0bdZBYM"
-  },
-  {
-    "title": "承教寺「狛犬ならぬ狛件(くだん)がいるお寺が港区にあった！」",
-    "pref": "東京都",
-    "region": "関東",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=OvEXLPHJG8o",
-    "id": "OvEXLPHJG8o"
-  },
-  {
-    "title": "有岡古墳群　【SUKIMA TOURS】　香川県善通寺市",
-    "pref": "香川県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "神社仏閣",
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=DnKBXgE2KiA",
-    "id": "DnKBXgE2KiA"
-  },
-  {
-    "title": "横浜市電保存館【SUKIMA TOURS】神奈川県横浜市磯子区",
-    "pref": "神奈川県",
-    "region": "関東",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=8JSqdvIG8SE",
-    "id": "8JSqdvIG8SE"
-  },
-  {
-    "title": "カッパの造り酒屋さん「松浦一酒造」",
-    "pref": "佐賀県",
-    "region": "九州・沖縄",
-    "type": "short",
-    "tags": [
-      "町歩き"
-    ],
-    "url": "https://www.youtube.com/watch?v=CJjcty1tldE",
-    "id": "CJjcty1tldE"
-  },
-  {
-    "title": "高池の虫喰岩「集合体恐怖症は行かないで！タフォニ好きは是非！」",
-    "pref": "和歌山県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=n_ZVixCNy8Q",
-    "id": "n_ZVixCNy8Q"
-  },
-  {
-    "title": "志賀の大仏「滋賀の大津に優しい顔の大仏様がいた！」",
-    "pref": "滋賀県",
-    "region": "関西",
-    "type": "short",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=EXMjKiCTRns",
-    "id": "EXMjKiCTRns"
-  },
-  {
-    "title": "屋島ケーブル【SUKIMA TOURS】香川県高松市",
-    "pref": "香川県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=T6kiE9S7_r0",
-    "id": "T6kiE9S7_r0"
-  },
-  {
-    "title": "銅閣寺「金閣寺銀閣寺があるなら当然次は銅閣寺！」",
-    "pref": "京都府",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=e-JaiTx39qs",
-    "id": "e-JaiTx39qs"
-  },
-  {
-    "title": "海上自衛隊呉史料館  てつのくじら館【SUKIMA TOURS】広島県呉市",
-    "pref": "広島県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "城・史跡",
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=sB9aAMNdRlw",
-    "id": "sB9aAMNdRlw"
-  },
-  {
-    "title": "小泉稲荷神社「200基以上の鳥居がずらりと並ぶ神社！」",
-    "pref": "群馬県",
-    "region": "関東",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=MbuCf5Ue-IY",
-    "id": "MbuCf5Ue-IY"
-  },
-  {
-    "title": "八九郎温泉【SUKIMA TOURS】秋田県鹿角郡小坂町",
-    "pref": "秋田県",
-    "region": "東北",
-    "type": "long",
-    "tags": [
-      "温泉・宿"
-    ],
-    "url": "https://www.youtube.com/watch?v=SLnRsTdLkYY",
-    "id": "SLnRsTdLkYY"
-  },
-  {
-    "title": "池子石の採石場跡【SUKIMA TOURS】神奈川県逗子市池子",
-    "pref": "神奈川県",
-    "region": "関東",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=V3Sv_NChj08",
-    "id": "V3Sv_NChj08"
-  },
-  {
-    "title": "日本ピラミッド　【SUKIMA TOURS】　広島県庄原市",
-    "pref": "広島県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=D-iXHar8DYo",
-    "id": "D-iXHar8DYo"
-  },
-  {
-    "title": "横浜の秘境「陣ヶ下渓谷」 【SUKIMA TOURS】神奈川県",
-    "pref": "神奈川県",
-    "region": "関東",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=vbeXogvdGnQ",
-    "id": "vbeXogvdGnQ"
-  },
-  {
-    "title": "妻木晩田遺跡【SUKIMA TOURS】鳥取県西伯郡大山町",
-    "pref": "鳥取県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=jnGlxG-gUnA",
-    "id": "jnGlxG-gUnA"
+    "url": "https://www.youtube.com/watch?v=m3EipjYdAfo",
+    "id": "m3EipjYdAfo"
   },
   {
     "title": "国道471号線の富山と岐阜の県境にある楢峠は全国屈指の酷道なのです！路！【国道471号線・岐阜県/富山県】　SUKIMA TOURS",
     "pref": "富山県",
     "region": "中部",
-    "type": "long",
+    "type": "short",
     "tags": [
       "乗り物・交通"
     ],
@@ -1771,892 +302,15 @@ const VIDEOS = [
     "id": "jC7RQoZpcDo"
   },
   {
-    "title": "今城塚古墳【SUKIMA TOURS】大阪府高槻市",
-    "pref": "大阪府",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=OxigIPmttTg",
-    "id": "OxigIPmttTg"
-  },
-  {
-    "title": "江戸時代の街並みと水路がそのまま残る！【武家屋敷・長崎県】ーSUKIMA TOURSー長崎県島原市下の丁",
-    "pref": "長崎県",
-    "region": "九州・沖縄",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=-gYbs5aRYpA",
-    "id": "-gYbs5aRYpA"
-  },
-  {
-    "title": "沖島【SUKIMA TOURS】滋賀県近江八幡市",
+    "title": "琵琶湖のほとりにひっそり佇む江戸時代に手掘りで掘られた放水路！【西野水道・滋賀県】　SUKIMA TOURSー滋賀県長浜市高月町西野",
     "pref": "滋賀県",
     "region": "関西",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=a3ltExYqaE8",
-    "id": "a3ltExYqaE8"
-  },
-  {
-    "title": "鳥取の名湯「三朝温泉」！",
-    "pref": "鳥取県",
-    "region": "中国",
     "type": "short",
-    "tags": [
-      "温泉・宿"
-    ],
-    "url": "https://www.youtube.com/watch?v=Znzw_50UQ-I",
-    "id": "Znzw_50UQ-I"
-  },
-  {
-    "title": "三瓶温泉「亀の湯」",
-    "pref": "島根県",
-    "region": "中国",
-    "type": "short",
-    "tags": [
-      "温泉・宿"
-    ],
-    "url": "https://www.youtube.com/watch?v=VSmBKgvzK3c",
-    "id": "VSmBKgvzK3c"
-  },
-  {
-    "title": "新沢千塚古墳群【SUKIMA TOURS】奈良県橿原市北越智町/川西町",
-    "pref": "奈良県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=8hoGZ36ZGtc",
-    "id": "8hoGZ36ZGtc"
-  },
-  {
-    "title": "関ヶ原ウォーランド「２００を超えるコンクリート像で関ヶ原の合戦を充実に再現！」",
-    "pref": "岐阜県",
-    "region": "中部",
-    "type": "long",
-    "tags": [
-      "公園・テーマパーク"
-    ],
-    "url": "https://www.youtube.com/watch?v=WXv-gooBghM",
-    "id": "WXv-gooBghM"
-  },
-  {
-    "title": "吉見百穴「山の斜面に無数の穴！これは小人の住まいか！」",
-    "pref": "埼玉県",
-    "region": "関東",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=83jT4z_GNAo",
-    "id": "83jT4z_GNAo"
-  },
-  {
-    "title": "敦賀シンボルロード「宇宙戦艦ヤマトと銀河鉄道999のキャラクターが28体も並んでいる！」",
-    "pref": "福井県",
-    "region": "中部",
-    "type": "long",
-    "tags": [
-      "乗り物・交通"
-    ],
-    "url": "https://www.youtube.com/watch?v=3j7u3ug3JEg",
-    "id": "3j7u3ug3JEg"
-  },
-  {
-    "title": "太陽の塔【SUKIMA TOURS】大阪府吹田市",
-    "pref": "大阪府",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "公園・テーマパーク"
-    ],
-    "url": "https://www.youtube.com/watch?v=F5fJmGV74yw",
-    "id": "F5fJmGV74yw"
-  },
-  {
-    "title": "市ヶ尾横穴古墳群【SUKIMA TOURS】神奈川県横浜市青葉区",
-    "pref": "神奈川県",
-    "region": "関東",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=uPBz2YFCwIA",
-    "id": "uPBz2YFCwIA"
-  },
-  {
-    "title": "西生寺「雷獣のミイラ！日本最古の即身仏！」",
-    "pref": "新潟県",
-    "region": "中部",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=PqF20vR0J9A",
-    "id": "PqF20vR0J9A"
-  },
-  {
-    "title": "仁淀ブルー！高知の仁淀川",
-    "pref": "高知県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=SIW0qALduvw",
-    "id": "SIW0qALduvw"
-  },
-  {
-    "title": "銭形砂絵【SUKIMA TOURS】香川県観音寺市",
-    "pref": "香川県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=kg7iVeXBXws",
-    "id": "kg7iVeXBXws"
-  },
-  {
-    "title": "亀甲駅「亀の姿をした駅舎が岡山にあったのだ！」",
-    "pref": "岡山県",
-    "region": "中国",
-    "type": "short",
-    "tags": [
-      "廃墟・廃線"
-    ],
-    "url": "https://www.youtube.com/watch?v=HcjwnwdbgsY",
-    "id": "HcjwnwdbgsY"
-  },
-  {
-    "title": "難波八阪神社「難波に巨大な獅子頭があるのだ！」",
-    "pref": "大阪府",
-    "region": "関西",
-    "type": "short",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=OhoiBrDGq1I",
-    "id": "OhoiBrDGq1I"
-  },
-  {
-    "title": "大野原古墳群【SUKIMA TOURS】香川県観音寺市大野原町",
-    "pref": "香川県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "神社仏閣",
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=fYL-BjZ6UB8",
-    "id": "fYL-BjZ6UB8"
-  },
-  {
-    "title": "雄橋「世界三大天然橋の一つ！その雄大な天然橋を見よ！",
-    "pref": "広島県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=w4zqTaBLdfs",
-    "id": "w4zqTaBLdfs"
-  },
-  {
-    "title": "白蛇山岩陰遺跡【SUKIMA TOURS】佐賀県伊万里市",
-    "pref": "佐賀県",
-    "region": "九州・沖縄",
-    "type": "long",
-    "tags": [
-      "城・史跡",
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=-AIwR2imtPw",
-    "id": "-AIwR2imtPw"
-  },
-  {
-    "title": "舞洲工場【SUKIMA TOURS】大阪府大阪市此花区",
-    "pref": "大阪府",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "町歩き"
-    ],
-    "url": "https://www.youtube.com/watch?v=Zs5SFyOl9aA",
-    "id": "Zs5SFyOl9aA"
-  },
-  {
-    "title": "不動院岩屋堂【SUKIMA TOURS】鳥取県八頭郡若桜町",
-    "pref": "鳥取県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "神社仏閣",
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=FzBhCEV_iFc",
-    "id": "FzBhCEV_iFc"
-  },
-  {
-    "title": "高開の石積み　【SUKIMA TOURS】　徳島県吉野川市",
-    "pref": "徳島県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=MydJjKTYfxk",
-    "id": "MydJjKTYfxk"
-  },
-  {
-    "title": "シャレコーベミュージアム【SUKIMA TOURS】兵庫県尼崎市",
-    "pref": "兵庫県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "公園・テーマパーク"
-    ],
-    "url": "https://www.youtube.com/watch?v=fC6RWsHpPfQ",
-    "id": "fC6RWsHpPfQ"
-  },
-  {
-    "title": "旧閑谷学校【SUKIMA TOURS】岡山県備前市",
-    "pref": "岡山県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=Ps-PlAdHdAI",
-    "id": "Ps-PlAdHdAI"
-  },
-  {
-    "title": "高屋神社【SUKIMA TOURS】香川県観音寺市",
-    "pref": "香川県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=E1oPEkKWTjM",
-    "id": "E1oPEkKWTjM"
-  },
-  {
-    "title": "峠古墳群【SUKIMA TOURS】岡山県総社市清音三因",
-    "pref": "岡山県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "神社仏閣",
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=cTYM_QTJDxU",
-    "id": "cTYM_QTJDxU"
-  },
-  {
-    "title": "瓜割石庭公園【SUKIMA TOURS】山形県東置賜郡高畠町",
-    "pref": "山形県",
-    "region": "東北",
-    "type": "long",
     "tags": [
       "遺跡・遺構"
     ],
-    "url": "https://www.youtube.com/watch?v=o70iaipX0B0",
-    "id": "o70iaipX0B0"
-  },
-  {
-    "title": "暗峠【SUKIMA TOURS】奈良県/大阪府",
-    "pref": "大阪府",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "町歩き"
-    ],
-    "url": "https://www.youtube.com/watch?v=VltWAsAmhu4",
-    "id": "VltWAsAmhu4"
-  },
-  {
-    "title": "ラバーダック！",
-    "pref": "大阪府",
-    "region": "関西",
-    "type": "short",
-    "tags": [
-      "町歩き"
-    ],
-    "url": "https://www.youtube.com/watch?v=gto4pBt0SJc",
-    "id": "gto4pBt0SJc"
-  },
-  {
-    "title": "階段国道【SUKIMA TOURS】青森県東津軽郡外ヶ浜",
-    "pref": "青森県",
-    "region": "東北",
-    "type": "long",
-    "tags": [
-      "乗り物・交通"
-    ],
-    "url": "https://www.youtube.com/watch?v=-J5q_i9URCo",
-    "id": "-J5q_i9URCo"
-  },
-  {
-    "title": "紫電改展示館【SUKIMA TOURS】愛媛県南宇和郡愛南町",
-    "pref": "愛媛県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=rrSj74K4khE",
-    "id": "rrSj74K4khE"
-  },
-  {
-    "title": "都電おもいで広場「懐かしい都電の車両が無料展示されているよ」",
-    "pref": "東京都",
-    "region": "関東",
-    "type": "long",
-    "tags": [
-      "公園・テーマパーク"
-    ],
-    "url": "https://www.youtube.com/watch?v=SJB8w15qins",
-    "id": "SJB8w15qins"
-  },
-  {
-    "title": "上野大仏「顔だけの大仏が上野の森にあった！」",
-    "pref": "東京都",
-    "region": "関東",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=KG72ul-_iRk",
-    "id": "KG72ul-_iRk"
-  },
-  {
-    "title": "御手洗－伝統的建造物群保存地区ー【SUKIMA TOURS】広島県呉市豊町御手洗",
-    "pref": "広島県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=iYJpdhzgk8M",
-    "id": "iYJpdhzgk8M"
-  },
-  {
-    "title": "ピクミンテラス「宮島SAにあるピクミンテラス！もう少しで終了ですって」",
-    "pref": "広島県",
-    "region": "中国",
-    "type": "short",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=wixwouJiDFg",
-    "id": "wixwouJiDFg"
-  },
-  {
-    "title": "盛岡天満宮「なんだこの狛犬は！ヘンテコ狛犬発見！」",
-    "pref": "岩手県",
-    "region": "東北",
-    "type": "short",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=Du9TYUfm5mE",
-    "id": "Du9TYUfm5mE"
-  },
-  {
-    "title": "牛久大仏「その高さは世界一！ギネスも認めた大仏さま！」",
-    "pref": "茨城県",
-    "region": "関東",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=XW2aSPLCivQ",
-    "id": "XW2aSPLCivQ"
-  },
-  {
-    "title": "玉手山古墳群【SUKIMA TOURS】大阪府柏原市",
-    "pref": "大阪府",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=FcX9vVdTO1o",
-    "id": "FcX9vVdTO1o"
-  },
-  {
-    "title": "三ツ城古墳【SUKIMA TOURS】広島県東広島市",
-    "pref": "広島県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "城・史跡",
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=K0ofNnYuvRU",
-    "id": "K0ofNnYuvRU"
-  },
-  {
-    "title": "雲仙地獄「雲仙温泉を代表する観光名所！しかし400年前、島原藩主の命により、キリシタンに対する拷問の場としてこの雲仙地獄が選ばれました。信仰を捨てさせるために行われた重い史実を今に伝えています。」",
-    "pref": "長崎県",
-    "region": "九州・沖縄",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=5jKJBz1u1bo",
-    "id": "5jKJBz1u1bo"
-  },
-  {
-    "title": "高井田横穴群【SUKIMA TOURS】大阪府柏原市",
-    "pref": "大阪府",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=LcMJnG1JwLs",
-    "id": "LcMJnG1JwLs"
-  },
-  {
-    "title": "姫路モノレール「たった８年で廃止となった幻の路線！でもその名残は今でも街に残っているのです！」",
-    "pref": "兵庫県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "乗り物・交通"
-    ],
-    "url": "https://www.youtube.com/watch?v=fB9xF_wgbiE",
-    "id": "fB9xF_wgbiE"
-  },
-  {
-    "title": "磐境の遺跡【SUKIMA TOURS】岡山県岡山市北区京山",
-    "pref": "岡山県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=Zy-_M4arHhE",
-    "id": "Zy-_M4arHhE"
-  },
-  {
-    "title": "筑後川昇開橋【SUKIMA TOURS】福岡県大川市向島/佐賀県佐賀市諸富町",
-    "pref": "福岡県",
-    "region": "九州・沖縄",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=F5kYj_2ZUzU",
-    "id": "F5kYj_2ZUzU"
-  },
-  {
-    "title": "箭田大塚(やたおおつか)古墳【SUKIMA TOURS】岡山県倉敷市真備町箭田",
-    "pref": "岡山県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=OoBokJOGdxM",
-    "id": "OoBokJOGdxM"
-  },
-  {
-    "title": "高松塚古墳【SUKIMA TOURS】奈良県高市郡明日香村",
-    "pref": "奈良県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=cIyAwCRoXL0",
-    "id": "cIyAwCRoXL0"
-  },
-  {
-    "title": "桑の川の鳥居「まさに天然の鳥居！奇跡の眺めがここに！」",
-    "pref": "高知県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "神社仏閣",
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=cAHj2BkL10c",
-    "id": "cAHj2BkL10c"
-  },
-  {
-    "title": "唐人駄馬巨石群【SUKIMA TOURS】高知県土佐清水市",
-    "pref": "高知県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=4MMp5jyxMto",
-    "id": "4MMp5jyxMto"
-  },
-  {
-    "title": "八栗ケーブル【SUKIMA TOURS】香川県高松市牟礼",
-    "pref": "香川県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "乗り物・交通"
-    ],
-    "url": "https://www.youtube.com/watch?v=7ljKDtPmpUY",
-    "id": "7ljKDtPmpUY"
-  },
-  {
-    "title": "ハニべ巌窟院「石川県が誇る珍スポットの横綱！」",
-    "pref": "石川県",
-    "region": "中部",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=mbHqgh87tcE",
-    "id": "mbHqgh87tcE"
-  },
-  {
-    "title": "阿光坊古墳群【SUKIMA TOURS】青森県上北郡おいらせ町",
-    "pref": "青森県",
-    "region": "東北",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=BDRfZddPAUg",
-    "id": "BDRfZddPAUg"
-  },
-  {
-    "title": "薮塚石切り場跡【SUKIMA TOURS】群馬県太田市藪塚町",
-    "pref": "群馬県",
-    "region": "関東",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=Va-7knQ6KUs",
-    "id": "Va-7knQ6KUs"
-  },
-  {
-    "title": "オランダ堰堤【SUKIMA TOURS】滋賀県大津市上田上",
-    "pref": "滋賀県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=CDRm2Nx5Tzc",
-    "id": "CDRm2Nx5Tzc"
-  },
-  {
-    "title": "土塔「大阪にも階段ピラミッドがあった！」",
-    "pref": "大阪府",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=g7TPx8XtU-g",
-    "id": "g7TPx8XtU-g"
-  },
-  {
-    "title": "橋杭岩「巨岩の柱が並ぶ不思議な絶景！」",
-    "pref": "和歌山県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=0cyyV6Idh8E",
-    "id": "0cyyV6Idh8E"
-  },
-  {
-    "title": "富田茶臼山古墳【SUKIMA TOURS】香川県さぬき市",
-    "pref": "香川県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=K6KRTRnlwzU",
-    "id": "K6KRTRnlwzU"
-  },
-  {
-    "title": "石手寺【SUKIMA TOURS】愛媛県松山市",
-    "pref": "愛媛県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=EXxbULaAUN0",
-    "id": "EXxbULaAUN0"
-  },
-  {
-    "title": "地蔵寺五百羅漢【SUKIMA TOURS】徳島県板野郡板野町",
-    "pref": "徳島県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "神社仏閣",
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=heGLw6aYrFo",
-    "id": "heGLw6aYrFo"
-  },
-  {
-    "title": "谷瀬の吊り橋「川面からの高さは54メートル！長さ297.7メートル！生活用としては日本一の長さを誇る個の吊り橋。今日もスリルを求めてこの山の奥までたくさんの人がやってきます！」",
-    "pref": "奈良県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=y4ctt4yjunc",
-    "id": "y4ctt4yjunc"
-  },
-  {
-    "title": "有田ポーセリンパーク「ドイツのツヴィンガー宮殿を完全再現！建築費は数十億円！パスポートなし！しかも無料で味わえる異国感！」",
-    "pref": "佐賀県",
-    "region": "九州・沖縄",
-    "type": "long",
-    "tags": [
-      "公園・テーマパーク"
-    ],
-    "url": "https://www.youtube.com/watch?v=uqpQYi-6UjU",
-    "id": "uqpQYi-6UjU"
-  },
-  {
-    "title": "土塔【SUKIMA TOURS】大阪府堺市",
-    "pref": "大阪府",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=8lKYrMYkleg",
-    "id": "8lKYrMYkleg"
-  },
-  {
-    "title": "鎌八幡宮「ご神木に無数の鎌が刺さる！」",
-    "pref": "和歌山県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=0Z8ojx8bB4E",
-    "id": "0Z8ojx8bB4E"
-  },
-  {
-    "title": "岩舟古墳【SUKIMA TOURS】島根県安来市岩舟町",
-    "pref": "島根県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "城・史跡",
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=AzyVCH0t0TA",
-    "id": "AzyVCH0t0TA"
-  },
-  {
-    "title": "ロズウェル・ＵＦＯ博物館",
-    "pref": "アメリカ",
-    "region": "海外",
-    "type": "short",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=zrtO9nlVp0k",
-    "id": "zrtO9nlVp0k"
-  },
-  {
-    "title": "造山古墳【SUKIMA TOURS】岡山県岡山市北区",
-    "pref": "岡山県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=lq7t2sN2iBE",
-    "id": "lq7t2sN2iBE"
-  },
-  {
-    "title": "頭塔【SUKIMA TOURS】奈良県奈良市",
-    "pref": "奈良県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=tur0gMa4v94",
-    "id": "tur0gMa4v94"
-  },
-  {
-    "title": "石貫ナギノ横穴群／石貫穴観音横穴【SUKIMA TOURS】熊本県玉名市石貫",
-    "pref": "熊本県",
-    "region": "九州・沖縄",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=QQiDz8Czf-I",
-    "id": "QQiDz8Czf-I"
-  },
-  {
-    "title": "立山防空壕　【SUKIMA TOURS】　長崎県長崎市",
-    "pref": "長崎県",
-    "region": "九州・沖縄",
-    "type": "long",
-    "tags": [
-      "戦争遺構"
-    ],
-    "url": "https://www.youtube.com/watch?v=u0prAxtq37Q",
-    "id": "u0prAxtq37Q"
-  },
-  {
-    "title": "うのこの滝【SUKIMA TOURS】宮崎県西臼杵郡五ケ瀬町",
-    "pref": "宮崎県",
-    "region": "九州・沖縄",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=ghdQj_OaJYo",
-    "id": "ghdQj_OaJYo"
-  },
-  {
-    "title": "阪堺電車「大阪を走るチンチン電車！乗ってみた！」",
-    "pref": "大阪府",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "町歩き"
-    ],
-    "url": "https://www.youtube.com/watch?v=YfUR62yyyjw",
-    "id": "YfUR62yyyjw"
-  },
-  {
-    "title": "恋山形駅「恋愛成就のピンク駅！」",
-    "pref": "山形県",
-    "region": "中国",
-    "type": "short",
-    "tags": [
-      "廃墟・廃線"
-    ],
-    "url": "https://www.youtube.com/watch?v=Hf6YxOp-Eoo",
-    "id": "Hf6YxOp-Eoo"
-  },
-  {
-    "title": "山犬嶽　【SUKIMA TOURS】　徳島県勝浦郡",
-    "pref": "徳島県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=f4afPi38oh0",
-    "id": "f4afPi38oh0"
-  },
-  {
-    "title": "哲学堂公園【SUKIMA TOURS】東京都中野区",
-    "pref": "東京都",
-    "region": "関東",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=VsKcSoi9DGg",
-    "id": "VsKcSoi9DGg"
-  },
-  {
-    "title": "首大仏「首だけの大仏様が和歌山にあるよ！」",
-    "pref": "和歌山県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=3rdubV5XeaI",
-    "id": "3rdubV5XeaI"
-  },
-  {
-    "title": "津嶋神社　【SUKIMA TOURS】　香川県三豊市三野町",
-    "pref": "香川県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=NPlW8Kkt4QU",
-    "id": "NPlW8Kkt4QU"
-  },
-  {
-    "title": "五郎山古墳【SUKIMA TOURS】福岡県筑紫野市原田",
-    "pref": "福岡県",
-    "region": "九州・沖縄",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=gF7MtvOd3yo",
-    "id": "gF7MtvOd3yo"
-  },
-  {
-    "title": "ホケノ山古墳【SUKIMA TOURS】奈良県桜井市箸中",
-    "pref": "奈良県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=azXPnnG-qqw",
-    "id": "azXPnnG-qqw"
-  },
-  {
-    "title": "鳴り石の浜「波に合わせてカラコロと音が鳴る珍しい海岸！」",
-    "pref": "鳥取県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=HA2R-CJJgEc",
-    "id": "HA2R-CJJgEc"
-  },
-  {
-    "title": "鷺湯公園「別名ウメボシ公園！そこには巨大な梅干しがあるのです！」",
-    "pref": "岡山県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "公園・テーマパーク"
-    ],
-    "url": "https://www.youtube.com/watch?v=TH818QLD0rk",
-    "id": "TH818QLD0rk"
-  },
-  {
-    "title": "笹畝坑道【SUKIMA TOURS】岡山県高梁市成羽町",
-    "pref": "岡山県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=T_TzrxI3J40",
-    "id": "T_TzrxI3J40"
+    "url": "https://www.youtube.com/watch?v=4MzKZQPAQ2U",
+    "id": "4MzKZQPAQ2U"
   },
   {
     "title": "奇才岡本太郎が残したふたつの梵鐘！名古屋と前橋にある奇跡の鐘をみろ！【岡本太郎の梵鐘・愛知県／群馬県】SUKIMA TOURSー愛知県名古屋市北区/群馬県前橋市",
@@ -2671,257 +325,43 @@ const VIDEOS = [
     "id": "4Dv9ZXAdL74"
   },
   {
-    "title": "龍岩寺奥院礼堂【SUKIMA TOURS】大分県宇佐市",
-    "pref": "大分県",
+    "title": "100年以上も昔の昭和10年に作られた動く橋が筑後川にあった！【筑後川昇開橋・佐賀県/福岡県】SUKIMA TOURSー福岡県大川市／佐賀県佐賀市諸富町",
+    "pref": "福岡県",
     "region": "九州・沖縄",
     "type": "long",
     "tags": [
-      "神社仏閣",
       "自然・絶景"
     ],
-    "url": "https://www.youtube.com/watch?v=V98jnSHDQmw",
-    "id": "V98jnSHDQmw"
+    "url": "https://www.youtube.com/watch?v=kJILjuw80Ek",
+    "id": "kJILjuw80Ek"
   },
   {
-    "title": "案山子公園「畑の中に巨大聖徳太子が！」",
-    "pref": "奈良県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "公園・テーマパーク"
-    ],
-    "url": "https://www.youtube.com/watch?v=R8J03X71PoQ",
-    "id": "R8J03X71PoQ"
-  },
-  {
-    "title": "須磨浦カーレーター【SUKIMA TOURS】兵庫県神戸市須磨区",
-    "pref": "兵庫県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "公園・テーマパーク"
-    ],
-    "url": "https://www.youtube.com/watch?v=5z2IhrVFu6g",
-    "id": "5z2IhrVFu6g"
-  },
-  {
-    "title": "三佛寺投入堂【SUKIMA TOURS】鳥取県東伯郡三朝町",
-    "pref": "鳥取県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=WfBWP6HURrI",
-    "id": "WfBWP6HURrI"
-  },
-  {
-    "title": "東大寺大仏殿【SUKIMA TOURS】奈良県奈良市",
-    "pref": "奈良県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=xgCpv1s6AT0",
-    "id": "xgCpv1s6AT0"
-  },
-  {
-    "title": "蓬莱橋【SUKIMA TOURS】静岡県島田市南",
-    "pref": "静岡県",
-    "region": "中部",
-    "type": "long",
+    "title": "鬼が踏み抜いたという巨大な岩が佐世保にあった！【眼鏡岩・長崎県】SUKIMA TOURSー長崎県佐世保市瀬戸越町 #奇景 ＃珍スポット",
+    "pref": "長崎県",
+    "region": "九州・沖縄",
+    "type": "short",
     "tags": [
       "自然・絶景"
     ],
-    "url": "https://www.youtube.com/watch?v=YLsI11taMdk",
-    "id": "YLsI11taMdk"
+    "url": "https://www.youtube.com/watch?v=l2xII19hkF4",
+    "id": "l2xII19hkF4"
   },
   {
-    "title": "伊尾木洞【SUKIMA TOURS】高知県安芸市",
-    "pref": "高知県",
+    "title": "2基の前方後円墳が中央の方墳を挟んで向かい合う！全国的にも類を見ない異例の配置！【陣の丸古墳・香川県】SUKIMA TOURSー香川県丸亀市綾歌町富熊",
+    "pref": "香川県",
     "region": "四国",
     "type": "long",
     "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=DG_dx9izaNg",
-    "id": "DG_dx9izaNg"
-  },
-  {
-    "title": "作山古墳群【SUKIMA TOURS】京都府与謝郡与謝野町",
-    "pref": "京都府",
-    "region": "関西",
-    "type": "long",
-    "tags": [
       "城・史跡"
     ],
-    "url": "https://www.youtube.com/watch?v=9GfL7prbbhI",
-    "id": "9GfL7prbbhI"
-  },
-  {
-    "title": "岩橋千塚古墳群【SUKIMA TOURS】和歌山県和歌山市岩橋",
-    "pref": "和歌山県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "城・史跡",
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=B45IvLjG1gQ",
-    "id": "B45IvLjG1gQ"
-  },
-  {
-    "title": "屯鶴峯「奈良に広がる白い異世界！謎の絶景どんづるぼうとは？」",
-    "pref": "奈良県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=aeteskSbEGE",
-    "id": "aeteskSbEGE"
-  },
-  {
-    "title": "有福大仏【SUKIMA TOURS】江津市有福温泉町",
-    "pref": "島根県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=gfKYINUym2g",
-    "id": "gfKYINUym2g"
-  },
-  {
-    "title": "赤山地下壕【SUKIMA TOURS】千葉県館山市宮城",
-    "pref": "千葉県",
-    "region": "関東",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=PhQ8uvsvDds",
-    "id": "PhQ8uvsvDds"
-  },
-  {
-    "title": "水木しげるロード「妖怪たちが１７８体も！」",
-    "pref": "鳥取県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "町歩き"
-    ],
-    "url": "https://www.youtube.com/watch?v=Sr39YUcKxI0",
-    "id": "Sr39YUcKxI0"
-  },
-  {
-    "title": "武蔵府中熊野神社古墳【SUKIMA TOURS】東京都府中市",
-    "pref": "東京都",
-    "region": "関東",
-    "type": "long",
-    "tags": [
-      "神社仏閣",
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=101Sm1waQ6E",
-    "id": "101Sm1waQ6E"
-  },
-  {
-    "title": "「東京･小平」を一日小旅　-OneDayTrip KODAIRA-",
-    "pref": "東京都",
-    "region": "関東",
-    "type": "long",
-    "tags": [
-      "町歩き"
-    ],
-    "url": "https://www.youtube.com/watch?v=rWnzMobDMvE",
-    "id": "rWnzMobDMvE"
-  },
-  {
-    "title": "安芸の小京都と呼ばれる美しい町並み！【竹原・広島県】SUKIMA TOURSー広島県竹原市",
-    "pref": "広島県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=jmDRK8LH6qs",
-    "id": "jmDRK8LH6qs"
-  },
-  {
-    "title": "一度乗れば二度と戻れない特攻兵器「回天」の訓練基地跡！【大津島(回天の島)・山口県】　ーSUKIMA TOURSー山口県周南市",
-    "pref": "山口県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "城・史跡",
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=na7d24fHVS8",
-    "id": "na7d24fHVS8"
-  },
-  {
-    "title": "石の島に残る圧巻の採石場跡！【北木島・岡山県】SUKIMA TOURSー岡山県笠岡市北木島町",
-    "pref": "岡山県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "城・史跡",
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=jVNaRLWXPVU",
-    "id": "jVNaRLWXPVU"
-  },
-  {
-    "title": "楯築遺跡【SUKIMA TOURS】岡山県倉敷市",
-    "pref": "岡山県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=jL166TQEzCY",
-    "id": "jL166TQEzCY"
-  },
-  {
-    "title": "瀬戸大橋【SUKIMA TOURS】香川県坂出市－岡山県倉敷市",
-    "pref": "岡山県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=km7jC9xC-BI",
-    "id": "km7jC9xC-BI"
-  },
-  {
-    "title": "一畑薬師【SUKIMA TOURS】島根県出雲市",
-    "pref": "島根県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=boD_Nfllna4",
-    "id": "boD_Nfllna4"
-  },
-  {
-    "title": "茶すり山古墳【SUKIMA TOURS】兵庫県朝来市和田山町",
-    "pref": "兵庫県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=r2rNbZthVo8",
-    "id": "r2rNbZthVo8"
+    "url": "https://www.youtube.com/watch?v=cmxq67RsB_o",
+    "id": "cmxq67RsB_o"
   },
   {
     "title": "石見畳ヶ浦「恐竜の卵のような岩がポコポコ並ぶ奇景！」",
     "pref": "島根県",
     "region": "中国",
-    "type": "long",
+    "type": "short",
     "tags": [
       "自然・絶景"
     ],
@@ -2929,137 +369,94 @@ const VIDEOS = [
     "id": "kMWzro0TdxE"
   },
   {
-    "title": "聖神社　【SUKIMA TOURS】　高知県高岡郡越智町",
-    "pref": "高知県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=ZiP-ECXEKsU",
-    "id": "ZiP-ECXEKsU"
-  },
-  {
-    "title": "脇町【SUKIMA TOURS】徳島県美馬市脇町",
-    "pref": "徳島県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=zfdTderEefc",
-    "id": "zfdTderEefc"
-  },
-  {
-    "title": "福光石の石切り場【SUKIMA TOURS】島根県大田市温泉津町",
+    "title": "畳のような岩肌に丸い塊状の岩が並ぶ奇景！【石見畳ヶ浦・島根県】島根県浜田市国分町",
     "pref": "島根県",
     "region": "中国",
     "type": "long",
     "tags": [
       "自然・絶景"
     ],
-    "url": "https://www.youtube.com/watch?v=vZY9yl1mlEY",
-    "id": "vZY9yl1mlEY"
+    "url": "https://www.youtube.com/watch?v=D50JqSOmXpE",
+    "id": "D50JqSOmXpE"
   },
   {
-    "title": "岩谷観音堂やぐら群【SUKIMA TOURS】千葉県富津市",
-    "pref": "千葉県",
-    "region": "関東",
+    "title": "江戸時代の街並みと水路がそのまま残る！【武家屋敷・長崎県】ーSUKIMA TOURSー長崎県島原市下の丁",
+    "pref": "長崎県",
+    "region": "九州・沖縄",
     "type": "long",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=-gYbs5aRYpA",
+    "id": "-gYbs5aRYpA"
+  },
+  {
+    "title": "鰐淵寺 浮浪の滝「かの武蔵坊弁慶が修行をしたとされる古刹！奥の院の蔵王堂がまさしくその修行の滝！出雲の数あるパワースポットでもここは別格！」",
+    "pref": "島根県",
+    "region": "中国",
+    "type": "short",
     "tags": [
       "神社仏閣",
       "自然・絶景"
     ],
-    "url": "https://www.youtube.com/watch?v=8D3EQGdYYqQ",
-    "id": "8D3EQGdYYqQ"
+    "url": "https://www.youtube.com/watch?v=FaqtK2bF9uw",
+    "id": "FaqtK2bF9uw"
   },
   {
-    "title": "豊稔池堰堤【SUKIMA TOURS】香川県観音寺市大野原町",
-    "pref": "香川県",
-    "region": "四国",
-    "type": "long",
+    "title": "岩谷観音堂やぐら群「古墳時代の横穴墓を再利用して造られたやぐら群。行基が一夜にして造ったともいわれている岩谷観音堂。この不思議な史跡を見に行ってみた。」",
+    "pref": "千葉県",
+    "region": "関東",
+    "type": "short",
     "tags": [
-      "神社仏閣"
+      "神社仏閣",
+      "城・史跡"
     ],
-    "url": "https://www.youtube.com/watch?v=hTJqqHlZ5Kc",
-    "id": "hTJqqHlZ5Kc"
+    "url": "https://www.youtube.com/watch?v=pxQ1cFNY8xc",
+    "id": "pxQ1cFNY8xc"
   },
   {
-    "title": "銭形砂絵「この砂絵を見ると一生お金に困らない⁉︎」",
-    "pref": "香川県",
-    "region": "四国",
-    "type": "long",
+    "title": "太陽の塔「なぜ、この塔が半世紀以上も大阪の空に立ち続けているのか！1970年、大阪万博のために岡本太郎がデザインした太陽の塔。万博が終わっても壊されることはなかった圧倒的な存在感がここにあります！」",
+    "pref": "大阪府",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "公園・テーマパーク"
+    ],
+    "url": "https://www.youtube.com/watch?v=GdYP6Kihmnw",
+    "id": "GdYP6Kihmnw"
+  },
+  {
+    "title": "雲仙地獄「雲仙温泉を代表する観光名所！しかし400年前、島原藩主の命により、キリシタンに対する拷問の場としてこの雲仙地獄が選ばれました。信仰を捨てさせるために行われた重い史実を今に伝えています。」",
+    "pref": "長崎県",
+    "region": "九州・沖縄",
+    "type": "short",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=5jKJBz1u1bo",
+    "id": "5jKJBz1u1bo"
+  },
+  {
+    "title": "鬼ノ城「文献などには一切の記録がない謎の山城！全周約2.8kmにわたって山の上に巡る城壁！いつ誰がこの城を造ったのか！そんな謎の城を歩きます！」",
+    "pref": "岡山県",
+    "region": "中国",
+    "type": "short",
     "tags": [
       "城・史跡"
     ],
-    "url": "https://www.youtube.com/watch?v=w13Kw_4OlUI",
-    "id": "w13Kw_4OlUI"
+    "url": "https://www.youtube.com/watch?v=gigAnzZqIJ4",
+    "id": "gigAnzZqIJ4"
   },
   {
-    "title": "別府タワー【SUKIMA TOURS】大分県別府市北浜",
-    "pref": "大分県",
-    "region": "九州・沖縄",
-    "type": "long",
-    "tags": [
-      "町歩き"
-    ],
-    "url": "https://www.youtube.com/watch?v=GXW_c6Eq2k0",
-    "id": "GXW_c6Eq2k0"
-  },
-  {
-    "title": "佐柳島【SUKIMA TOURS】香川県仲多度郡",
-    "pref": "香川県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=20pxZCnrrBw",
-    "id": "20pxZCnrrBw"
-  },
-  {
-    "title": "久井の岩海【SUKIMA TOURS】広島県三原市",
-    "pref": "広島県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=E-DbpJ3_Qzs",
-    "id": "E-DbpJ3_Qzs"
-  },
-  {
-    "title": "八九郎温泉「ビニールハウスの極上温泉が秋田にあった！」",
-    "pref": "秋田県",
-    "region": "東北",
+    "title": "谷瀬の吊り橋「川面からの高さは54メートル！長さ297.7メートル！生活用としては日本一の長さを誇る個の吊り橋。今日もスリルを求めてこの山の奥までたくさんの人がやってきます！」",
+    "pref": "奈良県",
+    "region": "関西",
     "type": "short",
     "tags": [
-      "温泉・宿"
-    ],
-    "url": "https://www.youtube.com/watch?v=X1PBXCIM4o8",
-    "id": "X1PBXCIM4o8"
-  },
-  {
-    "title": "全興寺【SUKIMA TOURS】大阪府大阪市平野区",
-    "pref": "大阪府",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=8dfJHZaxIeg",
-    "id": "8dfJHZaxIeg"
-  },
-  {
-    "title": "大立洞窟／日向洞窟【SUKIMA TOURS】山形県東置賜郡高畠町",
-    "pref": "山形県",
-    "region": "東北",
-    "type": "long",
-    "tags": [
       "自然・絶景"
     ],
-    "url": "https://www.youtube.com/watch?v=pw8gGjrordo",
-    "id": "pw8gGjrordo"
+    "url": "https://www.youtube.com/watch?v=y4ctt4yjunc",
+    "id": "y4ctt4yjunc"
   },
   {
     "title": "歴史書には一文字も記録がない謎の巨大城郭！【岡山県・鬼ノ城】ーSUKIMA TOURSー岡山県総社市黒尾",
@@ -3074,37 +471,255 @@ const VIDEOS = [
     "id": "-Jl7WKfbfwU"
   },
   {
-    "title": "東京都慰霊堂　【SUKIMA TOURS】　東京都墨田区",
-    "pref": "東京都",
-    "region": "関東",
+    "title": "子供たちが2年かけて掘った巨大防空壕！【無窮洞・長崎県】SUKIMA TOURSー長崎県佐世保市城間町",
+    "pref": "長崎県",
+    "region": "九州・沖縄",
+    "type": "long",
+    "tags": [
+      "城・史跡",
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=w3FgPRTKHqw",
+    "id": "w3FgPRTKHqw"
+  },
+  {
+    "title": "奥祖谷二重かずら橋「秘境中の秘境！徳島県・奥祖谷に架かる「二重かずら橋」。定番の祖谷のかずら橋から、さらに1時間以上も山奥へ入ったガチの山中にその聖域はあります！」",
+    "pref": "徳島県",
+    "region": "四国",
+    "type": "short",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=7UOKyMJNmyk",
+    "id": "7UOKyMJNmyk"
+  },
+  {
+    "title": "祖谷のかずら橋「秘境とよばれる祖谷の絶景スポット！祖谷川に架かる長さ45メートルの植物を編み込んで作られた橋！スリルあるその橋は渡る事ができるのです！」",
+    "pref": "徳島県",
+    "region": "四国",
+    "type": "short",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=kr-o8YVSGjQ",
+    "id": "kr-o8YVSGjQ"
+  },
+  {
+    "title": "花の窟神社「日本書紀にもある日本最古の神社です。社殿はなく、高さ約45ｍの巨大な岩窟がご神体となっているのです。ご祭神は伊弉冊尊（イザナミノミコト）と、その子供、軻遇突智尊（カグツチノミコト）です」",
+    "pref": "三重県",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "神社仏閣",
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=kABaSHh8Ylo",
+    "id": "kABaSHh8Ylo"
+  },
+  {
+    "title": "片島魚雷発射試験場跡「大正から昭和の戦局を裏で支え続けた小さな島。国防の要であった魚雷の、最終的な実戦能力を決定づけた最重要拠点がここにあったのです」",
+    "pref": "長崎県",
+    "region": "九州・沖縄",
+    "type": "short",
+    "tags": [
+      "城・史跡",
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=_Z-9alWkmwg",
+    "id": "_Z-9alWkmwg"
+  },
+  {
+    "title": "針尾送信所「１００年以上前に大正時代に建てられた3本の電波塔！ここからニイタカヤマノボレの暗号信号が送信されたのだ！」",
+    "pref": "長崎県",
+    "region": "九州・沖縄",
+    "type": "short",
+    "tags": [
+      "戦争遺構"
+    ],
+    "url": "https://www.youtube.com/watch?v=CMpUCrXdI8s",
+    "id": "CMpUCrXdI8s"
+  },
+  {
+    "title": "荒波と風雨が数万年かけて削った天然の岸壁！【鬼ヶ城】SUKIMA TOURS 近畿ー三重県熊野市木本町",
+    "pref": "三重県",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=IcmarLVY-xc",
+    "id": "IcmarLVY-xc"
+  },
+  {
+    "title": "本願寺伝道院「伝統的な京都の町家に突如現れる赤レンガの怪しい洋館。世界の宗教建築を融合させた、巨匠・伊東忠太の妖怪愛に溢れた異形の建造物を訪ねます。",
+    "pref": "京都府",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "神社仏閣",
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=tGm_pgpMrFY",
+    "id": "tGm_pgpMrFY"
+  },
+  {
+    "title": "御輿来海岸「広い干潟に広がる三日月型の波の模様。夕暮れ時には水溜まりが鏡のように空を映し出します。日本の渚百選、日本の夕陽百選にも選べれています」",
+    "pref": "熊本県",
+    "region": "九州・沖縄",
+    "type": "short",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=pJ0YKwVmTlc",
+    "id": "pJ0YKwVmTlc"
+  },
+  {
+    "title": "100年前の姿のまま残る高さ136mの無線塔！【針尾送信所・長崎県】SUKIMA TOURSー長崎県佐世保市針尾中町",
+    "pref": "長崎県",
+    "region": "九州・沖縄",
+    "type": "long",
+    "tags": [
+      "戦争遺構"
+    ],
+    "url": "https://www.youtube.com/watch?v=VYDHqiUJK1A",
+    "id": "VYDHqiUJK1A"
+  },
+  {
+    "title": "玄武洞「柱状節理の最高傑作！そして地球の磁場反転の証明地でもあり、江戸時代は採石場跡だった。さらに「玄武岩」の名はここから付けられたのです！」",
+    "pref": "兵庫県",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "城・史跡",
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=LK2osRi1E7A",
+    "id": "LK2osRi1E7A"
+  },
+  {
+    "title": "有田ポーセリンパーク「ドイツのツヴィンガー宮殿を完全再現！建築費は数十億円！パスポートなし！しかも無料で味わえる異国感！」",
+    "pref": "佐賀県",
+    "region": "九州・沖縄",
+    "type": "short",
+    "tags": [
+      "公園・テーマパーク"
+    ],
+    "url": "https://www.youtube.com/watch?v=uqpQYi-6UjU",
+    "id": "uqpQYi-6UjU"
+  },
+  {
+    "title": "鬼ヶ城「鬼ヶ城は三重県熊野市にある全長1.2㎞に及ぶ断崖絶壁！奇岩怪石！奇観の台地です！そこは昔の人が鬼が住む城と伝えた荒涼とした光景！息を呑むほどの自然の驚異！」",
+    "pref": "三重県",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "城・史跡",
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=6hPTY1NvQ40",
+    "id": "6hPTY1NvQ40"
+  },
+  {
+    "title": "石舞台古墳「江戸時代にはすでに観光名所として知られていた石舞台古墳！巨石30個を積み上げて造られた石舞台古墳。その総重量は2,300トン！天井石だけでも約77トンもあります！」",
+    "pref": "奈良県",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=WjcY1D42d5w",
+    "id": "WjcY1D42d5w"
+  },
+  {
+    "title": "武家屋敷「島原城に近い武家屋敷町は、通りの中央を流れる湧水の小川も当時の面影を残しています！」",
+    "pref": "長崎県",
+    "region": "九州・沖縄",
+    "type": "short",
+    "tags": [
+      "城・史跡",
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=O46hiBKjk7w",
+    "id": "O46hiBKjk7w"
+  },
+  {
+    "title": "日本で唯一の古代イスラエル式神社？山奥に隠された謎の石垣遺跡！【徳島】磐境神明神社　　ーSUKIMA TOURSー徳島県美馬市穴吹町",
+    "pref": "徳島県",
+    "region": "四国",
+    "type": "long",
+    "tags": [
+      "神社仏閣",
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=8HI1OULpZu0",
+    "id": "8HI1OULpZu0"
+  },
+  {
+    "title": "垂水遺跡「山寺の原点、名僧・円仁が山寺を建立する前に籠もった原点の場所！」",
+    "pref": "山形県",
+    "region": "東北",
+    "type": "short",
+    "tags": [
+      "神社仏閣",
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=lXnPAhRzu60",
+    "id": "lXnPAhRzu60"
+  },
+  {
+    "title": "現存１２天守「日本人なら一度は訪れたい、江戸時代より以前に建てられ、戦火も地震も乗り越え、400年以上生き残った奇跡の12天守！日本にたった12しか残らなかった本物の天守、その全てを巡ります！」",
+    "pref": "複数",
+    "region": "全国",
+    "type": "short",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=XjX9Y_l4JLA",
+    "id": "XjX9Y_l4JLA"
+  },
+  {
+    "title": "生き木地蔵「切り出していない生の木に彫刻された珍しいお地蔵さま！平家の落ち武者伝説が今も色濃く残る県境の山の中。そんな山中の一本の木に彫られているお地蔵さま。何故こんな山奥の木に彫られたのか！」",
+    "pref": "愛媛県",
+    "region": "四国",
+    "type": "short",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=rmz0DBkK3Ec",
+    "id": "rmz0DBkK3Ec"
+  },
+  {
+    "title": "山奥の断崖に張り出す懸造りの本殿！【石川県】赤瀬那殿観音　ーSUKIMA TOURSー石川県小松市赤瀬町",
+    "pref": "石川県",
+    "region": "中部",
     "type": "long",
     "tags": [
       "神社仏閣"
     ],
-    "url": "https://www.youtube.com/watch?v=oLn0cu6N0IY",
-    "id": "oLn0cu6N0IY"
+    "url": "https://www.youtube.com/watch?v=3sdSce1rc6k",
+    "id": "3sdSce1rc6k"
   },
   {
-    "title": "長柄横穴群　【SUKIMA TOURS】千葉県長生郡　　　山の中の崖を掘って造った墓室がずらりと並ぶその光景は一見の価値あり！",
-    "pref": "千葉県",
+    "title": "承教寺「狛犬ならぬ狛件(くだん)がいるお寺が港区にあった！」",
+    "pref": "東京都",
     "region": "関東",
-    "type": "long",
+    "type": "short",
     "tags": [
-      "遺跡・遺構"
+      "神社仏閣"
     ],
-    "url": "https://www.youtube.com/watch?v=S4ep7nc0Emg",
-    "id": "S4ep7nc0Emg"
+    "url": "https://www.youtube.com/watch?v=OvEXLPHJG8o",
+    "id": "OvEXLPHJG8o"
   },
   {
-    "title": "三津の渡し【SUKIMA TOURS】愛媛県松山市三津",
-    "pref": "愛媛県",
-    "region": "四国",
-    "type": "long",
+    "title": "大谷第一墳「まさにピラミッド！岡山の山奥に階段式古墳があった！」",
+    "pref": "岡山県",
+    "region": "中国",
+    "type": "short",
     "tags": [
-      "町歩き"
+      "城・史跡"
     ],
-    "url": "https://www.youtube.com/watch?v=cg3bZ5XDAQc",
-    "id": "cg3bZ5XDAQc"
+    "url": "https://www.youtube.com/watch?v=JpokJumG7N8",
+    "id": "JpokJumG7N8"
   },
   {
     "title": "奈良の石舞台に匹敵する吉備三大巨石墳の内部に潜入！【こうもり塚古墳／牟佐大塚古墳・岡山】ーSUKIMA TOURSー岡山県総社市上林/岡山県岡山市北区牟佐",
@@ -3119,77 +734,10 @@ const VIDEOS = [
     "id": "RKNmMHmbaMA"
   },
   {
-    "title": "少彦名神社【SUKIMA TOURS】愛媛県大洲市",
-    "pref": "愛媛県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=9OMhBEFL1E0",
-    "id": "9OMhBEFL1E0"
-  },
-  {
-    "title": "尾市一号古墳【SUKIMA TOURS】広島県福山市新市町",
-    "pref": "広島県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "城・史跡",
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=DKnl36laGj4",
-    "id": "DKnl36laGj4"
-  },
-  {
-    "title": "伊根の舟屋【SUKIMA TOURS】京都府与謝郡",
-    "pref": "京都府",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "町歩き"
-    ],
-    "url": "https://www.youtube.com/watch?v=QQTcjvEw_K8",
-    "id": "QQTcjvEw_K8"
-  },
-  {
-    "title": "石のカラト古墳【SUKIMA TOURS】奈良県奈良市神功/京都府木津川市兜台",
-    "pref": "京都府",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=TXW78hDaUO0",
-    "id": "TXW78hDaUO0"
-  },
-  {
-    "title": "聖天宮「埼玉にある台湾！本格的台湾寺院に行こう！」",
-    "pref": "埼玉県",
-    "region": "関東",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=sfUSQJr-SOA",
-    "id": "sfUSQJr-SOA"
-  },
-  {
-    "title": "高鉢山風穴【SUKIMA TOURS】香川県綾歌郡綾川町西分",
-    "pref": "香川県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "遺跡・遺構"
-    ],
-    "url": "https://www.youtube.com/watch?v=TUj_w3vA-aI",
-    "id": "TUj_w3vA-aI"
-  },
-  {
     "title": "ハニべ巌窟院「石川県が誇る珍スポットの横綱！」",
     "pref": "石川県",
     "region": "中部",
-    "type": "long",
+    "type": "short",
     "tags": [
       "城・史跡"
     ],
@@ -3197,82 +745,37 @@ const VIDEOS = [
     "id": "38IxNI630pU"
   },
   {
-    "title": "関ケ原ウォーランド【SUKIMA TOURS】岐阜県不破郡関ケ原町",
-    "pref": "岐阜県",
+    "title": "雄橋「世界三大天然橋の一つ！その雄大な天然橋を見よ！",
+    "pref": "広島県",
+    "region": "中国",
+    "type": "short",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=w4zqTaBLdfs",
+    "id": "w4zqTaBLdfs"
+  },
+  {
+    "title": "越前大仏「日本一大きい坐像の大仏さま！福井の実業家が私財を投じて建立した清大寺越前大仏！その額なんと380億円！日本一を誇る巨大な大仏さまは必見です！」",
+    "pref": "福井県",
     "region": "中部",
-    "type": "long",
-    "tags": [
-      "公園・テーマパーク"
-    ],
-    "url": "https://www.youtube.com/watch?v=TGdcfd-oOJU",
-    "id": "TGdcfd-oOJU"
-  },
-  {
-    "title": "御輿来海岸「広い干潟に広がる三日月型の波の模様。夕暮れ時には水溜まりが鏡のように空を映し出します。日本の渚百選、日本の夕陽百選にも選べれています」",
-    "pref": "熊本県",
-    "region": "九州・沖縄",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=pJ0YKwVmTlc",
-    "id": "pJ0YKwVmTlc"
-  },
-  {
-    "title": "お岩稲荷【SUKIMA TOURS】東京都新宿区",
-    "pref": "東京都",
-    "region": "関東",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=aJbIHxuUpRA",
-    "id": "aJbIHxuUpRA"
-  },
-  {
-    "title": "国道駅【SUKIMA TOURS】神奈川県横浜市鶴見区",
-    "pref": "神奈川県",
-    "region": "関東",
-    "type": "long",
-    "tags": [
-      "廃墟・廃線",
-      "乗り物・交通"
-    ],
-    "url": "https://www.youtube.com/watch?v=Onw8B_5q_lw",
-    "id": "Onw8B_5q_lw"
-  },
-  {
-    "title": "安居渓谷　【SUKIMA TOURS】　高知県",
-    "pref": "高知県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=qTKXmzulxLw",
-    "id": "qTKXmzulxLw"
-  },
-  {
-    "title": "岐阜大仏【SUKIMA TOURS】岐阜県岐阜市大仏町",
-    "pref": "岐阜県",
-    "region": "中部",
-    "type": "long",
+    "type": "short",
     "tags": [
       "神社仏閣"
     ],
-    "url": "https://www.youtube.com/watch?v=hymrQ-e37aE",
-    "id": "hymrQ-e37aE"
+    "url": "https://www.youtube.com/watch?v=S7jSrOQ4558",
+    "id": "S7jSrOQ4558"
   },
   {
-    "title": "ラオスタイ国境越え【SUKIMA TOURS】ビエンチャン：ノンカイ",
-    "pref": "タイ",
-    "region": "海外",
-    "type": "long",
+    "title": "橋杭岩「巨岩の柱が並ぶ不思議な絶景！」",
+    "pref": "和歌山県",
+    "region": "関西",
+    "type": "short",
     "tags": [
-      "未分類"
+      "自然・絶景"
     ],
-    "url": "https://www.youtube.com/watch?v=5zuPhMlcrxw",
-    "id": "5zuPhMlcrxw"
+    "url": "https://www.youtube.com/watch?v=0cyyV6Idh8E",
+    "id": "0cyyV6Idh8E"
   },
   {
     "title": "紀淡海峡を防備するために作られた明治の要塞！【兵庫】由良要塞　SUKIMA TOURS　兵庫県洲本市由良町",
@@ -3286,361 +789,60 @@ const VIDEOS = [
     "id": "MpuuSV4hyMc"
   },
   {
-    "title": "雄橋【SUKIMA TOURS】広島県庄原市東城町",
-    "pref": "広島県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "城・史跡",
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=gbi9XbGzfcc",
-    "id": "gbi9XbGzfcc"
-  },
-  {
-    "title": "大室古墳群【SUKIMA TOURS】長野県長野市松代町",
-    "pref": "長野県",
-    "region": "中部",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=JZ2AlzvvMdk",
-    "id": "JZ2AlzvvMdk"
-  },
-  {
-    "title": "源宗坊寺【SUKIMA TOURS】広島県呉市清水",
-    "pref": "広島県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "神社仏閣",
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=L8bG9EHtQwk",
-    "id": "L8bG9EHtQwk"
-  },
-  {
-    "title": "石見銀山・龍源寺間歩【SUKIMA TOURS】島根県太田市",
-    "pref": "島根県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "神社仏閣",
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=2yQytXTlnoQ",
-    "id": "2yQytXTlnoQ"
-  },
-  {
-    "title": "HTMSメークロン号【SUKIMA TOURS】タイ・バンコク",
-    "pref": "タイ",
-    "region": "海外",
-    "type": "long",
-    "tags": [
-      "未分類"
-    ],
-    "url": "https://www.youtube.com/watch?v=eQ4SXHCTxtA",
-    "id": "eQ4SXHCTxtA"
-  },
-  {
-    "title": "キリストの墓【SUKIMA TOURS】青森県三戸郡新郷村",
-    "pref": "青森県",
-    "region": "東北",
-    "type": "long",
-    "tags": [
-      "公園・テーマパーク"
-    ],
-    "url": "https://www.youtube.com/watch?v=XfnLAy7A4kE",
-    "id": "XfnLAy7A4kE"
-  },
-  {
-    "title": "スカイレール　【SUKIMA TOURS】　広島県広島市安芸区",
-    "pref": "広島県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=DhUH73osWps",
-    "id": "DhUH73osWps"
-  },
-  {
-    "title": "ただ歩いてみた香港　Just Walked Hongkong !",
-    "pref": "香港",
-    "region": "海外",
-    "type": "long",
-    "tags": [
-      "未分類"
-    ],
-    "url": "https://www.youtube.com/watch?v=peAbBPR92rw",
-    "id": "peAbBPR92rw"
-  },
-  {
-    "title": "三鷹跨線人道橋　【SUKIMA TOURS】東京都",
-    "pref": "東京都",
-    "region": "関東",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=4kwbn5wEmbc",
-    "id": "4kwbn5wEmbc"
-  },
-  {
-    "title": "常昌院【SUKIMA TOURS】静岡県藤枝市岡部町",
-    "pref": "静岡県",
-    "region": "中部",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=5_hn_1IWaks",
-    "id": "5_hn_1IWaks"
-  },
-  {
-    "title": "皇子山古墳【SUKIMA TOURS】滋賀県大津市錦織",
-    "pref": "滋賀県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=KxjPDDvnvTQ",
-    "id": "KxjPDDvnvTQ"
-  },
-  {
-    "title": "浮浪滝【SUKIMA TOURS】島根県出雲市別所町",
-    "pref": "島根県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=sRLdjB6L0NA",
-    "id": "sRLdjB6L0NA"
-  },
-  {
-    "title": "塩津山墳墓群【SUKIMA TOURS】島根県安来市久白町",
-    "pref": "島根県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=qoAX0SNOwj8",
-    "id": "qoAX0SNOwj8"
-  },
-  {
-    "title": "安治川隧道【SUKIMA TOURS】大阪府大阪市",
-    "pref": "大阪府",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "町歩き"
-    ],
-    "url": "https://www.youtube.com/watch?v=hV9dUxfd97w",
-    "id": "hV9dUxfd97w"
-  },
-  {
-    "title": "生野銀山【SUKIMA TOURS】兵庫県朝来市",
-    "pref": "兵庫県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=fD86TWzUMqE",
-    "id": "fD86TWzUMqE"
-  },
-  {
-    "title": "志賀の大仏【SUKIMA TOURS】滋賀県大津市滋賀里町",
-    "pref": "滋賀県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=samQqWXjT7Y",
-    "id": "samQqWXjT7Y"
-  },
-  {
-    "title": "人魚を食べ800年生きた女性が最後に辿り着いた町！【小浜西組・福井県】SUKIMA TOURSー福井県小浜市",
-    "pref": "福井県",
-    "region": "中部",
-    "type": "long",
-    "tags": [
-      "町歩き"
-    ],
-    "url": "https://www.youtube.com/watch?v=UCnditPbatE",
-    "id": "UCnditPbatE"
-  },
-  {
-    "title": "有福大仏",
-    "pref": "島根県",
-    "region": "中国",
+    "title": "桃太郎神社「桃太郎の墓はここにある！犬キジ猿の墓も！おじいさんおばあさんまで！」",
+    "pref": "香川県",
+    "region": "四国",
     "type": "short",
     "tags": [
       "神社仏閣"
     ],
-    "url": "https://www.youtube.com/watch?v=EOjsZGmIu3Q",
-    "id": "EOjsZGmIu3Q"
+    "url": "https://www.youtube.com/watch?v=G2y7IXMNEyg",
+    "id": "G2y7IXMNEyg"
   },
   {
-    "title": "ハニべ巌窟院【SUKIMA TOURS】石川県小松市立明寺町",
+    "title": "会津さざえ堂「世界唯一木造二重螺旋構造！」",
+    "pref": "福島県",
+    "region": "東北",
+    "type": "short",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=gyhE33Zz8HQ",
+    "id": "gyhE33Zz8HQ"
+  },
+  {
+    "title": "旧倉吉線廃線跡「日本一美しいと言われる廃線跡！」",
+    "pref": "鳥取県",
+    "region": "中国",
+    "type": "short",
+    "tags": [
+      "城・史跡",
+      "廃墟・廃線"
+    ],
+    "url": "https://www.youtube.com/watch?v=Say3EkXyhKg",
+    "id": "Say3EkXyhKg"
+  },
+  {
+    "title": "ニコニコ岩「ニッコリ笑っているように見える岩が岡山にあった！」",
+    "pref": "岡山県",
+    "region": "中国",
+    "type": "short",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=3qZq60kOyaI",
+    "id": "3qZq60kOyaI"
+  },
+  {
+    "title": "ハニべ巌窟院「石川県が誇る珍スポットの横綱！」",
     "pref": "石川県",
     "region": "中部",
     "type": "long",
     "tags": [
       "神社仏閣"
     ],
-    "url": "https://www.youtube.com/watch?v=5OIpHRBsNso",
-    "id": "5OIpHRBsNso"
-  },
-  {
-    "title": "金刀比羅宮【SUKIMA TOURS】香川県仲多度郡",
-    "pref": "香川県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=onzSbsEIU_I",
-    "id": "onzSbsEIU_I"
-  },
-  {
-    "title": "牧野植物園　【SUKIMA TOURS】　高知県高知市",
-    "pref": "高知県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "公園・テーマパーク"
-    ],
-    "url": "https://www.youtube.com/watch?v=4rHjw24HJtM",
-    "id": "4rHjw24HJtM"
-  },
-  {
-    "title": "フアランポーン駅【SUKIMA TOURS】タイ･バンコク",
-    "pref": "タイ",
-    "region": "海外",
-    "type": "long",
-    "tags": [
-      "廃墟・廃線"
-    ],
-    "url": "https://www.youtube.com/watch?v=OBQD2B_3GYw",
-    "id": "OBQD2B_3GYw"
-  },
-  {
-    "title": "津山まなびの鉄道館【SUKIMA TOURS】岡山県津山市大谷",
-    "pref": "岡山県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "城・史跡",
-      "乗り物・交通"
-    ],
-    "url": "https://www.youtube.com/watch?v=VR5VhOhOtAo",
-    "id": "VR5VhOhOtAo"
-  },
-  {
-    "title": "鬼塚古墳【SUKIMA TOURS】大分県玖珠郡玖珠町小田",
-    "pref": "大分県",
-    "region": "九州・沖縄",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=O8p4QWAtgNk",
-    "id": "O8p4QWAtgNk"
-  },
-  {
-    "title": "尾去沢(おさりざわ)鉱山【SUKIMA TOURS】秋田県鹿角市尾去沢",
-    "pref": "秋田県",
-    "region": "東北",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=nH7Ura1PoV4",
-    "id": "nH7Ura1PoV4"
-  },
-  {
-    "title": "上塩冶築山古墳／今市大念寺古墳【SUKIMA TOURS】島根県出雲市",
-    "pref": "島根県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "神社仏閣",
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=Mem7zAlI30U",
-    "id": "Mem7zAlI30U"
-  },
-  {
-    "title": "弁天山【SUKIMA TOURS】徳島県徳島市",
-    "pref": "徳島県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=FVLMLItp7Ig",
-    "id": "FVLMLItp7Ig"
-  },
-  {
-    "title": "懐中電灯ひとつで入る漆黒の手掘り洞窟！江戸時代の村人がノミだけで220mの山を貫通させた衝撃の理由！【西野水道・滋賀県】SUKIMA TOURSー滋賀県長浜市高月町西野",
-    "pref": "滋賀県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=m3EipjYdAfo",
-    "id": "m3EipjYdAfo"
-  },
-  {
-    "title": "旧日立航空機立川変電所【SUKIMA TOURS】東京都東大和市",
-    "pref": "東京都",
-    "region": "関東",
-    "type": "long",
-    "tags": [
-      "戦争遺構"
-    ],
-    "url": "https://www.youtube.com/watch?v=gt95XbZ52iM",
-    "id": "gt95XbZ52iM"
-  },
-  {
-    "title": "猿田洞【SUKIMA TOURS】高知県日高村",
-    "pref": "高知県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=tlGysnSgfI0",
-    "id": "tlGysnSgfI0"
-  },
-  {
-    "title": "東京タワー【SUKIMA TOURS】東京都港区",
-    "pref": "東京都",
-    "region": "関東",
-    "type": "long",
-    "tags": [
-      "町歩き"
-    ],
-    "url": "https://www.youtube.com/watch?v=fVdC-r0p4d0",
-    "id": "fVdC-r0p4d0"
-  },
-  {
-    "title": "荒波と風雨が数万年かけて削った天然の岸壁！【鬼ヶ城】SUKIMA TOURS 近畿ー三重県熊野市木本町",
-    "pref": "三重県",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=IcmarLVY-xc",
-    "id": "IcmarLVY-xc"
+    "url": "https://www.youtube.com/watch?v=mbHqgh87tcE",
+    "id": "mbHqgh87tcE"
   },
   {
     "title": "高さ50m以上の巨大な岩塊がご神体！【岡山】石畳神社ーSUKIMA TOURSー岡山県総社市秦",
@@ -3655,48 +857,698 @@ const VIDEOS = [
     "id": "bz7HcS5HBCg"
   },
   {
-    "title": "ニコニコ岩「ニッコリ笑っているように見える岩が岡山にあった！」",
-    "pref": "岡山県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=3qZq60kOyaI",
-    "id": "3qZq60kOyaI"
-  },
-  {
-    "title": "スターフェリー「香港島と九龍半島を結ぶ120年以上の歴史があるフェリー！」",
-    "pref": "香港",
-    "region": "海外",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=P2QsccCY-XI",
-    "id": "P2QsccCY-XI"
-  },
-  {
-    "title": "本願寺伝道院【SUKIMA TOURS】京都府京都市",
+    "title": "アフロ地蔵「ネットで話題のアフロ地蔵は「地蔵」ではありません！」",
     "pref": "京都府",
     "region": "関西",
+    "type": "short",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=bfOBmOhpsZY",
+    "id": "bfOBmOhpsZY"
+  },
+  {
+    "title": "空滝大不動尊「滝上に鎮座する不動明王はゆるキャラチックな愛らしいお姿でした！」",
+    "pref": "埼玉県",
+    "region": "関東",
+    "type": "short",
+    "tags": [
+      "神社仏閣",
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=kz-TgWOT1fQ",
+    "id": "kz-TgWOT1fQ"
+  },
+  {
+    "title": "松代象山 地下壕「太平洋戦争末期、日本の政府中枢機能を長野の山の中に移転する計画があった！」",
+    "pref": "長野県",
+    "region": "中部",
+    "type": "short",
+    "tags": [
+      "戦争遺構"
+    ],
+    "url": "https://www.youtube.com/watch?v=WN2PLzsB7ug",
+    "id": "WN2PLzsB7ug"
+  },
+  {
+    "title": "美しい柱状節理が織りなす壮大な眺め！そして地球の磁場反転の証明地でもある！【兵庫県】玄武洞　ーSUKIMA TOURSー兵庫県豊岡市赤石",
+    "pref": "兵庫県",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=w9w5LHRHvdU",
+    "id": "w9w5LHRHvdU"
+  },
+  {
+    "title": "広兼邸「映画八つ墓村の田治見家は岡山の山の中にあった！」",
+    "pref": "岡山県",
+    "region": "中国",
+    "type": "short",
+    "tags": [
+      "小説・ロケ・アニメ"
+    ],
+    "url": "https://www.youtube.com/watch?v=dULxEc-tb14",
+    "id": "dULxEc-tb14"
+  },
+  {
+    "title": "安土城跡「たった3年で焼け落ちた幻の城！信長の夢のあと！」",
+    "pref": "滋賀県",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=vB4jX4bKE-Y",
+    "id": "vB4jX4bKE-Y"
+  },
+  {
+    "title": "阿佐海岸鉄道「世界初！鉄道とバスのハイブリッド！」",
+    "pref": "徳島県",
+    "region": "四国",
+    "type": "short",
+    "tags": [
+      "乗り物・交通"
+    ],
+    "url": "https://www.youtube.com/watch?v=0iPYjE4ZvNE",
+    "id": "0iPYjE4ZvNE"
+  },
+  {
+    "title": "大津島「回天の島！人間魚雷の訓練基地が今も残る！」",
+    "pref": "広島県",
+    "region": "中国",
+    "type": "short",
+    "tags": [
+      "自然・絶景",
+      "戦争遺跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=6RgwRFVd-1A",
+    "id": "6RgwRFVd-1A"
+  },
+  {
+    "title": "紫電改保存館「国内で唯一現存する紫電改がみられる！」",
+    "pref": "高知県",
+    "region": "四国",
+    "type": "short",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=IWeqhVL9Ijw",
+    "id": "IWeqhVL9Ijw"
+  },
+  {
+    "title": "壁一面に13,000体のお地蔵様！真山の万体仏【秋田県】　ーSUKIMA TOURSー秋田県男鹿市北浦真山",
+    "pref": "秋田県",
+    "region": "東北",
     "type": "long",
     "tags": [
       "神社仏閣"
     ],
-    "url": "https://www.youtube.com/watch?v=h8AFcaQHk2A",
-    "id": "h8AFcaQHk2A"
+    "url": "https://www.youtube.com/watch?v=M-yC-eYr2To",
+    "id": "M-yC-eYr2To"
   },
   {
-    "title": "友ヶ島　【SUKIMA TOURS】　和歌山県和歌山市",
+    "title": "第五福竜丸「水爆実験で被爆したマグロ漁船が東京夢の島に展示されています！」",
+    "pref": "東京都",
+    "region": "関東",
+    "type": "short",
+    "tags": [
+      "自然・絶景",
+      "戦争遺跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=WnQJq4G05V8",
+    "id": "WnQJq4G05V8"
+  },
+  {
+    "title": "猿橋「日本三奇橋のひとつ！橋脚がない橋が渓谷を渡る」",
+    "pref": "山梨県",
+    "region": "関東",
+    "type": "short",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=55v44DhLYnM",
+    "id": "55v44DhLYnM"
+  },
+  {
+    "title": "頭塔「奈良にあった階段式ピラミッド！この謎の塔の正体はなんだ！」",
+    "pref": "奈良県",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=tBGURNAU_KI",
+    "id": "tBGURNAU_KI"
+  },
+  {
+    "title": "ハニべ巌窟院【SUKIMA TOURS】石川県小松市立明寺町",
+    "pref": "石川県",
+    "region": "中部",
+    "type": "long",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=5OIpHRBsNso",
+    "id": "5OIpHRBsNso"
+  },
+  {
+    "title": "海上保安資料館横浜館「銃撃戦を繰り広げたのち自爆して沈没した北朝鮮の不審船が横浜に展示されていました！」",
+    "pref": "神奈川県",
+    "region": "関東",
+    "type": "short",
+    "tags": [
+      "城・史跡",
+      "戦争遺跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=U1cfthgvwww",
+    "id": "U1cfthgvwww"
+  },
+  {
+    "title": "立山防空壕「太平洋戦争時に長崎県防空本部が置かれた場所。原爆投下後の救援救護や応急対応はここで指揮されました！」",
+    "pref": "長崎県",
+    "region": "九州・沖縄",
+    "type": "short",
+    "tags": [
+      "戦争遺構"
+    ],
+    "url": "https://www.youtube.com/watch?v=ZQqNt_LsLho",
+    "id": "ZQqNt_LsLho"
+  },
+  {
+    "title": "脇町「うだつが上がるのうだつって何？その答えはこの町にありました！」",
+    "pref": "徳島県",
+    "region": "四国",
+    "type": "short",
+    "tags": [
+      "町歩き"
+    ],
+    "url": "https://www.youtube.com/watch?v=bVisWB3pzPw",
+    "id": "bVisWB3pzPw"
+  },
+  {
+    "title": "鼻ぐり塚「その数なんと７００万以上！牛の鼻輪が山となった供養塚！」",
+    "pref": "岡山県",
+    "region": "中国",
+    "type": "short",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=8A1NALuO8Cw",
+    "id": "8A1NALuO8Cw"
+  },
+  {
+    "title": "埋没鳥居「桜島の大噴火で埋まってしまった鳥居が現在まで残されて居ました！」",
+    "pref": "鹿児島県",
+    "region": "九州・沖縄",
+    "type": "short",
+    "tags": [
+      "神社仏閣",
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=avbDQreVks0",
+    "id": "avbDQreVks0"
+  },
+  {
+    "title": "旧日立航空機株式会社変電所「西の原爆ドーム、東の変電所」とも称される戦争遺跡！",
+    "pref": "東京都",
+    "region": "関東",
+    "type": "short",
+    "tags": [
+      "神社仏閣",
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=rkMtrQf-oPI",
+    "id": "rkMtrQf-oPI"
+  },
+  {
+    "title": "峠古墳群【SUKIMA TOURS】岡山県総社市清音三因",
+    "pref": "岡山県",
+    "region": "中国",
+    "type": "long",
+    "tags": [
+      "神社仏閣",
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=cTYM_QTJDxU",
+    "id": "cTYM_QTJDxU"
+  },
+  {
+    "title": "階段国道「日本でココだけ！階段の国道があった！」",
+    "pref": "青森県",
+    "region": "東北",
+    "type": "short",
+    "tags": [
+      "乗り物・交通"
+    ],
+    "url": "https://www.youtube.com/watch?v=969m2DgTFvU",
+    "id": "969m2DgTFvU"
+  },
+  {
+    "title": "集合体恐怖症は注意！穴だらけの巨大岩壁！【高池の虫喰岩・和歌山県】　ーSUKIMA TOURSー和歌山県東牟婁郡古座川町",
     "pref": "和歌山県",
     "region": "関西",
     "type": "long",
     "tags": [
       "自然・絶景"
     ],
-    "url": "https://www.youtube.com/watch?v=RFzFb593JDQ",
-    "id": "RFzFb593JDQ"
+    "url": "https://www.youtube.com/watch?v=zCrNCrpcxsA",
+    "id": "zCrNCrpcxsA"
+  },
+  {
+    "title": "八九郎温泉「ビニールハウスの極上温泉が秋田にあった！」",
+    "pref": "秋田県",
+    "region": "東北",
+    "type": "short",
+    "tags": [
+      "温泉・宿"
+    ],
+    "url": "https://www.youtube.com/watch?v=X1PBXCIM4o8",
+    "id": "X1PBXCIM4o8"
+  },
+  {
+    "title": "田倉牛神社「30万の牛の焼き物がご神体！」",
+    "pref": "岡山県",
+    "region": "中国",
+    "type": "short",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=sVKaV8D_gD4",
+    "id": "sVKaV8D_gD4"
+  },
+  {
+    "title": "一本足の家「一本足で立つ不思議な家が滋賀の高島市にありました！」",
+    "pref": "滋賀県",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=riQu8zbmgec",
+    "id": "riQu8zbmgec"
+  },
+  {
+    "title": "高池の虫喰岩「集合体恐怖症は行かないで！タフォニ好きは是非！」",
+    "pref": "和歌山県",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=n_ZVixCNy8Q",
+    "id": "n_ZVixCNy8Q"
+  },
+  {
+    "title": "新開の森「織田信長の処刑場だった伝説が残る畑の中の小さな森！」",
+    "pref": "滋賀県",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=doTVA9fommM",
+    "id": "doTVA9fommM"
+  },
+  {
+    "title": "敦賀シンボルロード「宇宙戦艦ヤマトと銀河鉄道999のキャラクターが28体も並んでいる！」",
+    "pref": "福井県",
+    "region": "中部",
+    "type": "short",
+    "tags": [
+      "乗り物・交通"
+    ],
+    "url": "https://www.youtube.com/watch?v=3j7u3ug3JEg",
+    "id": "3j7u3ug3JEg"
+  },
+  {
+    "title": "ぶつぶつ川「日本一短い川はたったの13.5ｍ！」",
+    "pref": "和歌山県",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=xWpePW4RzO0",
+    "id": "xWpePW4RzO0"
+  },
+  {
+    "title": "まるでピラミッドのような一号墳！そして巨大な石室と、棺に刻まれた謎の文字！【大谷･定古墳群・岡山県】SUKIMA TOURSー岡山県真庭市上中津井",
+    "pref": "岡山県",
+    "region": "中国",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=QMk_wszzSLo",
+    "id": "QMk_wszzSLo"
+  },
+  {
+    "title": "金田一耕助ミステリー遊歩道「ブロンズ像の驚愕の共通点とは⁉︎」",
+    "pref": "岡山県",
+    "region": "中国",
+    "type": "short",
+    "tags": [
+      "町歩き"
+    ],
+    "url": "https://www.youtube.com/watch?v=3TsN27lvbyw",
+    "id": "3TsN27lvbyw"
+  },
+  {
+    "title": "明日香の奇石群「飛鳥時代の謎多き石造物が多数点在している奈良の明日香村！」",
+    "pref": "奈良県",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "遺跡・遺構"
+    ],
+    "url": "https://www.youtube.com/watch?v=b5mprDjsddE",
+    "id": "b5mprDjsddE"
+  },
+  {
+    "title": "法隆寺「現存する世界最古の木造建築！」",
+    "pref": "奈良県",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=LwGzHxpg1zA",
+    "id": "LwGzHxpg1zA"
+  },
+  {
+    "title": "学童看板「朽ち果てた学生の看板がなぜか人気者に！」",
+    "pref": "鳥取県",
+    "region": "中国",
+    "type": "short",
+    "tags": [
+      "町歩き"
+    ],
+    "url": "https://www.youtube.com/watch?v=GW7esL8DVVk",
+    "id": "GW7esL8DVVk"
+  },
+  {
+    "title": "広兼邸「映画八つ墓村の田治見家は岡山の山の中にあった！」",
+    "pref": "岡山県",
+    "region": "中国",
+    "type": "short",
+    "tags": [
+      "小説・ロケ・アニメ"
+    ],
+    "url": "https://www.youtube.com/watch?v=0WEKjdJboGU",
+    "id": "0WEKjdJboGU"
+  },
+  {
+    "title": "現存１２天守「江戸時代から奇跡的に残る天守１２城をご覧あれ！」",
+    "pref": "複数",
+    "region": "全国",
+    "type": "short",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=4guT-sVwnMo",
+    "id": "4guT-sVwnMo"
+  },
+  {
+    "title": "尾去沢(おさりざわ)鉱山【SUKIMA TOURS】秋田県鹿角市尾去沢",
+    "pref": "秋田県",
+    "region": "東北",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=nH7Ura1PoV4",
+    "id": "nH7Ura1PoV4"
+  },
+  {
+    "title": "友ヶ島「和歌山県に浮かぶ無人島。そこは、現実にある「ラピュタ」の世界！」",
+    "pref": "和歌山県",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=NU-pLBC8US0",
+    "id": "NU-pLBC8US0"
+  },
+  {
+    "title": "屯鶴峯「奈良に広がる白い異世界！謎の絶景どんづるぼうとは？」",
+    "pref": "奈良県",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=aeteskSbEGE",
+    "id": "aeteskSbEGE"
+  },
+  {
+    "title": "岐阜大仏「奈良、鎌倉と並ぶ日本三大大仏！それが岐阜大仏なのだ！」",
+    "pref": "岐阜県",
+    "region": "中部",
+    "type": "short",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=J0PFJimwKDg",
+    "id": "J0PFJimwKDg"
+  },
+  {
+    "title": "大久野島「地図から消された毒ガスの島！」",
+    "pref": "広島県",
+    "region": "中国",
+    "type": "short",
+    "tags": [
+      "自然・絶景",
+      "戦争遺跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=bGXEGQbxRH0",
+    "id": "bGXEGQbxRH0"
+  },
+  {
+    "title": "石清尾山古墳群【SUKIMA TOURS】香川県高松市",
+    "pref": "香川県",
+    "region": "四国",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=Nj1PxojERYc",
+    "id": "Nj1PxojERYc"
+  },
+  {
+    "title": "鳴り石の浜「波に合わせてカラコロと音が鳴る珍しい海岸！」",
+    "pref": "鳥取県",
+    "region": "中国",
+    "type": "short",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=HA2R-CJJgEc",
+    "id": "HA2R-CJJgEc"
+  },
+  {
+    "title": "黄泉比良坂「伊弉諾と伊奘冉、悲劇の場所が島根の松江にあった！」",
+    "pref": "島根県",
+    "region": "中国",
+    "type": "short",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=3cP4G2bvW6c",
+    "id": "3cP4G2bvW6c"
+  },
+  {
+    "title": "安土城跡「たった3年で焼け落ちた幻の城！信長の夢のあと！」",
+    "pref": "滋賀県",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=HpJmZi2WtBU",
+    "id": "HpJmZi2WtBU"
+  },
+  {
+    "title": "国道駅「９０年以上も前から変わらぬ姿！昭和ノスタルジックな駅が横浜にあった！」",
+    "pref": "神奈川県",
+    "region": "関東",
+    "type": "short",
+    "tags": [
+      "廃墟・廃線",
+      "乗り物・交通"
+    ],
+    "url": "https://www.youtube.com/watch?v=x_rToH9Rg9c",
+    "id": "x_rToH9Rg9c"
+  },
+  {
+    "title": "舞洲工場「超芸術的な建物はゴミ焼却場だった！」",
+    "pref": "大阪府",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "公共施設"
+    ],
+    "url": "https://www.youtube.com/watch?v=KnhRM81dZCU",
+    "id": "KnhRM81dZCU"
+  },
+  {
+    "title": "天保山渡船場「水の都･大阪には無料の渡し船が８つもあるんです！」",
+    "pref": "大阪府",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "乗り物・交通"
+    ],
+    "url": "https://www.youtube.com/watch?v=vEgvo-75244",
+    "id": "vEgvo-75244"
+  },
+  {
+    "title": "カーレーター「日本一乗り心地のワルい乗り物！」",
+    "pref": "兵庫県",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "公園・テーマパーク"
+    ],
+    "url": "https://www.youtube.com/watch?v=WSNxHTtYT30",
+    "id": "WSNxHTtYT30"
+  },
+  {
+    "title": "一度乗れば二度と戻れない特攻兵器「回天」の訓練基地跡！【大津島(回天の島)・山口県】　ーSUKIMA TOURSー山口県周南市",
+    "pref": "山口県",
+    "region": "中国",
+    "type": "long",
+    "tags": [
+      "城・史跡",
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=na7d24fHVS8",
+    "id": "na7d24fHVS8"
+  },
+  {
+    "title": "安閑神社「文字なのか絵なのか、謎の紋様が描かれた石が滋賀にあった！」",
+    "pref": "滋賀県",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=hn8cS2_X6lE",
+    "id": "hn8cS2_X6lE"
+  },
+  {
+    "title": "桑の川の鳥居「まさに天然の鳥居！奇跡の眺めがここに！」",
+    "pref": "高知県",
+    "region": "四国",
+    "type": "short",
+    "tags": [
+      "神社仏閣",
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=cAHj2BkL10c",
+    "id": "cAHj2BkL10c"
+  },
+  {
+    "title": "大津島「回天の島！人間魚雷の訓練基地が今も残る！」",
+    "pref": "山口県",
+    "region": "中国",
+    "type": "short",
+    "tags": [
+      "自然・絶景",
+      "戦争遺跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=1pw52oru5mQ",
+    "id": "1pw52oru5mQ"
+  },
+  {
+    "title": "鎌八幡宮「ご神木に無数の鎌が刺さる！」",
+    "pref": "和歌山県",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=0Z8ojx8bB4E",
+    "id": "0Z8ojx8bB4E"
+  },
+  {
+    "title": "尾去沢鉱山「もう直ぐ一般公開終了！日本最大の鉱山跡！」",
+    "pref": "秋田県",
+    "region": "東北",
+    "type": "short",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=raq_9fWH9lc",
+    "id": "raq_9fWH9lc"
+  },
+  {
+    "title": "姫路モノレール「たった８年で廃止となった幻の路線！でもその名残は今でも街に残っているのです！」",
+    "pref": "兵庫県",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "乗り物・交通"
+    ],
+    "url": "https://www.youtube.com/watch?v=fB9xF_wgbiE",
+    "id": "fB9xF_wgbiE"
+  },
+  {
+    "title": "牛久大仏「その高さは世界一！ギネスも認めた大仏さま！」",
+    "pref": "茨城県",
+    "region": "関東",
+    "type": "short",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=XW2aSPLCivQ",
+    "id": "XW2aSPLCivQ"
+  },
+  {
+    "title": "小泉稲荷神社「200基以上の鳥居がずらりと並ぶ神社！」",
+    "pref": "群馬県",
+    "region": "関東",
+    "type": "short",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=MbuCf5Ue-IY",
+    "id": "MbuCf5Ue-IY"
+  },
+  {
+    "title": "シ多曲屈「日本最古の道路標識！」",
+    "pref": "香川県",
+    "region": "四国",
+    "type": "short",
+    "tags": [
+      "乗り物・交通"
+    ],
+    "url": "https://www.youtube.com/watch?v=t39jOeDsGX8",
+    "id": "t39jOeDsGX8"
+  },
+  {
+    "title": "紫電改展示館「国内で唯一現存する紫電改がみられる！」",
+    "pref": "高知県",
+    "region": "四国",
+    "type": "short",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=7lL66nTcDD4",
+    "id": "7lL66nTcDD4"
+  },
+  {
+    "title": "阿佐海岸鉄道「世界初！鉄道とバスのハイブリッド！」",
+    "pref": "徳島県",
+    "region": "四国",
+    "type": "short",
+    "tags": [
+      "乗り物・交通"
+    ],
+    "url": "https://www.youtube.com/watch?v=WQtqG7nnKQI",
+    "id": "WQtqG7nnKQI"
   },
   {
     "title": "板東俘虜収容所【SUKIMA TOURS】徳島県鳴門市大麻町",
@@ -3710,48 +1562,470 @@ const VIDEOS = [
     "id": "6UcdcHhAgmo"
   },
   {
-    "title": "どんづるぼう【SUKIMA TOURS】奈良県香芝市",
-    "pref": "奈良県",
-    "region": "関西",
-    "type": "long",
+    "title": "蓬莱橋「世界一長い木造の橋は静岡にあり！」",
+    "pref": "静岡県",
+    "region": "中部",
+    "type": "short",
     "tags": [
       "自然・絶景"
     ],
-    "url": "https://www.youtube.com/watch?v=sFW1vo1nO6A",
-    "id": "sFW1vo1nO6A"
+    "url": "https://www.youtube.com/watch?v=XzkwbGq2TBI",
+    "id": "XzkwbGq2TBI"
   },
   {
-    "title": "八乙女の水路橋【SUKIMA TOURS】長野県上伊那郡箕輪町",
-    "pref": "長野県",
+    "title": "人魚を食べ800年生きた女性が最後に辿り着いた町！【小浜西組・福井県】SUKIMA TOURSー福井県小浜市",
+    "pref": "福井県",
     "region": "中部",
     "type": "long",
     "tags": [
-      "自然・絶景"
+      "町歩き"
     ],
-    "url": "https://www.youtube.com/watch?v=aIT9zGEyZe4",
-    "id": "aIT9zGEyZe4"
+    "url": "https://www.youtube.com/watch?v=UCnditPbatE",
+    "id": "UCnditPbatE"
   },
   {
-    "title": "かやぶきの里【SUKIMA TOURS】京都府南丹市美山町",
-    "pref": "京都府",
+    "title": "西生寺「雷獣のミイラ！日本最古の即身仏！」",
+    "pref": "新潟県",
+    "region": "中部",
+    "type": "short",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=PqF20vR0J9A",
+    "id": "PqF20vR0J9A"
+  },
+  {
+    "title": "志賀の大仏「滋賀の大津に優しい顔の大仏様がいた！」",
+    "pref": "滋賀県",
     "region": "関西",
+    "type": "short",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=EXMjKiCTRns",
+    "id": "EXMjKiCTRns"
+  },
+  {
+    "title": "石の島に残る圧巻の採石場跡！【北木島・岡山県】SUKIMA TOURSー岡山県笠岡市北木島町",
+    "pref": "岡山県",
+    "region": "中国",
     "type": "long",
+    "tags": [
+      "城・史跡",
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=jVNaRLWXPVU",
+    "id": "jVNaRLWXPVU"
+  },
+  {
+    "title": "別府タワー「タワー６兄弟の三男坊は別府のシンボルなのです！」",
+    "pref": "大分県",
+    "region": "九州・沖縄",
+    "type": "short",
     "tags": [
       "公園・テーマパーク"
     ],
-    "url": "https://www.youtube.com/watch?v=_4hRt4Y7y1g",
-    "id": "_4hRt4Y7y1g"
+    "url": "https://www.youtube.com/watch?v=6oStKaFg0pY",
+    "id": "6oStKaFg0pY"
   },
   {
-    "title": "鳴門の渦潮【SUKIMA TOURS】兵庫県南あわじ市/徳島県鳴門市",
-    "pref": "兵庫県",
+    "title": "案山子公園「畑の中に巨大聖徳太子が！」",
+    "pref": "奈良県",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "公園・テーマパーク"
+    ],
+    "url": "https://www.youtube.com/watch?v=R8J03X71PoQ",
+    "id": "R8J03X71PoQ"
+  },
+  {
+    "title": "鷺湯公園「別名ウメボシ公園！そこには巨大な梅干しがあるのです！」",
+    "pref": "岡山県",
+    "region": "中国",
+    "type": "short",
+    "tags": [
+      "公園・テーマパーク"
+    ],
+    "url": "https://www.youtube.com/watch?v=TH818QLD0rk",
+    "id": "TH818QLD0rk"
+  },
+  {
+    "title": "都電おもいで広場「懐かしい都電の車両が無料展示されているよ」",
+    "pref": "東京都",
+    "region": "関東",
+    "type": "short",
+    "tags": [
+      "公園・テーマパーク"
+    ],
+    "url": "https://www.youtube.com/watch?v=SJB8w15qins",
+    "id": "SJB8w15qins"
+  },
+  {
+    "title": "木造駅「遮光器土偶のシャコちゃんが駅舎になった！」",
+    "pref": "青森県",
+    "region": "東北",
+    "type": "short",
+    "tags": [
+      "廃墟・廃線"
+    ],
+    "url": "https://www.youtube.com/watch?v=l6Lmjz9D2R0",
+    "id": "l6Lmjz9D2R0"
+  },
+  {
+    "title": "高屋神社「天空の鳥居！瀬戸内の海と浜辺を見下ろす絶景」",
+    "pref": "香川県",
+    "region": "四国",
+    "type": "short",
+    "tags": [
+      "神社仏閣",
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=Txg_-9oyd-E",
+    "id": "Txg_-9oyd-E"
+  },
+  {
+    "title": "現存１２天守「江戸時代から奇跡的に残る天守１２城をご覧あれ！」",
+    "pref": "複数",
+    "region": "全国",
+    "type": "short",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=QNqLa-IBh1Q",
+    "id": "QNqLa-IBh1Q"
+  },
+  {
+    "title": "亀甲駅「亀の姿をした駅舎が岡山にあったのだ！」",
+    "pref": "岡山県",
+    "region": "中国",
+    "type": "short",
+    "tags": [
+      "廃墟・廃線"
+    ],
+    "url": "https://www.youtube.com/watch?v=HcjwnwdbgsY",
+    "id": "HcjwnwdbgsY"
+  },
+  {
+    "title": "白川郷「合掌作りが有名な世界遺産にも登録された集落」",
+    "pref": "岐阜県",
+    "region": "中部",
+    "type": "short",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=CnkLtgyyN54",
+    "id": "CnkLtgyyN54"
+  },
+  {
+    "title": "上野大仏「顔だけの大仏が上野の森にあった！」",
+    "pref": "東京都",
+    "region": "関東",
+    "type": "short",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=KG72ul-_iRk",
+    "id": "KG72ul-_iRk"
+  },
+  {
+    "title": "塩津山墳墓群【SUKIMA TOURS】島根県安来市久白町",
+    "pref": "島根県",
+    "region": "中国",
+    "type": "long",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=qoAX0SNOwj8",
+    "id": "qoAX0SNOwj8"
+  },
+  {
+    "title": "スターフェリー「香港島と九龍半島を結ぶ120年以上の歴史があるフェリー！」",
+    "pref": "香港",
+    "region": "海外",
+    "type": "short",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=P2QsccCY-XI",
+    "id": "P2QsccCY-XI"
+  },
+  {
+    "title": "聖天宮「埼玉にある台湾！本格的台湾寺院に行こう！」",
+    "pref": "埼玉県",
+    "region": "関東",
+    "type": "short",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=sfUSQJr-SOA",
+    "id": "sfUSQJr-SOA"
+  },
+  {
+    "title": "ピクミンテラス「宮島SAにあるピクミンテラス！もう少しで終了ですって」",
+    "pref": "広島県",
+    "region": "中国",
+    "type": "short",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=wixwouJiDFg",
+    "id": "wixwouJiDFg"
+  },
+  {
+    "title": "石鳥居「1000年前から立っている鳥居が山形にあった！しかも二つも！」",
+    "pref": "山形県",
+    "region": "東北",
+    "type": "short",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=EmD4XklwHtw",
+    "id": "EmD4XklwHtw"
+  },
+  {
+    "title": "承教寺「狛犬ならぬ狛件(くだん)がいるお寺が港区にあった！」",
+    "pref": "東京都",
+    "region": "関東",
+    "type": "short",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=i6P2bNFBcrY",
+    "id": "i6P2bNFBcrY"
+  },
+  {
+    "title": "銭形砂絵「この砂絵を見ると一生お金に困らない⁉︎」",
+    "pref": "香川県",
+    "region": "四国",
+    "type": "short",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=w13Kw_4OlUI",
+    "id": "w13Kw_4OlUI"
+  },
+  {
+    "title": "首大仏「首だけの大仏様が和歌山にあるよ！」",
+    "pref": "和歌山県",
+    "region": "中国",
+    "type": "short",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=3rdubV5XeaI",
+    "id": "3rdubV5XeaI"
+  },
+  {
+    "title": "保呂の虫喰岩【SUKIMA TOURS】和歌山県西牟婁郡白浜町",
+    "pref": "和歌山県",
     "region": "関西",
     "type": "long",
     "tags": [
       "自然・絶景"
     ],
-    "url": "https://www.youtube.com/watch?v=adeOPrzqRpI",
-    "id": "adeOPrzqRpI"
+    "url": "https://www.youtube.com/watch?v=UrtB6x8e5KU",
+    "id": "UrtB6x8e5KU"
+  },
+  {
+    "title": "高鉢山風穴【SUKIMA TOURS】香川県綾歌郡綾川町西分",
+    "pref": "香川県",
+    "region": "四国",
+    "type": "long",
+    "tags": [
+      "遺跡・遺構"
+    ],
+    "url": "https://www.youtube.com/watch?v=TUj_w3vA-aI",
+    "id": "TUj_w3vA-aI"
+  },
+  {
+    "title": "磐境の遺跡【SUKIMA TOURS】岡山県岡山市北区京山",
+    "pref": "岡山県",
+    "region": "中国",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=Zy-_M4arHhE",
+    "id": "Zy-_M4arHhE"
+  },
+  {
+    "title": "上塩冶築山古墳／今市大念寺古墳【SUKIMA TOURS】島根県出雲市",
+    "pref": "島根県",
+    "region": "中国",
+    "type": "long",
+    "tags": [
+      "神社仏閣",
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=Mem7zAlI30U",
+    "id": "Mem7zAlI30U"
+  },
+  {
+    "title": "安芸の小京都と呼ばれる美しい町並み！【竹原・広島県】SUKIMA TOURSー広島県竹原市",
+    "pref": "広島県",
+    "region": "中国",
+    "type": "long",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=jmDRK8LH6qs",
+    "id": "jmDRK8LH6qs"
+  },
+  {
+    "title": "シャレコーベミュージアム「世界でココだけ！ドクロの博物館！」",
+    "pref": "兵庫県",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=Bi6goiU-waU",
+    "id": "Bi6goiU-waU"
+  },
+  {
+    "title": "佐柳島「瀬戸内海に浮かぶネコの島！」",
+    "pref": "香川県",
+    "region": "四国",
+    "type": "short",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=9DsjdnbPPwg",
+    "id": "9DsjdnbPPwg"
+  },
+  {
+    "title": "関ヶ原ウォーランド「２００を超えるコンクリート像で関ヶ原の合戦を充実に再現！」",
+    "pref": "岐阜県",
+    "region": "中部",
+    "type": "short",
+    "tags": [
+      "公園・テーマパーク"
+    ],
+    "url": "https://www.youtube.com/watch?v=WXv-gooBghM",
+    "id": "WXv-gooBghM"
+  },
+  {
+    "title": "常昌院「木製の兵隊さんが２００体以上！その謎に迫る！」",
+    "pref": "静岡県",
+    "region": "中部",
+    "type": "short",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=rlAC3sdzAuQ",
+    "id": "rlAC3sdzAuQ"
+  },
+  {
+    "title": "阪堺電車「大阪を走るチンチン電車！乗ってみた！」",
+    "pref": "大阪府",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "町歩き"
+    ],
+    "url": "https://www.youtube.com/watch?v=YfUR62yyyjw",
+    "id": "YfUR62yyyjw"
+  },
+  {
+    "title": "福崎町「町のいたる所に妖怪が潜んでいるという妖怪だらけの町が兵庫県にありました！」",
+    "pref": "兵庫県",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "町歩き"
+    ],
+    "url": "https://www.youtube.com/watch?v=LbRE44QI3y4",
+    "id": "LbRE44QI3y4"
+  },
+  {
+    "title": "八角トンネル「映えると人気の廃線跡のトンネルだ！」",
+    "pref": "熊本県",
+    "region": "九州・沖縄",
+    "type": "short",
+    "tags": [
+      "城・史跡",
+      "廃墟・廃線"
+    ],
+    "url": "https://www.youtube.com/watch?v=xhON9wOo3YU",
+    "id": "xhON9wOo3YU"
+  },
+  {
+    "title": "吉見百穴「山の斜面に無数の穴！これは小人の住まいか！」",
+    "pref": "埼玉県",
+    "region": "関東",
+    "type": "short",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=83jT4z_GNAo",
+    "id": "83jT4z_GNAo"
+  },
+  {
+    "title": "土塔「大阪にも階段ピラミッドがあった！」",
+    "pref": "大阪府",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=g7TPx8XtU-g",
+    "id": "g7TPx8XtU-g"
+  },
+  {
+    "title": "阿波の土柱「雨と土が創り出した自然の芸術！世界三大土柱の一つ！」",
+    "pref": "徳島県",
+    "region": "四国",
+    "type": "short",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=TDo5o6eZlGg",
+    "id": "TDo5o6eZlGg"
+  },
+  {
+    "title": "五郎山古墳【SUKIMA TOURS】福岡県筑紫野市原田",
+    "pref": "福岡県",
+    "region": "九州・沖縄",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=gF7MtvOd3yo",
+    "id": "gF7MtvOd3yo"
+  },
+  {
+    "title": "銅閣寺「金閣寺銀閣寺があるなら当然次は銅閣寺！」",
+    "pref": "京都府",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=e-JaiTx39qs",
+    "id": "e-JaiTx39qs"
+  },
+  {
+    "title": "盛岡天満宮「なんだこの狛犬は！ヘンテコ狛犬発見！」",
+    "pref": "岩手県",
+    "region": "東北",
+    "type": "short",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=Du9TYUfm5mE",
+    "id": "Du9TYUfm5mE"
+  },
+  {
+    "title": "熊山遺跡「岡山にもあった⁉︎階段ピラミッド！」",
+    "pref": "岡山県",
+    "region": "中国",
+    "type": "short",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=cwHPgnchuII",
+    "id": "cwHPgnchuII"
   },
   {
     "title": "旧志免鉱業所竪坑櫓【SUKIMA TOURS】福岡県糟屋郡志免町",
@@ -3765,6 +2039,383 @@ const VIDEOS = [
     "id": "X-8QCTr_BNk"
   },
   {
+    "title": "キリストの墓「日本にキリストの墓があった⁉️」",
+    "pref": "青森県",
+    "region": "東北",
+    "type": "short",
+    "tags": [
+      "遺跡・遺構"
+    ],
+    "url": "https://www.youtube.com/watch?v=JV2Jiu18_tU",
+    "id": "JV2Jiu18_tU"
+  },
+  {
+    "title": "難波八阪神社「難波に巨大な獅子頭があるのだ！」",
+    "pref": "大阪府",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=OhoiBrDGq1I",
+    "id": "OhoiBrDGq1I"
+  },
+  {
+    "title": "水木しげるロード「妖怪たちが１７８体も！」",
+    "pref": "鳥取県",
+    "region": "中国",
+    "type": "short",
+    "tags": [
+      "町歩き"
+    ],
+    "url": "https://www.youtube.com/watch?v=Sr39YUcKxI0",
+    "id": "Sr39YUcKxI0"
+  },
+  {
+    "title": "三徳山三佛寺投入堂！「日本一見に行くのが危険な国宝！」",
+    "pref": "鳥取県",
+    "region": "中国",
+    "type": "short",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=lHc-AYhQlIw",
+    "id": "lHc-AYhQlIw"
+  },
+  {
+    "title": "恋山形駅「恋愛成就のピンク駅！」",
+    "pref": "山形県",
+    "region": "中国",
+    "type": "short",
+    "tags": [
+      "廃墟・廃線"
+    ],
+    "url": "https://www.youtube.com/watch?v=Hf6YxOp-Eoo",
+    "id": "Hf6YxOp-Eoo"
+  },
+  {
+    "title": "大岩神社「堂本印象デザインの鳥居がある！」",
+    "pref": "京都府",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "神社仏閣",
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=xOMJkbDRFyM",
+    "id": "xOMJkbDRFyM"
+  },
+  {
+    "title": "白蛇山岩陰遺跡【SUKIMA TOURS】佐賀県伊万里市",
+    "pref": "佐賀県",
+    "region": "九州・沖縄",
+    "type": "long",
+    "tags": [
+      "城・史跡",
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=-AIwR2imtPw",
+    "id": "-AIwR2imtPw"
+  },
+  {
+    "title": "安治川トンネル　「大阪にある日本初の沈埋トンネル！」",
+    "pref": "大阪府",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "廃墟・廃線"
+    ],
+    "url": "https://www.youtube.com/watch?v=YXEHT8K3mQc",
+    "id": "YXEHT8K3mQc"
+  },
+  {
+    "title": "生駒ケーブル「日本一古いケーブルカー！」",
+    "pref": "奈良県",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "乗り物・交通"
+    ],
+    "url": "https://www.youtube.com/watch?v=5OmO3oLZs2c",
+    "id": "5OmO3oLZs2c"
+  },
+  {
+    "title": "筑後川昇開橋【SUKIMA TOURS】福岡県大川市向島/佐賀県佐賀市諸富町",
+    "pref": "福岡県",
+    "region": "九州・沖縄",
+    "type": "long",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=F5kYj_2ZUzU",
+    "id": "F5kYj_2ZUzU"
+  },
+  {
+    "title": "ラバーダック！",
+    "pref": "大阪府",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "町歩き"
+    ],
+    "url": "https://www.youtube.com/watch?v=gto4pBt0SJc",
+    "id": "gto4pBt0SJc"
+  },
+  {
+    "title": "しってんさん【SUKIMA TOURS】佐賀県佐賀市大和町",
+    "pref": "佐賀県",
+    "region": "九州・沖縄",
+    "type": "long",
+    "tags": [
+      "遺跡・遺構"
+    ],
+    "url": "https://www.youtube.com/watch?v=AAAM-1xUe34",
+    "id": "AAAM-1xUe34"
+  },
+  {
+    "title": "仁淀ブルー！高知の仁淀川",
+    "pref": "高知県",
+    "region": "四国",
+    "type": "short",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=SIW0qALduvw",
+    "id": "SIW0qALduvw"
+  },
+  {
+    "title": "麦わらの一味！熊本に集結！",
+    "pref": "熊本県",
+    "region": "九州・沖縄",
+    "type": "short",
+    "tags": [
+      "小説・ロケ・アニメ"
+    ],
+    "url": "https://www.youtube.com/watch?v=JpKuE7opkA0",
+    "id": "JpKuE7opkA0"
+  },
+  {
+    "title": "カッパの造り酒屋さん「松浦一酒造」",
+    "pref": "佐賀県",
+    "region": "九州・沖縄",
+    "type": "short",
+    "tags": [
+      "町歩き"
+    ],
+    "url": "https://www.youtube.com/watch?v=CJjcty1tldE",
+    "id": "CJjcty1tldE"
+  },
+  {
+    "title": "ロズウェル・ＵＦＯ博物館",
+    "pref": "アメリカ",
+    "region": "海外",
+    "type": "short",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=zrtO9nlVp0k",
+    "id": "zrtO9nlVp0k"
+  },
+  {
+    "title": "総天然色！弘法大師像",
+    "pref": "熊本県",
+    "region": "九州・沖縄",
+    "type": "short",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=V1Yf0bdZBYM",
+    "id": "V1Yf0bdZBYM"
+  },
+  {
+    "title": "大室古墳群【SUKIMA TOURS】長野県長野市松代町",
+    "pref": "長野県",
+    "region": "中部",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=JZ2AlzvvMdk",
+    "id": "JZ2AlzvvMdk"
+  },
+  {
+    "title": "小金塚古墳",
+    "pref": "大阪府",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=iCauJGV4bQo",
+    "id": "iCauJGV4bQo"
+  },
+  {
+    "title": "三瓶温泉「亀の湯」",
+    "pref": "島根県",
+    "region": "中国",
+    "type": "short",
+    "tags": [
+      "温泉・宿"
+    ],
+    "url": "https://www.youtube.com/watch?v=VSmBKgvzK3c",
+    "id": "VSmBKgvzK3c"
+  },
+  {
+    "title": "有福大仏",
+    "pref": "島根県",
+    "region": "中国",
+    "type": "short",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=EOjsZGmIu3Q",
+    "id": "EOjsZGmIu3Q"
+  },
+  {
+    "title": "千葉都市モノレール",
+    "pref": "千葉県",
+    "region": "関東",
+    "type": "short",
+    "tags": [
+      "乗り物・交通"
+    ],
+    "url": "https://www.youtube.com/watch?v=OR1J2l0cWKc",
+    "id": "OR1J2l0cWKc"
+  },
+  {
+    "title": "金田一耕助ミステリー遊歩道",
+    "pref": "岡山県",
+    "region": "中国",
+    "type": "short",
+    "tags": [
+      "町歩き",
+      "小説・ロケ・アニメ"
+    ],
+    "url": "https://www.youtube.com/watch?v=al1-qz3LxJ4",
+    "id": "al1-qz3LxJ4"
+  },
+  {
+    "title": "鳥取の名湯「三朝温泉」！",
+    "pref": "鳥取県",
+    "region": "中国",
+    "type": "short",
+    "tags": [
+      "温泉・宿"
+    ],
+    "url": "https://www.youtube.com/watch?v=Znzw_50UQ-I",
+    "id": "Znzw_50UQ-I"
+  },
+  {
+    "title": "豊稔池堰堤【SUKIMA TOURS】香川県観音寺市大野原町",
+    "pref": "香川県",
+    "region": "四国",
+    "type": "long",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=hTJqqHlZ5Kc",
+    "id": "hTJqqHlZ5Kc"
+  },
+  {
+    "title": "蓬莱橋【SUKIMA TOURS】静岡県島田市南",
+    "pref": "静岡県",
+    "region": "中部",
+    "type": "long",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=YLsI11taMdk",
+    "id": "YLsI11taMdk"
+  },
+  {
+    "title": "箭田大塚(やたおおつか)古墳【SUKIMA TOURS】岡山県倉敷市真備町箭田",
+    "pref": "岡山県",
+    "region": "中国",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=OoBokJOGdxM",
+    "id": "OoBokJOGdxM"
+  },
+  {
+    "title": "八乙女の水路橋【SUKIMA TOURS】長野県上伊那郡箕輪町",
+    "pref": "長野県",
+    "region": "中部",
+    "type": "long",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=aIT9zGEyZe4",
+    "id": "aIT9zGEyZe4"
+  },
+  {
+    "title": "福光石の石切り場【SUKIMA TOURS】島根県大田市温泉津町",
+    "pref": "島根県",
+    "region": "中国",
+    "type": "long",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=vZY9yl1mlEY",
+    "id": "vZY9yl1mlEY"
+  },
+  {
+    "title": "赤山地下壕【SUKIMA TOURS】千葉県館山市宮城",
+    "pref": "千葉県",
+    "region": "関東",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=PhQ8uvsvDds",
+    "id": "PhQ8uvsvDds"
+  },
+  {
+    "title": "松代象山地下壕【SUKIMA TOURS】長野県長野市松代町",
+    "pref": "長野県",
+    "region": "中部",
+    "type": "long",
+    "tags": [
+      "戦争遺構"
+    ],
+    "url": "https://www.youtube.com/watch?v=whf1j5xC5Kg",
+    "id": "whf1j5xC5Kg"
+  },
+  {
+    "title": "皇子山古墳【SUKIMA TOURS】滋賀県大津市錦織",
+    "pref": "滋賀県",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=KxjPDDvnvTQ",
+    "id": "KxjPDDvnvTQ"
+  },
+  {
+    "title": "猿島【SUKIMA TOURS】神奈川県横須賀市",
+    "pref": "神奈川県",
+    "region": "関東",
+    "type": "long",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=WIS4HtoIZ5o",
+    "id": "WIS4HtoIZ5o"
+  },
+  {
+    "title": "紫電改展示館【SUKIMA TOURS】愛媛県南宇和郡愛南町",
+    "pref": "愛媛県",
+    "region": "四国",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=rrSj74K4khE",
+    "id": "rrSj74K4khE"
+  },
+  {
     "title": "旧豊後森機関庫【SUKIMA TOURS】大分県玖珠郡玖珠町",
     "pref": "大分県",
     "region": "九州・沖縄",
@@ -3776,48 +2427,965 @@ const VIDEOS = [
     "id": "S6_JVivehoo"
   },
   {
-    "title": "大久野島　【SUKIMA TOURS】　広島県竹原市",
+    "title": "ホケノ山古墳【SUKIMA TOURS】奈良県桜井市箸中",
+    "pref": "奈良県",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=azXPnnG-qqw",
+    "id": "azXPnnG-qqw"
+  },
+  {
+    "title": "大立洞窟／日向洞窟【SUKIMA TOURS】山形県東置賜郡高畠町",
+    "pref": "山形県",
+    "region": "東北",
+    "type": "long",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=pw8gGjrordo",
+    "id": "pw8gGjrordo"
+  },
+  {
+    "title": "常昌院【SUKIMA TOURS】静岡県藤枝市岡部町",
+    "pref": "静岡県",
+    "region": "中部",
+    "type": "long",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=5_hn_1IWaks",
+    "id": "5_hn_1IWaks"
+  },
+  {
+    "title": "志賀の大仏【SUKIMA TOURS】滋賀県大津市滋賀里町",
+    "pref": "滋賀県",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=samQqWXjT7Y",
+    "id": "samQqWXjT7Y"
+  },
+  {
+    "title": "岩橋千塚古墳群【SUKIMA TOURS】和歌山県和歌山市岩橋",
+    "pref": "和歌山県",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "城・史跡",
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=B45IvLjG1gQ",
+    "id": "B45IvLjG1gQ"
+  },
+  {
+    "title": "源宗坊寺【SUKIMA TOURS】広島県呉市清水",
+    "pref": "広島県",
+    "region": "中国",
+    "type": "long",
+    "tags": [
+      "神社仏閣",
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=L8bG9EHtQwk",
+    "id": "L8bG9EHtQwk"
+  },
+  {
+    "title": "脇町【SUKIMA TOURS】徳島県美馬市脇町",
+    "pref": "徳島県",
+    "region": "四国",
+    "type": "long",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=zfdTderEefc",
+    "id": "zfdTderEefc"
+  },
+  {
+    "title": "垂水遺跡【SUKIMA TOURS】山形県山形市山寺",
+    "pref": "山形県",
+    "region": "東北",
+    "type": "long",
+    "tags": [
+      "神社仏閣",
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=c3U7JQxVfBA",
+    "id": "c3U7JQxVfBA"
+  },
+  {
+    "title": "鬼塚古墳【SUKIMA TOURS】大分県玖珠郡玖珠町小田",
+    "pref": "大分県",
+    "region": "九州・沖縄",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=O8p4QWAtgNk",
+    "id": "O8p4QWAtgNk"
+  },
+  {
+    "title": "瓜割石庭公園【SUKIMA TOURS】山形県東置賜郡高畠町",
+    "pref": "山形県",
+    "region": "東北",
+    "type": "long",
+    "tags": [
+      "遺跡・遺構"
+    ],
+    "url": "https://www.youtube.com/watch?v=o70iaipX0B0",
+    "id": "o70iaipX0B0"
+  },
+  {
+    "title": "石貫ナギノ横穴群／石貫穴観音横穴【SUKIMA TOURS】熊本県玉名市石貫",
+    "pref": "熊本県",
+    "region": "九州・沖縄",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=QQiDz8Czf-I",
+    "id": "QQiDz8Czf-I"
+  },
+  {
+    "title": "浮浪滝【SUKIMA TOURS】島根県出雲市別所町",
+    "pref": "島根県",
+    "region": "中国",
+    "type": "long",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=sRLdjB6L0NA",
+    "id": "sRLdjB6L0NA"
+  },
+  {
+    "title": "段の塚穴【SUKIMA TOURS】徳島県美馬市美馬町",
+    "pref": "徳島県",
+    "region": "四国",
+    "type": "long",
+    "tags": [
+      "自然・絶景",
+      "遺跡・遺構"
+    ],
+    "url": "https://www.youtube.com/watch?v=0zGAHe9krVI",
+    "id": "0zGAHe9krVI"
+  },
+  {
+    "title": "チブサン古墳／オブサン古墳【SUKIMA TOURS】熊本県山鹿市城",
+    "pref": "熊本県",
+    "region": "九州・沖縄",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=W_P_LVrwY-c",
+    "id": "W_P_LVrwY-c"
+  },
+  {
+    "title": "御手洗－伝統的建造物群保存地区ー【SUKIMA TOURS】広島県呉市豊町御手洗",
     "pref": "広島県",
     "region": "中国",
     "type": "long",
     "tags": [
       "自然・絶景"
     ],
-    "url": "https://www.youtube.com/watch?v=JOXOZiyha68",
-    "id": "JOXOZiyha68"
+    "url": "https://www.youtube.com/watch?v=iYJpdhzgk8M",
+    "id": "iYJpdhzgk8M"
   },
   {
-    "title": "鼻ぐり塚【SUKIMA TOURS】岡山県岡山市北区",
-    "pref": "岡山県",
+    "title": "岩舟古墳【SUKIMA TOURS】島根県安来市岩舟町",
+    "pref": "島根県",
     "region": "中国",
     "type": "long",
     "tags": [
-      "神社仏閣"
+      "城・史跡",
+      "自然・絶景"
     ],
-    "url": "https://www.youtube.com/watch?v=Pw5kymHVwFw",
-    "id": "Pw5kymHVwFw"
+    "url": "https://www.youtube.com/watch?v=AzyVCH0t0TA",
+    "id": "AzyVCH0t0TA"
   },
   {
-    "title": "石垣の里 外泊　【SUKIMA TOURS】　愛媛県南宇和郡",
+    "title": "雄橋【SUKIMA TOURS】広島県庄原市東城町",
+    "pref": "広島県",
+    "region": "中国",
+    "type": "long",
+    "tags": [
+      "城・史跡",
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=gbi9XbGzfcc",
+    "id": "gbi9XbGzfcc"
+  },
+  {
+    "title": "吉見百穴【SUKIMA TOURS】埼玉県比企郡吉見町",
+    "pref": "埼玉県",
+    "region": "関東",
+    "type": "long",
+    "tags": [
+      "遺跡・遺構"
+    ],
+    "url": "https://www.youtube.com/watch?v=rOy3R7z6szk",
+    "id": "rOy3R7z6szk"
+  },
+  {
+    "title": "三津の渡し【SUKIMA TOURS】愛媛県松山市三津",
     "pref": "愛媛県",
     "region": "四国",
     "type": "long",
     "tags": [
       "町歩き"
     ],
-    "url": "https://www.youtube.com/watch?v=2kX8YujVSPw",
-    "id": "2kX8YujVSPw"
+    "url": "https://www.youtube.com/watch?v=cg3bZ5XDAQc",
+    "id": "cg3bZ5XDAQc"
   },
   {
-    "title": "姫路モノレール　【SUKIMA TOURS】　兵庫県姫路市",
-    "pref": "兵庫県",
+    "title": "八九郎温泉【SUKIMA TOURS】秋田県鹿角郡小坂町",
+    "pref": "秋田県",
+    "region": "東北",
+    "type": "long",
+    "tags": [
+      "温泉・宿"
+    ],
+    "url": "https://www.youtube.com/watch?v=SLnRsTdLkYY",
+    "id": "SLnRsTdLkYY"
+  },
+  {
+    "title": "尾市一号古墳【SUKIMA TOURS】広島県福山市新市町",
+    "pref": "広島県",
+    "region": "中国",
+    "type": "long",
+    "tags": [
+      "城・史跡",
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=DKnl36laGj4",
+    "id": "DKnl36laGj4"
+  },
+  {
+    "title": "池子石の採石場跡【SUKIMA TOURS】神奈川県逗子市池子",
+    "pref": "神奈川県",
+    "region": "関東",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=V3Sv_NChj08",
+    "id": "V3Sv_NChj08"
+  },
+  {
+    "title": "横浜市電保存館【SUKIMA TOURS】神奈川県横浜市磯子区",
+    "pref": "神奈川県",
+    "region": "関東",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=8JSqdvIG8SE",
+    "id": "8JSqdvIG8SE"
+  },
+  {
+    "title": "新沢千塚古墳群【SUKIMA TOURS】奈良県橿原市北越智町/川西町",
+    "pref": "奈良県",
     "region": "関西",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=8hoGZ36ZGtc",
+    "id": "8hoGZ36ZGtc"
+  },
+  {
+    "title": "地蔵寺五百羅漢【SUKIMA TOURS】徳島県板野郡板野町",
+    "pref": "徳島県",
+    "region": "四国",
+    "type": "long",
+    "tags": [
+      "神社仏閣",
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=heGLw6aYrFo",
+    "id": "heGLw6aYrFo"
+  },
+  {
+    "title": "阿光坊古墳群【SUKIMA TOURS】青森県上北郡おいらせ町",
+    "pref": "青森県",
+    "region": "東北",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=BDRfZddPAUg",
+    "id": "BDRfZddPAUg"
+  },
+  {
+    "title": "石見銀山・龍源寺間歩【SUKIMA TOURS】島根県太田市",
+    "pref": "島根県",
+    "region": "中国",
+    "type": "long",
+    "tags": [
+      "神社仏閣",
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=2yQytXTlnoQ",
+    "id": "2yQytXTlnoQ"
+  },
+  {
+    "title": "五島列島の教会群【SUKIMA TOURS】長崎県五島市",
+    "pref": "長崎県",
+    "region": "九州・沖縄",
+    "type": "long",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=xHCUI5M0x7Q",
+    "id": "xHCUI5M0x7Q"
+  },
+  {
+    "title": "大野原古墳群【SUKIMA TOURS】香川県観音寺市大野原町",
+    "pref": "香川県",
+    "region": "四国",
+    "type": "long",
+    "tags": [
+      "神社仏閣",
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=fYL-BjZ6UB8",
+    "id": "fYL-BjZ6UB8"
+  },
+  {
+    "title": "キリストの墓【SUKIMA TOURS】青森県三戸郡新郷村",
+    "pref": "青森県",
+    "region": "東北",
+    "type": "long",
+    "tags": [
+      "公園・テーマパーク"
+    ],
+    "url": "https://www.youtube.com/watch?v=XfnLAy7A4kE",
+    "id": "XfnLAy7A4kE"
+  },
+  {
+    "title": "階段国道【SUKIMA TOURS】青森県東津軽郡外ヶ浜",
+    "pref": "青森県",
+    "region": "東北",
     "type": "long",
     "tags": [
       "乗り物・交通"
     ],
-    "url": "https://www.youtube.com/watch?v=cPURXpwimso",
-    "id": "cPURXpwimso"
+    "url": "https://www.youtube.com/watch?v=-J5q_i9URCo",
+    "id": "-J5q_i9URCo"
+  },
+  {
+    "title": "両宮山古墳【SUKIMA TOURS】岡山県赤磐市穂崎",
+    "pref": "岡山県",
+    "region": "中国",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=wvjFXBXR6nc",
+    "id": "wvjFXBXR6nc"
+  },
+  {
+    "title": "オランダ堰堤【SUKIMA TOURS】滋賀県大津市上田上",
+    "pref": "滋賀県",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=CDRm2Nx5Tzc",
+    "id": "CDRm2Nx5Tzc"
+  },
+  {
+    "title": "水泥古墳【SUKIMA TOURS】奈良県御所市古瀬",
+    "pref": "奈良県",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=c-IHwhxJ0t4",
+    "id": "c-IHwhxJ0t4"
+  },
+  {
+    "title": "明日香村の奇石群【SUKIMA TOURS】奈良県高市郡明日香村",
+    "pref": "奈良県",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "遺跡・遺構"
+    ],
+    "url": "https://www.youtube.com/watch?v=ADTIQk21d6I",
+    "id": "ADTIQk21d6I"
+  },
+  {
+    "title": "有福大仏【SUKIMA TOURS】江津市有福温泉町",
+    "pref": "島根県",
+    "region": "中国",
+    "type": "long",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=gfKYINUym2g",
+    "id": "gfKYINUym2g"
+  },
+  {
+    "title": "津山まなびの鉄道館【SUKIMA TOURS】岡山県津山市大谷",
+    "pref": "岡山県",
+    "region": "中国",
+    "type": "long",
+    "tags": [
+      "城・史跡",
+      "乗り物・交通"
+    ],
+    "url": "https://www.youtube.com/watch?v=VR5VhOhOtAo",
+    "id": "VR5VhOhOtAo"
+  },
+  {
+    "title": "作山古墳群【SUKIMA TOURS】京都府与謝郡与謝野町",
+    "pref": "京都府",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=9GfL7prbbhI",
+    "id": "9GfL7prbbhI"
+  },
+  {
+    "title": "うのこの滝【SUKIMA TOURS】宮崎県西臼杵郡五ケ瀬町",
+    "pref": "宮崎県",
+    "region": "九州・沖縄",
+    "type": "long",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=ghdQj_OaJYo",
+    "id": "ghdQj_OaJYo"
+  },
+  {
+    "title": "妻木晩田遺跡【SUKIMA TOURS】鳥取県西伯郡大山町",
+    "pref": "鳥取県",
+    "region": "中国",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=jnGlxG-gUnA",
+    "id": "jnGlxG-gUnA"
+  },
+  {
+    "title": "銅閣寺【SUKIMA TOURS】京都府京都市東山区",
+    "pref": "京都府",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=Gvmjj_XDSB4",
+    "id": "Gvmjj_XDSB4"
+  },
+  {
+    "title": "武蔵府中熊野神社古墳【SUKIMA TOURS】東京都府中市",
+    "pref": "東京都",
+    "region": "関東",
+    "type": "long",
+    "tags": [
+      "神社仏閣",
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=101Sm1waQ6E",
+    "id": "101Sm1waQ6E"
+  },
+  {
+    "title": "三佛寺投入堂【SUKIMA TOURS】鳥取県東伯郡三朝町",
+    "pref": "鳥取県",
+    "region": "中国",
+    "type": "long",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=WfBWP6HURrI",
+    "id": "WfBWP6HURrI"
+  },
+  {
+    "title": "須磨浦カーレーター【SUKIMA TOURS】兵庫県神戸市須磨区",
+    "pref": "兵庫県",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "公園・テーマパーク"
+    ],
+    "url": "https://www.youtube.com/watch?v=5z2IhrVFu6g",
+    "id": "5z2IhrVFu6g"
+  },
+  {
+    "title": "石のカラト古墳【SUKIMA TOURS】奈良県奈良市神功/京都府木津川市兜台",
+    "pref": "京都府",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=TXW78hDaUO0",
+    "id": "TXW78hDaUO0"
+  },
+  {
+    "title": "八栗ケーブル【SUKIMA TOURS】香川県高松市牟礼",
+    "pref": "香川県",
+    "region": "四国",
+    "type": "long",
+    "tags": [
+      "乗り物・交通"
+    ],
+    "url": "https://www.youtube.com/watch?v=7ljKDtPmpUY",
+    "id": "7ljKDtPmpUY"
+  },
+  {
+    "title": "シャレコーベミュージアム【SUKIMA TOURS】兵庫県尼崎市",
+    "pref": "兵庫県",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "公園・テーマパーク"
+    ],
+    "url": "https://www.youtube.com/watch?v=fC6RWsHpPfQ",
+    "id": "fC6RWsHpPfQ"
+  },
+  {
+    "title": "三瓶温泉 亀の湯【SUKIMA TOURS】島根県大田市三瓶町",
+    "pref": "島根県",
+    "region": "中国",
+    "type": "long",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=lIISApl-SSU",
+    "id": "lIISApl-SSU"
+  },
+  {
+    "title": "牽牛子塚古墳【SUKIMA TOURS】奈良県高市郡明日香村",
+    "pref": "奈良県",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=rrRhQ0RMaTI",
+    "id": "rrRhQ0RMaTI"
+  },
+  {
+    "title": "高松塚古墳【SUKIMA TOURS】奈良県高市郡明日香村",
+    "pref": "奈良県",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=cIyAwCRoXL0",
+    "id": "cIyAwCRoXL0"
+  },
+  {
+    "title": "伊尾木洞【SUKIMA TOURS】高知県安芸市",
+    "pref": "高知県",
+    "region": "四国",
+    "type": "long",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=DG_dx9izaNg",
+    "id": "DG_dx9izaNg"
+  },
+  {
+    "title": "市ヶ尾横穴古墳群【SUKIMA TOURS】神奈川県横浜市青葉区",
+    "pref": "神奈川県",
+    "region": "関東",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=uPBz2YFCwIA",
+    "id": "uPBz2YFCwIA"
+  },
+  {
+    "title": "関ケ原ウォーランド【SUKIMA TOURS】岐阜県不破郡関ケ原町",
+    "pref": "岐阜県",
+    "region": "中部",
+    "type": "long",
+    "tags": [
+      "公園・テーマパーク"
+    ],
+    "url": "https://www.youtube.com/watch?v=TGdcfd-oOJU",
+    "id": "TGdcfd-oOJU"
+  },
+  {
+    "title": "三ツ城古墳【SUKIMA TOURS】広島県東広島市",
+    "pref": "広島県",
+    "region": "中国",
+    "type": "long",
+    "tags": [
+      "城・史跡",
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=K0ofNnYuvRU",
+    "id": "K0ofNnYuvRU"
+  },
+  {
+    "title": "岐阜大仏【SUKIMA TOURS】岐阜県岐阜市大仏町",
+    "pref": "岐阜県",
+    "region": "中部",
+    "type": "long",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=hymrQ-e37aE",
+    "id": "hymrQ-e37aE"
+  },
+  {
+    "title": "全興寺【SUKIMA TOURS】大阪府大阪市平野区",
+    "pref": "大阪府",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=8dfJHZaxIeg",
+    "id": "8dfJHZaxIeg"
+  },
+  {
+    "title": "鳴門の渦潮【SUKIMA TOURS】兵庫県南あわじ市/徳島県鳴門市",
+    "pref": "兵庫県",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=adeOPrzqRpI",
+    "id": "adeOPrzqRpI"
+  },
+  {
+    "title": "今城塚古墳【SUKIMA TOURS】大阪府高槻市",
+    "pref": "大阪府",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=OxigIPmttTg",
+    "id": "OxigIPmttTg"
+  },
+  {
+    "title": "久井の岩海【SUKIMA TOURS】広島県三原市",
+    "pref": "広島県",
+    "region": "中国",
+    "type": "long",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=E-DbpJ3_Qzs",
+    "id": "E-DbpJ3_Qzs"
+  },
+  {
+    "title": "高井田横穴群【SUKIMA TOURS】大阪府柏原市",
+    "pref": "大阪府",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=LcMJnG1JwLs",
+    "id": "LcMJnG1JwLs"
+  },
+  {
+    "title": "銭形砂絵【SUKIMA TOURS】香川県観音寺市",
+    "pref": "香川県",
+    "region": "四国",
+    "type": "long",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=kg7iVeXBXws",
+    "id": "kg7iVeXBXws"
+  },
+  {
+    "title": "一畑薬師【SUKIMA TOURS】島根県出雲市",
+    "pref": "島根県",
+    "region": "中国",
+    "type": "long",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=boD_Nfllna4",
+    "id": "boD_Nfllna4"
+  },
+  {
+    "title": "八幡山古墳【SUKIMA TOURS】埼玉県行田市",
+    "pref": "埼玉県",
+    "region": "関東",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=rfy-EnBYFpQ",
+    "id": "rfy-EnBYFpQ"
+  },
+  {
+    "title": "広兼邸【SUKIMA TOURS】岡山県高梁市",
+    "pref": "岡山県",
+    "region": "中国",
+    "type": "long",
+    "tags": [
+      "小説・ロケ・アニメ"
+    ],
+    "url": "https://www.youtube.com/watch?v=IFq0cQm-klU",
+    "id": "IFq0cQm-klU"
+  },
+  {
+    "title": "舞洲工場【SUKIMA TOURS】大阪府大阪市此花区",
+    "pref": "大阪府",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "町歩き"
+    ],
+    "url": "https://www.youtube.com/watch?v=Zs5SFyOl9aA",
+    "id": "Zs5SFyOl9aA"
+  },
+  {
+    "title": "薮塚石切り場跡【SUKIMA TOURS】群馬県太田市藪塚町",
+    "pref": "群馬県",
+    "region": "関東",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=Va-7knQ6KUs",
+    "id": "Va-7knQ6KUs"
+  },
+  {
+    "title": "玉手山古墳群【SUKIMA TOURS】大阪府柏原市",
+    "pref": "大阪府",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=FcX9vVdTO1o",
+    "id": "FcX9vVdTO1o"
+  },
+  {
+    "title": "どんづるぼう【SUKIMA TOURS】奈良県香芝市",
+    "pref": "奈良県",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=sFW1vo1nO6A",
+    "id": "sFW1vo1nO6A"
+  },
+  {
+    "title": "河内風穴【SUKIMA TOURS】滋賀県犬上郡多賀町",
+    "pref": "滋賀県",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=Vd0z7rCjKjY",
+    "id": "Vd0z7rCjKjY"
+  },
+  {
+    "title": "茶すり山古墳【SUKIMA TOURS】兵庫県朝来市和田山町",
+    "pref": "兵庫県",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=r2rNbZthVo8",
+    "id": "r2rNbZthVo8"
+  },
+  {
+    "title": "安福寺横穴群【SUKIMA TOURS】大阪府柏原市",
+    "pref": "大阪府",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=Cpjy5hYDWHA",
+    "id": "Cpjy5hYDWHA"
+  },
+  {
+    "title": "歩いてみたイエメン　Just Walked YEMEN 2013",
+    "pref": "イエメン",
+    "region": "海外",
+    "type": "long",
+    "tags": [
+      "町歩き"
+    ],
+    "url": "https://www.youtube.com/watch?v=K_Pjputp_6E",
+    "id": "K_Pjputp_6E"
+  },
+  {
+    "title": "ただ歩いてみたマカオ　Just Walked MACAU",
+    "pref": "マカオ",
+    "region": "海外",
+    "type": "long",
+    "tags": [
+      "未分類"
+    ],
+    "url": "https://www.youtube.com/watch?v=Kj50d0vT83U",
+    "id": "Kj50d0vT83U"
+  },
+  {
+    "title": "笹畝坑道【SUKIMA TOURS】岡山県高梁市成羽町",
+    "pref": "岡山県",
+    "region": "中国",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=T_TzrxI3J40",
+    "id": "T_TzrxI3J40"
+  },
+  {
+    "title": "ただ歩いてみた香港　Just Walked Hongkong !",
+    "pref": "香港",
+    "region": "海外",
+    "type": "long",
+    "tags": [
+      "未分類"
+    ],
+    "url": "https://www.youtube.com/watch?v=peAbBPR92rw",
+    "id": "peAbBPR92rw"
+  },
+  {
+    "title": "別府タワー【SUKIMA TOURS】大分県別府市北浜",
+    "pref": "大分県",
+    "region": "九州・沖縄",
+    "type": "long",
+    "tags": [
+      "町歩き"
+    ],
+    "url": "https://www.youtube.com/watch?v=GXW_c6Eq2k0",
+    "id": "GXW_c6Eq2k0"
+  },
+  {
+    "title": "かやぶきの里【SUKIMA TOURS】京都府南丹市美山町",
+    "pref": "京都府",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "公園・テーマパーク"
+    ],
+    "url": "https://www.youtube.com/watch?v=_4hRt4Y7y1g",
+    "id": "_4hRt4Y7y1g"
+  },
+  {
+    "title": "三津屋古墳【SUKIMA TOURS】群馬県北群馬郡吉岡町",
+    "pref": "群馬県",
+    "region": "関東",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=e3zkUaqwkj4",
+    "id": "e3zkUaqwkj4"
+  },
+  {
+    "title": "猿田洞【SUKIMA TOURS】高知県日高村",
+    "pref": "高知県",
+    "region": "四国",
+    "type": "long",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=tlGysnSgfI0",
+    "id": "tlGysnSgfI0"
+  },
+  {
+    "title": "不動院岩屋堂【SUKIMA TOURS】鳥取県八頭郡若桜町",
+    "pref": "鳥取県",
+    "region": "中国",
+    "type": "long",
+    "tags": [
+      "神社仏閣",
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=FzBhCEV_iFc",
+    "id": "FzBhCEV_iFc"
+  },
+  {
+    "title": "京都タワー【SUKIMA TOURS】京都府京都市",
+    "pref": "京都府",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "町歩き"
+    ],
+    "url": "https://www.youtube.com/watch?v=Krz1UQwV8KA",
+    "id": "Krz1UQwV8KA"
+  },
+  {
+    "title": "屋島ケーブル【SUKIMA TOURS】香川県高松市",
+    "pref": "香川県",
+    "region": "四国",
+    "type": "long",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=T6kiE9S7_r0",
+    "id": "T6kiE9S7_r0"
+  },
+  {
+    "title": "少彦名神社【SUKIMA TOURS】愛媛県大洲市",
+    "pref": "愛媛県",
+    "region": "四国",
+    "type": "long",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=9OMhBEFL1E0",
+    "id": "9OMhBEFL1E0"
+  },
+  {
+    "title": "生野銀山【SUKIMA TOURS】兵庫県朝来市",
+    "pref": "兵庫県",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=fD86TWzUMqE",
+    "id": "fD86TWzUMqE"
+  },
+  {
+    "title": "龍岩寺奥院礼堂【SUKIMA TOURS】大分県宇佐市",
+    "pref": "大分県",
+    "region": "九州・沖縄",
+    "type": "long",
+    "tags": [
+      "神社仏閣",
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=V98jnSHDQmw",
+    "id": "V98jnSHDQmw"
+  },
+  {
+    "title": "石手寺【SUKIMA TOURS】愛媛県松山市",
+    "pref": "愛媛県",
+    "region": "四国",
+    "type": "long",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=EXxbULaAUN0",
+    "id": "EXxbULaAUN0"
   },
   {
     "title": "第五福竜丸展示館【SUKIMA TOURS】東京都江東区",
@@ -3842,26 +3410,60 @@ const VIDEOS = [
     "id": "NwYOEeizDOA"
   },
   {
-    "title": "集合体恐怖症は注意！穴だらけの巨大岩壁！【高池の虫喰岩・和歌山県】　ーSUKIMA TOURSー和歌山県東牟婁郡古座川町",
-    "pref": "和歌山県",
+    "title": "石油の里【SUKIMA TOURS】新潟県新潟市秋葉区",
+    "pref": "新潟県",
+    "region": "中部",
+    "type": "long",
+    "tags": [
+      "町歩き"
+    ],
+    "url": "https://www.youtube.com/watch?v=jSlUP_YpfiY",
+    "id": "jSlUP_YpfiY"
+  },
+  {
+    "title": "岩谷観音堂やぐら群【SUKIMA TOURS】千葉県富津市",
+    "pref": "千葉県",
+    "region": "関東",
+    "type": "long",
+    "tags": [
+      "神社仏閣",
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=8D3EQGdYYqQ",
+    "id": "8D3EQGdYYqQ"
+  },
+  {
+    "title": "安治川隧道【SUKIMA TOURS】大阪府大阪市",
+    "pref": "大阪府",
     "region": "関西",
     "type": "long",
     "tags": [
-      "自然・絶景"
+      "町歩き"
     ],
-    "url": "https://www.youtube.com/watch?v=zCrNCrpcxsA",
-    "id": "zCrNCrpcxsA"
+    "url": "https://www.youtube.com/watch?v=hV9dUxfd97w",
+    "id": "hV9dUxfd97w"
   },
   {
-    "title": "2基の前方後円墳が中央の方墳を挟んで向かい合う！全国的にも類を見ない異例の配置！【陣の丸古墳・香川県】SUKIMA TOURSー香川県丸亀市綾歌町富熊",
+    "title": "楯築遺跡【SUKIMA TOURS】岡山県倉敷市",
+    "pref": "岡山県",
+    "region": "中国",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=jL166TQEzCY",
+    "id": "jL166TQEzCY"
+  },
+  {
+    "title": "富田茶臼山古墳【SUKIMA TOURS】香川県さぬき市",
     "pref": "香川県",
     "region": "四国",
     "type": "long",
     "tags": [
       "城・史跡"
     ],
-    "url": "https://www.youtube.com/watch?v=cmxq67RsB_o",
-    "id": "cmxq67RsB_o"
+    "url": "https://www.youtube.com/watch?v=K6KRTRnlwzU",
+    "id": "K6KRTRnlwzU"
   },
   {
     "title": "内子座【SUKIMA TOURS】愛媛県喜多郡内子町",
@@ -3875,93 +3477,125 @@ const VIDEOS = [
     "id": "8fYLf3Qri9c"
   },
   {
-    "title": "日本で唯一の古代イスラエル式神社？山奥に隠された謎の石垣遺跡！【徳島】磐境神明神社　　ーSUKIMA TOURSー徳島県美馬市穴吹町",
-    "pref": "徳島県",
+    "title": "別子銅山【SUKIMA TOURS】愛媛県新居浜市",
+    "pref": "愛媛県",
     "region": "四国",
     "type": "long",
     "tags": [
-      "神社仏閣",
-      "城・史跡"
+      "遺跡・遺構"
     ],
-    "url": "https://www.youtube.com/watch?v=8HI1OULpZu0",
-    "id": "8HI1OULpZu0"
+    "url": "https://www.youtube.com/watch?v=wWw_Bk4h3Ak",
+    "id": "wWw_Bk4h3Ak"
   },
   {
-    "title": "100年前の姿のまま残る高さ136mの無線塔！【針尾送信所・長崎県】SUKIMA TOURSー長崎県佐世保市針尾中町",
-    "pref": "長崎県",
-    "region": "九州・沖縄",
+    "title": "造山古墳【SUKIMA TOURS】岡山県岡山市北区",
+    "pref": "岡山県",
+    "region": "中国",
     "type": "long",
     "tags": [
-      "戦争遺構"
+      "城・史跡"
     ],
-    "url": "https://www.youtube.com/watch?v=VYDHqiUJK1A",
-    "id": "VYDHqiUJK1A"
+    "url": "https://www.youtube.com/watch?v=lq7t2sN2iBE",
+    "id": "lq7t2sN2iBE"
   },
   {
-    "title": "壁一面に13,000体のお地蔵様！真山の万体仏【秋田県】　ーSUKIMA TOURSー秋田県男鹿市北浦真山",
-    "pref": "秋田県",
-    "region": "東北",
+    "title": "鼻ぐり塚【SUKIMA TOURS】岡山県岡山市北区",
+    "pref": "岡山県",
+    "region": "中国",
     "type": "long",
     "tags": [
       "神社仏閣"
     ],
-    "url": "https://www.youtube.com/watch?v=M-yC-eYr2To",
-    "id": "M-yC-eYr2To"
+    "url": "https://www.youtube.com/watch?v=Pw5kymHVwFw",
+    "id": "Pw5kymHVwFw"
   },
   {
-    "title": "畳のような岩肌に丸い塊状の岩が並ぶ奇景！【石見畳ヶ浦・島根県】島根県浜田市国分町",
-    "pref": "島根県",
+    "title": "関門トンネル【SUKIMA TOURS】山口県下関市/福岡県北九州市",
+    "pref": "山口県",
     "region": "中国",
     "type": "long",
     "tags": [
-      "自然・絶景"
+      "廃墟・廃線"
     ],
-    "url": "https://www.youtube.com/watch?v=D50JqSOmXpE",
-    "id": "D50JqSOmXpE"
+    "url": "https://www.youtube.com/watch?v=GJU_Ts12wiM",
+    "id": "GJU_Ts12wiM"
   },
   {
-    "title": "猿橋【SUKIMA TOURS】山梨県大月市",
-    "pref": "山梨県",
-    "region": "中部",
+    "title": "HTMSメークロン号【SUKIMA TOURS】タイ・バンコク",
+    "pref": "タイ",
+    "region": "海外",
     "type": "long",
     "tags": [
-      "自然・絶景"
+      "未分類"
     ],
-    "url": "https://www.youtube.com/watch?v=t6-urtbxvSI",
-    "id": "t6-urtbxvSI"
+    "url": "https://www.youtube.com/watch?v=eQ4SXHCTxtA",
+    "id": "eQ4SXHCTxtA"
   },
   {
-    "title": "石清尾山古墳群【SUKIMA TOURS】香川県高松市",
-    "pref": "香川県",
-    "region": "四国",
+    "title": "ラオスタイ国境越え【SUKIMA TOURS】ビエンチャン：ノンカイ",
+    "pref": "タイ",
+    "region": "海外",
     "type": "long",
     "tags": [
-      "城・史跡"
+      "未分類"
     ],
-    "url": "https://www.youtube.com/watch?v=Nj1PxojERYc",
-    "id": "Nj1PxojERYc"
+    "url": "https://www.youtube.com/watch?v=5zuPhMlcrxw",
+    "id": "5zuPhMlcrxw"
   },
   {
-    "title": "阿波の土柱　【SUKIMA TOURS】　徳島県阿波市",
+    "title": "フアランポーン駅【SUKIMA TOURS】タイ･バンコク",
+    "pref": "タイ",
+    "region": "海外",
+    "type": "long",
+    "tags": [
+      "廃墟・廃線"
+    ],
+    "url": "https://www.youtube.com/watch?v=OBQD2B_3GYw",
+    "id": "OBQD2B_3GYw"
+  },
+  {
+    "title": "弁天山【SUKIMA TOURS】徳島県徳島市",
     "pref": "徳島県",
     "region": "四国",
     "type": "long",
     "tags": [
       "自然・絶景"
     ],
-    "url": "https://www.youtube.com/watch?v=ApCSVlbt0LI",
-    "id": "ApCSVlbt0LI"
+    "url": "https://www.youtube.com/watch?v=FVLMLItp7Ig",
+    "id": "FVLMLItp7Ig"
   },
   {
-    "title": "佐倉城址　【SUKIMA TOURS】 千葉県",
-    "pref": "千葉県",
+    "title": "頭塔【SUKIMA TOURS】奈良県奈良市",
+    "pref": "奈良県",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=tur0gMa4v94",
+    "id": "tur0gMa4v94"
+  },
+  {
+    "title": "東京タワー【SUKIMA TOURS】東京都港区",
+    "pref": "東京都",
     "region": "関東",
     "type": "long",
     "tags": [
-      "城・史跡"
+      "町歩き"
     ],
-    "url": "https://www.youtube.com/watch?v=7ItLlQEOSPE",
-    "id": "7ItLlQEOSPE"
+    "url": "https://www.youtube.com/watch?v=fVdC-r0p4d0",
+    "id": "fVdC-r0p4d0"
+  },
+  {
+    "title": "高屋神社【SUKIMA TOURS】香川県観音寺市",
+    "pref": "香川県",
+    "region": "四国",
+    "type": "long",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=E1oPEkKWTjM",
+    "id": "E1oPEkKWTjM"
   },
   {
     "title": "江戸東京たてもの園【SUKIMA TOURS】東京都小金井市",
@@ -3975,63 +3609,6 @@ const VIDEOS = [
     "id": "0MU-OiLPCaE"
   },
   {
-    "title": "京都タワー【SUKIMA TOURS】京都府京都市",
-    "pref": "京都府",
-    "region": "関西",
-    "type": "long",
-    "tags": [
-      "町歩き"
-    ],
-    "url": "https://www.youtube.com/watch?v=Krz1UQwV8KA",
-    "id": "Krz1UQwV8KA"
-  },
-  {
-    "title": "まるでピラミッドのような一号墳！そして巨大な石室と、棺に刻まれた謎の文字！【大谷･定古墳群・岡山県】SUKIMA TOURSー岡山県真庭市上中津井",
-    "pref": "岡山県",
-    "region": "中国",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=QMk_wszzSLo",
-    "id": "QMk_wszzSLo"
-  },
-  {
-    "title": "しってんさん【SUKIMA TOURS】佐賀県佐賀市大和町",
-    "pref": "佐賀県",
-    "region": "九州・沖縄",
-    "type": "long",
-    "tags": [
-      "遺跡・遺構"
-    ],
-    "url": "https://www.youtube.com/watch?v=AAAM-1xUe34",
-    "id": "AAAM-1xUe34"
-  },
-  {
-    "title": "海上保安資料館　【SUKIMA TOURS】　神奈川県横浜市中区",
-    "pref": "神奈川県",
-    "region": "関東",
-    "type": "long",
-    "tags": [
-      "城・史跡",
-      "戦争遺跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=NaLZBSLnJMI",
-    "id": "NaLZBSLnJMI"
-  },
-  {
-    "title": "子供たちが2年かけて掘った巨大防空壕！【無窮洞・長崎県】SUKIMA TOURSー長崎県佐世保市城間町",
-    "pref": "長崎県",
-    "region": "九州・沖縄",
-    "type": "long",
-    "tags": [
-      "城・史跡",
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=w3FgPRTKHqw",
-    "id": "w3FgPRTKHqw"
-  },
-  {
     "title": "築地本願寺【SUKIMA TOURS】東京都",
     "pref": "東京都",
     "region": "関東",
@@ -4041,6 +3618,73 @@ const VIDEOS = [
     ],
     "url": "https://www.youtube.com/watch?v=MRsF9F9lMo0",
     "id": "MRsF9F9lMo0"
+  },
+  {
+    "title": "伊根の舟屋【SUKIMA TOURS】京都府与謝郡",
+    "pref": "京都府",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "町歩き"
+    ],
+    "url": "https://www.youtube.com/watch?v=QQTcjvEw_K8",
+    "id": "QQTcjvEw_K8"
+  },
+  {
+    "title": "土塔【SUKIMA TOURS】大阪府堺市",
+    "pref": "大阪府",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=8lKYrMYkleg",
+    "id": "8lKYrMYkleg"
+  },
+  {
+    "title": "東大寺大仏殿【SUKIMA TOURS】奈良県奈良市",
+    "pref": "奈良県",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=xgCpv1s6AT0",
+    "id": "xgCpv1s6AT0"
+  },
+  {
+    "title": "暗峠【SUKIMA TOURS】奈良県/大阪府",
+    "pref": "大阪府",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "町歩き"
+    ],
+    "url": "https://www.youtube.com/watch?v=VltWAsAmhu4",
+    "id": "VltWAsAmhu4"
+  },
+  {
+    "title": "海上自衛隊呉史料館  てつのくじら館【SUKIMA TOURS】広島県呉市",
+    "pref": "広島県",
+    "region": "中国",
+    "type": "long",
+    "tags": [
+      "城・史跡",
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=sB9aAMNdRlw",
+    "id": "sB9aAMNdRlw"
+  },
+  {
+    "title": "猿橋【SUKIMA TOURS】山梨県大月市",
+    "pref": "山梨県",
+    "region": "中部",
+    "type": "long",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=t6-urtbxvSI",
+    "id": "t6-urtbxvSI"
   },
   {
     "title": "埋没鳥居【SUKIMA TOURS】鹿児島県",
@@ -4055,82 +3699,15 @@ const VIDEOS = [
     "id": "i3ENPwz4v1Y"
   },
   {
-    "title": "太陽の塔「なぜ、この塔が半世紀以上も大阪の空に立ち続けているのか！1970年、大阪万博のために岡本太郎がデザインした太陽の塔。万博が終わっても壊されることはなかった圧倒的な存在感がここにあります！」",
+    "title": "太陽の塔【SUKIMA TOURS】大阪府吹田市",
     "pref": "大阪府",
     "region": "関西",
     "type": "long",
     "tags": [
       "公園・テーマパーク"
     ],
-    "url": "https://www.youtube.com/watch?v=GdYP6Kihmnw",
-    "id": "GdYP6Kihmnw"
-  },
-  {
-    "title": "遊子水荷浦の段畑【SUKIMA TOURS】愛媛県宇和島市遊子水荷浦町",
-    "pref": "愛媛県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=YrYbtPfWv9c",
-    "id": "YrYbtPfWv9c"
-  },
-  {
-    "title": "奥祖谷二重かずら橋「秘境中の秘境！徳島県・奥祖谷に架かる「二重かずら橋」。定番の祖谷のかずら橋から、さらに1時間以上も山奥へ入ったガチの山中にその聖域はあります！」",
-    "pref": "徳島県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=7UOKyMJNmyk",
-    "id": "7UOKyMJNmyk"
-  },
-  {
-    "title": "八倉比賣神社【SUKIMA TOURS】徳島県徳島市",
-    "pref": "徳島県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "神社仏閣",
-      "自然・絶景"
-    ],
-    "url": "https://www.youtube.com/watch?v=GE31vNRvvVo",
-    "id": "GE31vNRvvVo"
-  },
-  {
-    "title": "山奥の断崖に張り出す懸造りの本殿！【石川県】赤瀬那殿観音　ーSUKIMA TOURSー石川県小松市赤瀬町",
-    "pref": "石川県",
-    "region": "中部",
-    "type": "long",
-    "tags": [
-      "神社仏閣"
-    ],
-    "url": "https://www.youtube.com/watch?v=3sdSce1rc6k",
-    "id": "3sdSce1rc6k"
-  },
-  {
-    "title": "ただ歩いてみたマカオ　Just Walked MACAU",
-    "pref": "マカオ",
-    "region": "海外",
-    "type": "long",
-    "tags": [
-      "未分類"
-    ],
-    "url": "https://www.youtube.com/watch?v=Kj50d0vT83U",
-    "id": "Kj50d0vT83U"
-  },
-  {
-    "title": "豊稔池堰堤　【SUKIMA TOURS】香川県",
-    "pref": "香川県",
-    "region": "四国",
-    "type": "long",
-    "tags": [
-      "城・史跡"
-    ],
-    "url": "https://www.youtube.com/watch?v=kYpkQnd0w3c",
-    "id": "kYpkQnd0w3c"
+    "url": "https://www.youtube.com/watch?v=F5fJmGV74yw",
+    "id": "F5fJmGV74yw"
   },
   {
     "title": "湯島聖堂【SUKIMA TOURS】東京都文京区",
@@ -4145,26 +3722,350 @@ const VIDEOS = [
     "id": "xzmHtNXcnpA"
   },
   {
-    "title": "関門トンネル【SUKIMA TOURS】山口県下関市/福岡県北九州市",
-    "pref": "山口県",
+    "title": "八倉比賣神社【SUKIMA TOURS】徳島県徳島市",
+    "pref": "徳島県",
+    "region": "四国",
+    "type": "long",
+    "tags": [
+      "神社仏閣",
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=GE31vNRvvVo",
+    "id": "GE31vNRvvVo"
+  },
+  {
+    "title": "旧閑谷学校【SUKIMA TOURS】岡山県備前市",
+    "pref": "岡山県",
     "region": "中国",
     "type": "long",
     "tags": [
-      "廃墟・廃線"
+      "城・史跡"
     ],
-    "url": "https://www.youtube.com/watch?v=GJU_Ts12wiM",
-    "id": "GJU_Ts12wiM"
+    "url": "https://www.youtube.com/watch?v=Ps-PlAdHdAI",
+    "id": "Ps-PlAdHdAI"
   },
   {
-    "title": "保呂の虫喰岩【SUKIMA TOURS】和歌山県西牟婁郡白浜町",
+    "title": "生駒ケーブル【SUKIMA TOURS】奈良県生駒市",
+    "pref": "奈良県",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "乗り物・交通"
+    ],
+    "url": "https://www.youtube.com/watch?v=qjDoCkp-C8o",
+    "id": "qjDoCkp-C8o"
+  },
+  {
+    "title": "お岩稲荷【SUKIMA TOURS】東京都新宿区",
+    "pref": "東京都",
+    "region": "関東",
+    "type": "long",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=aJbIHxuUpRA",
+    "id": "aJbIHxuUpRA"
+  },
+  {
+    "title": "本願寺伝道院【SUKIMA TOURS】京都府京都市",
+    "pref": "京都府",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=h8AFcaQHk2A",
+    "id": "h8AFcaQHk2A"
+  },
+  {
+    "title": "瀬戸大橋【SUKIMA TOURS】香川県坂出市－岡山県倉敷市",
+    "pref": "岡山県",
+    "region": "中国",
+    "type": "long",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=km7jC9xC-BI",
+    "id": "km7jC9xC-BI"
+  },
+  {
+    "title": "国道駅【SUKIMA TOURS】神奈川県横浜市鶴見区",
+    "pref": "神奈川県",
+    "region": "関東",
+    "type": "long",
+    "tags": [
+      "廃墟・廃線",
+      "乗り物・交通"
+    ],
+    "url": "https://www.youtube.com/watch?v=Onw8B_5q_lw",
+    "id": "Onw8B_5q_lw"
+  },
+  {
+    "title": "白川郷【SUKIMA TOURS】岐阜県大野郡白川村    Shirakawa-go - 29/Jan/2023  Winter",
+    "pref": "岐阜県",
+    "region": "中部",
+    "type": "long",
+    "tags": [
+      "町歩き",
+      "自然絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=RivooRukZes",
+    "id": "RivooRukZes"
+  },
+  {
+    "title": "哲学堂公園【SUKIMA TOURS】東京都中野区",
+    "pref": "東京都",
+    "region": "関東",
+    "type": "long",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=VsKcSoi9DGg",
+    "id": "VsKcSoi9DGg"
+  },
+  {
+    "title": "沖島【SUKIMA TOURS】滋賀県近江八幡市",
+    "pref": "滋賀県",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=a3ltExYqaE8",
+    "id": "a3ltExYqaE8"
+  },
+  {
+    "title": "旧日立航空機立川変電所【SUKIMA TOURS】東京都東大和市",
+    "pref": "東京都",
+    "region": "関東",
+    "type": "long",
+    "tags": [
+      "戦争遺構"
+    ],
+    "url": "https://www.youtube.com/watch?v=gt95XbZ52iM",
+    "id": "gt95XbZ52iM"
+  },
+  {
+    "title": "佐柳島【SUKIMA TOURS】香川県仲多度郡",
+    "pref": "香川県",
+    "region": "四国",
+    "type": "long",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=20pxZCnrrBw",
+    "id": "20pxZCnrrBw"
+  },
+  {
+    "title": "奥祖谷二重かずら橋　【SUKIMA TOURS】　徳島県三好市",
+    "pref": "徳島県",
+    "region": "四国",
+    "type": "long",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=KkRcm7zcuBQ",
+    "id": "KkRcm7zcuBQ"
+  },
+  {
+    "title": "友ヶ島　【SUKIMA TOURS】　和歌山県和歌山市",
     "pref": "和歌山県",
     "region": "関西",
     "type": "long",
     "tags": [
       "自然・絶景"
     ],
-    "url": "https://www.youtube.com/watch?v=UrtB6x8e5KU",
-    "id": "UrtB6x8e5KU"
+    "url": "https://www.youtube.com/watch?v=RFzFb593JDQ",
+    "id": "RFzFb593JDQ"
+  },
+  {
+    "title": "熊山遺跡　【SUKIMA TOURS】　岡山県赤磐市",
+    "pref": "岡山県",
+    "region": "中国",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=4mbbUL2iLQg",
+    "id": "4mbbUL2iLQg"
+  },
+  {
+    "title": "金刀比羅宮【SUKIMA TOURS】香川県仲多度郡",
+    "pref": "香川県",
+    "region": "四国",
+    "type": "long",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=onzSbsEIU_I",
+    "id": "onzSbsEIU_I"
+  },
+  {
+    "title": "立山防空壕　【SUKIMA TOURS】　長崎県長崎市",
+    "pref": "長崎県",
+    "region": "九州・沖縄",
+    "type": "long",
+    "tags": [
+      "戦争遺構"
+    ],
+    "url": "https://www.youtube.com/watch?v=u0prAxtq37Q",
+    "id": "u0prAxtq37Q"
+  },
+  {
+    "title": "東京都慰霊堂　【SUKIMA TOURS】　東京都墨田区",
+    "pref": "東京都",
+    "region": "関東",
+    "type": "long",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=oLn0cu6N0IY",
+    "id": "oLn0cu6N0IY"
+  },
+  {
+    "title": "石垣の里 外泊　【SUKIMA TOURS】　愛媛県南宇和郡",
+    "pref": "愛媛県",
+    "region": "四国",
+    "type": "long",
+    "tags": [
+      "町歩き"
+    ],
+    "url": "https://www.youtube.com/watch?v=2kX8YujVSPw",
+    "id": "2kX8YujVSPw"
+  },
+  {
+    "title": "山犬嶽　【SUKIMA TOURS】　徳島県勝浦郡",
+    "pref": "徳島県",
+    "region": "四国",
+    "type": "long",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=f4afPi38oh0",
+    "id": "f4afPi38oh0"
+  },
+  {
+    "title": "大久野島　【SUKIMA TOURS】　広島県竹原市",
+    "pref": "広島県",
+    "region": "中国",
+    "type": "long",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=JOXOZiyha68",
+    "id": "JOXOZiyha68"
+  },
+  {
+    "title": "聖神社　【SUKIMA TOURS】　高知県高岡郡越智町",
+    "pref": "高知県",
+    "region": "四国",
+    "type": "long",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=ZiP-ECXEKsU",
+    "id": "ZiP-ECXEKsU"
+  },
+  {
+    "title": "姫路モノレール　【SUKIMA TOURS】　兵庫県姫路市",
+    "pref": "兵庫県",
+    "region": "関西",
+    "type": "long",
+    "tags": [
+      "乗り物・交通"
+    ],
+    "url": "https://www.youtube.com/watch?v=cPURXpwimso",
+    "id": "cPURXpwimso"
+  },
+  {
+    "title": "唐人駄馬巨石群【SUKIMA TOURS】高知県土佐清水市",
+    "pref": "高知県",
+    "region": "四国",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=4MMp5jyxMto",
+    "id": "4MMp5jyxMto"
+  },
+  {
+    "title": "牧野植物園　【SUKIMA TOURS】　高知県高知市",
+    "pref": "高知県",
+    "region": "四国",
+    "type": "long",
+    "tags": [
+      "公園・テーマパーク"
+    ],
+    "url": "https://www.youtube.com/watch?v=4rHjw24HJtM",
+    "id": "4rHjw24HJtM"
+  },
+  {
+    "title": "日本ピラミッド　【SUKIMA TOURS】　広島県庄原市",
+    "pref": "広島県",
+    "region": "中国",
+    "type": "long",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=D-iXHar8DYo",
+    "id": "D-iXHar8DYo"
+  },
+  {
+    "title": "津嶋神社　【SUKIMA TOURS】　香川県三豊市三野町",
+    "pref": "香川県",
+    "region": "四国",
+    "type": "long",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=NPlW8Kkt4QU",
+    "id": "NPlW8Kkt4QU"
+  },
+  {
+    "title": "高開の石積み　【SUKIMA TOURS】　徳島県吉野川市",
+    "pref": "徳島県",
+    "region": "四国",
+    "type": "long",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=MydJjKTYfxk",
+    "id": "MydJjKTYfxk"
+  },
+  {
+    "title": "海上保安資料館　【SUKIMA TOURS】　神奈川県横浜市中区",
+    "pref": "神奈川県",
+    "region": "関東",
+    "type": "long",
+    "tags": [
+      "城・史跡",
+      "戦争遺跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=NaLZBSLnJMI",
+    "id": "NaLZBSLnJMI"
+  },
+  {
+    "title": "有岡古墳群　【SUKIMA TOURS】　香川県善通寺市",
+    "pref": "香川県",
+    "region": "四国",
+    "type": "long",
+    "tags": [
+      "神社仏閣",
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=DnKBXgE2KiA",
+    "id": "DnKBXgE2KiA"
+  },
+  {
+    "title": "スカイレール　【SUKIMA TOURS】　広島県広島市安芸区",
+    "pref": "広島県",
+    "region": "中国",
+    "type": "long",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=DhUH73osWps",
+    "id": "DhUH73osWps"
   },
   {
     "title": "国道１７４号線　【SUKIMA TOURS】　兵庫県神戸市",
@@ -4178,49 +4079,114 @@ const VIDEOS = [
     "id": "RorRUk7HzPU"
   },
   {
-    "title": "山犬嶽　【SUKIMA TOURS】　徳島県勝浦郡",
+    "title": "佐倉城址　【SUKIMA TOURS】 千葉県",
+    "pref": "千葉県",
+    "region": "関東",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=7ItLlQEOSPE",
+    "id": "7ItLlQEOSPE"
+  },
+  {
+    "title": "阿波の土柱　【SUKIMA TOURS】　徳島県阿波市",
     "pref": "徳島県",
     "region": "四国",
     "type": "long",
     "tags": [
       "自然・絶景"
     ],
-    "url": "https://www.youtube.com/watch?v=X3fqCqX8lW8",
-    "id": "X3fqCqX8lW8"
+    "url": "https://www.youtube.com/watch?v=ApCSVlbt0LI",
+    "id": "ApCSVlbt0LI"
   },
   {
-    "title": "高屋神社「天空の鳥居！瀬戸内の海と浜辺を見下ろす絶景」",
-    "pref": "香川県",
+    "title": "安居渓谷　【SUKIMA TOURS】　高知県",
+    "pref": "高知県",
     "region": "四国",
     "type": "long",
     "tags": [
-      "神社仏閣",
       "自然・絶景"
     ],
-    "url": "https://www.youtube.com/watch?v=TO3EKkwW2iY",
-    "id": "TO3EKkwW2iY"
+    "url": "https://www.youtube.com/watch?v=qTKXmzulxLw",
+    "id": "qTKXmzulxLw"
   },
   {
-    "title": "サニープラザ【SUKIMA TOURS】東京都世田谷区",
+    "title": "三鷹跨線人道橋　【SUKIMA TOURS】東京都",
     "pref": "東京都",
     "region": "関東",
     "type": "long",
     "tags": [
-      "未分類"
+      "自然・絶景"
     ],
-    "url": "https://www.youtube.com/watch?v=FDTX0lFz80U",
-    "id": "FDTX0lFz80U"
+    "url": "https://www.youtube.com/watch?v=4kwbn5wEmbc",
+    "id": "4kwbn5wEmbc"
   },
   {
-    "title": "一人に墓が二つある！？日本各地に残る謎の「両墓制」とは！【鈑戸(たたらど)の両墓制・鳥取県」SUKIMA TOURSー鳥取県西伯郡大山町鈑戸",
-    "pref": "鳥取県",
-    "region": "中国",
+    "title": "遊子水荷浦の段畑【SUKIMA TOURS】愛媛県宇和島市遊子水荷浦町",
+    "pref": "愛媛県",
+    "region": "四国",
     "type": "long",
     "tags": [
-      "神社仏閣"
+      "自然・絶景"
     ],
-    "url": "https://www.youtube.com/watch?v=R86Wz91dBOs",
-    "id": "R86Wz91dBOs"
+    "url": "https://www.youtube.com/watch?v=YrYbtPfWv9c",
+    "id": "YrYbtPfWv9c"
+  },
+  {
+    "title": "横浜の秘境「陣ヶ下渓谷」 【SUKIMA TOURS】神奈川県",
+    "pref": "神奈川県",
+    "region": "関東",
+    "type": "long",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://www.youtube.com/watch?v=vbeXogvdGnQ",
+    "id": "vbeXogvdGnQ"
+  },
+  {
+    "title": "横浜市鶴見区の銭湯「安善湯」 【SUKIMA TOURS】神奈川県",
+    "pref": "神奈川県",
+    "region": "関東",
+    "type": "long",
+    "tags": [
+      "町歩き"
+    ],
+    "url": "https://www.youtube.com/watch?v=82OpHkSeFVI",
+    "id": "82OpHkSeFVI"
+  },
+  {
+    "title": "長柄横穴群　【SUKIMA TOURS】千葉県長生郡　　　山の中の崖を掘って造った墓室がずらりと並ぶその光景は一見の価値あり！",
+    "pref": "千葉県",
+    "region": "関東",
+    "type": "long",
+    "tags": [
+      "遺跡・遺構"
+    ],
+    "url": "https://www.youtube.com/watch?v=S4ep7nc0Emg",
+    "id": "S4ep7nc0Emg"
+  },
+  {
+    "title": "豊稔池堰堤　【SUKIMA TOURS】香川県",
+    "pref": "香川県",
+    "region": "四国",
+    "type": "long",
+    "tags": [
+      "城・史跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=kYpkQnd0w3c",
+    "id": "kYpkQnd0w3c"
+  },
+  {
+    "title": "「東京･小平」を一日小旅　-OneDayTrip KODAIRA-",
+    "pref": "東京都",
+    "region": "関東",
+    "type": "long",
+    "tags": [
+      "町歩き"
+    ],
+    "url": "https://www.youtube.com/watch?v=rWnzMobDMvE",
+    "id": "rWnzMobDMvE"
   }
 ];
 VIDEOS.forEach((v,i)=>{ v.no = String(i+1).padStart(3,'0'); });
