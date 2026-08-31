@@ -268,14 +268,103 @@
 <div class="grid" id="grid"></div>
 <div class="empty" id="emptyMsg" style="display:none;">該当する記録が見つかりませんでした。条件を変えてお試しください。</div>
 
-<footer>SUKIMATOURS 全動画INDEX — 全349本を収録（公開日が新しい順）</footer>
+<footer>SUKIMATOURS 全動画INDEX — 全355本を収録（公開日が新しい順）</footer>
 
 <script>
-/* ▼▼▼ データ台帳。動画が増えたら1行追記するだけ。地方(region)は都道府県(pref)から自動判定されます ▼▼▼ */
-/* 地方(region)・都道府県(pref)は台帳（Excel）に入力された値をそのまま使用 */
+/* ▼▼▼ データ台帳。動画が増えたら1行追記するだけ。地方(region)は都道府県(pref)から常に自動判定されます（Excelの「地方」列に誤記があっても自動で正しい方に補正されます） ▼▼▼ */
 const REGION_ORDER = ["北海道","東北","関東","中部","関西","中国","四国","九州・沖縄","全国","海外","その他"];
+const PREF_TO_REGION = {
+  "北海道":"北海道",
+  "青森県":"東北","岩手県":"東北","宮城県":"東北","秋田県":"東北","山形県":"東北","福島県":"東北",
+  "茨城県":"関東","栃木県":"関東","群馬県":"関東","埼玉県":"関東","千葉県":"関東","東京都":"関東","神奈川県":"関東",
+  "新潟県":"中部","富山県":"中部","石川県":"中部","福井県":"中部","山梨県":"中部","長野県":"中部","岐阜県":"中部","静岡県":"中部","愛知県":"中部",
+  "三重県":"関西","滋賀県":"関西","京都府":"関西","大阪府":"関西","兵庫県":"関西","奈良県":"関西","和歌山県":"関西",
+  "鳥取県":"中国","島根県":"中国","岡山県":"中国","広島県":"中国","山口県":"中国",
+  "徳島県":"四国","香川県":"四国","愛媛県":"四国","高知県":"四国",
+  "福岡県":"九州・沖縄","佐賀県":"九州・沖縄","長崎県":"九州・沖縄","熊本県":"九州・沖縄","大分県":"九州・沖縄","宮崎県":"九州・沖縄","鹿児島県":"九州・沖縄","沖縄県":"九州・沖縄",
+  "複数":"全国"
+};
+function norm(s){ return (s || "").normalize('NFC'); }
+function regionOf(pref){
+  pref = norm(pref);
+  if(PREF_TO_REGION[pref]) return PREF_TO_REGION[pref];
+  if(pref === "未分類" || !pref) return "その他";
+  return "海外";
+}
 
 const VIDEOS = [
+  {
+    "title": "未完の巨大仏！30mの大仏の中に隠れるはずだった「黒い不動明王」の謎｜呉市・源宗坊寺",
+    "pref": "広島県",
+    "region": "中国",
+    "type": "long",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=W54C7jPVLt8",
+    "id": "W54C7jPVLt8",
+    "pubdate": "Aug 28, 2026"
+  },
+  {
+    "title": "定期船で10分！知られざる要塞の島「小島」に眠る明治の超巨大要塞が凄すぎた！【小島(おしま)・愛媛県】SUKIMA TOURSー愛媛県今治市小島",
+    "pref": "愛媛県",
+    "region": "四国",
+    "type": "long",
+    "tags": [
+      "戦争遺跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=GUxfOLbzudo",
+    "id": "GUxfOLbzudo",
+    "pubdate": "Aug 27, 2026"
+  },
+  {
+    "title": "福井の山奥にそびえる巨大な壁の正体とは⁉︎勝山黒谷の集落を守る高さ15メートルの壁！",
+    "pref": "福井県",
+    "region": "中部",
+    "type": "long",
+    "tags": [
+      "未分類"
+    ],
+    "url": "https://www.youtube.com/watch?v=VKCJQayh3XQ",
+    "id": "VKCJQayh3XQ",
+    "pubdate": "Aug 26, 2026"
+  },
+  {
+    "title": "驚愕のミステリー！あのモーゼが日本で没した！？能登に眠る「モーゼの墓」の謎！",
+    "pref": "石川県",
+    "region": "中部",
+    "type": "long",
+    "tags": [
+      "未分類"
+    ],
+    "url": "https://www.youtube.com/watch?v=lZgm5B8fS0I",
+    "id": "lZgm5B8fS0I",
+    "pubdate": "Aug 24, 2026"
+  },
+  {
+    "title": "【実存するラピュタ】一度も撃たれなかった砲台！愛媛「小島」に眠る明治時代に造られた軍事要塞跡！",
+    "pref": "愛媛県",
+    "region": "四国",
+    "type": "long",
+    "tags": [
+      "戦争遺跡"
+    ],
+    "url": "https://www.youtube.com/watch?v=gDT7SIUrKOU",
+    "id": "gDT7SIUrKOU",
+    "pubdate": "Aug 23, 2026"
+  },
+  {
+    "title": "「日本一の美男」高岡大仏だけじゃない！青銅・木造・10万人の遺骨を包むコンクリート骨仏まで！富山に並ぶ「越中三大仏」の個性がスゴすぎる。",
+    "pref": "富山県",
+    "region": "中部",
+    "type": "long",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=_-9LQpwK2XE",
+    "id": "_-9LQpwK2XE",
+    "pubdate": "Aug 19, 2026"
+  },
   {
     "title": "一人に墓が二つある！？日本各地に残る謎の「両墓制」とは！【鈑戸(たたらど)の両墓制・鳥取県」SUKIMA TOURSー鳥取県西伯郡大山町鈑戸",
     "pref": "鳥取県",
@@ -285,7 +374,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=R86Wz91dBOs",
-    "id": "R86Wz91dBOs"
+    "id": "R86Wz91dBOs",
+    "pubdate": "Aug 16, 2026"
   },
   {
     "title": "懐中電灯ひとつで入る漆黒の手掘り洞窟！江戸時代の村人がノミだけで220mの山を貫通させた衝撃の理由！【西野水道・滋賀県】SUKIMA TOURSー滋賀県長浜市高月町西野",
@@ -296,7 +386,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=m3EipjYdAfo",
-    "id": "m3EipjYdAfo"
+    "id": "m3EipjYdAfo",
+    "pubdate": "Aug 15, 2026"
   },
   {
     "title": "国道471号線の富山と岐阜の県境にある楢峠は全国屈指の酷道なのです！路！【国道471号線・岐阜県/富山県】　SUKIMA TOURS",
@@ -307,7 +398,8 @@ const VIDEOS = [
       "乗り物・交通"
     ],
     "url": "https://www.youtube.com/watch?v=jC7RQoZpcDo",
-    "id": "jC7RQoZpcDo"
+    "id": "jC7RQoZpcDo",
+    "pubdate": "Aug 14, 2026"
   },
   {
     "title": "琵琶湖のほとりにひっそり佇む江戸時代に手掘りで掘られた放水路！【西野水道・滋賀県】　SUKIMA TOURSー滋賀県長浜市高月町西野",
@@ -318,7 +410,8 @@ const VIDEOS = [
       "遺跡・遺構"
     ],
     "url": "https://www.youtube.com/watch?v=4MzKZQPAQ2U",
-    "id": "4MzKZQPAQ2U"
+    "id": "4MzKZQPAQ2U",
+    "pubdate": "Aug 13, 2026"
   },
   {
     "title": "奇才岡本太郎が残したふたつの梵鐘！名古屋と前橋にある奇跡の鐘をみろ！【岡本太郎の梵鐘・愛知県／群馬県】SUKIMA TOURSー愛知県名古屋市北区/群馬県前橋市",
@@ -330,7 +423,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=4Dv9ZXAdL74",
-    "id": "4Dv9ZXAdL74"
+    "id": "4Dv9ZXAdL74",
+    "pubdate": "Aug 12, 2026"
   },
   {
     "title": "100年以上も昔の昭和10年に作られた動く橋が筑後川にあった！【筑後川昇開橋・佐賀県/福岡県】SUKIMA TOURSー福岡県大川市／佐賀県佐賀市諸富町",
@@ -341,7 +435,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=kJILjuw80Ek",
-    "id": "kJILjuw80Ek"
+    "id": "kJILjuw80Ek",
+    "pubdate": "Aug 9, 2026"
   },
   {
     "title": "鬼が踏み抜いたという巨大な岩が佐世保にあった！【眼鏡岩・長崎県】SUKIMA TOURSー長崎県佐世保市瀬戸越町 #奇景 ＃珍スポット",
@@ -352,7 +447,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=l2xII19hkF4",
-    "id": "l2xII19hkF4"
+    "id": "l2xII19hkF4",
+    "pubdate": "Aug 6, 2026"
   },
   {
     "title": "2基の前方後円墳が中央の方墳を挟んで向かい合う！全国的にも類を見ない異例の配置！【陣の丸古墳・香川県】SUKIMA TOURSー香川県丸亀市綾歌町富熊",
@@ -363,7 +459,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=cmxq67RsB_o",
-    "id": "cmxq67RsB_o"
+    "id": "cmxq67RsB_o",
+    "pubdate": "Aug 5, 2026"
   },
   {
     "title": "石見畳ヶ浦「恐竜の卵のような岩がポコポコ並ぶ奇景！」",
@@ -374,7 +471,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=kMWzro0TdxE",
-    "id": "kMWzro0TdxE"
+    "id": "kMWzro0TdxE",
+    "pubdate": "Aug 4, 2026"
   },
   {
     "title": "畳のような岩肌に丸い塊状の岩が並ぶ奇景！【石見畳ヶ浦・島根県】島根県浜田市国分町",
@@ -385,7 +483,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=D50JqSOmXpE",
-    "id": "D50JqSOmXpE"
+    "id": "D50JqSOmXpE",
+    "pubdate": "Aug 3, 2026"
   },
   {
     "title": "江戸時代の街並みと水路がそのまま残る！【武家屋敷・長崎県】ーSUKIMA TOURSー長崎県島原市下の丁",
@@ -396,7 +495,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=-gYbs5aRYpA",
-    "id": "-gYbs5aRYpA"
+    "id": "-gYbs5aRYpA",
+    "pubdate": "Jul 28, 2026"
   },
   {
     "title": "鰐淵寺 浮浪の滝「かの武蔵坊弁慶が修行をしたとされる古刹！奥の院の蔵王堂がまさしくその修行の滝！出雲の数あるパワースポットでもここは別格！」",
@@ -408,10 +508,11 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=FaqtK2bF9uw",
-    "id": "FaqtK2bF9uw"
+    "id": "FaqtK2bF9uw",
+    "pubdate": "Jul 27, 2026"
   },
   {
-    "title": "岩谷観音堂やぐら群「古墳時代の横穴墓を再利用して造られたやぐら群。行基が一夜にして造ったともいわれている岩谷観音堂。この不思議な史跡を見に行ってみた。」",
+    "title": "岩谷観音堂やぐら群「古墳時代の横穴墓を再利用して造られたやぐら群。行基が一夜にして造ったともいわれている岩谷観音堂。この不思議な史跡を見に行ってみた。」",
     "pref": "千葉県",
     "region": "関東",
     "type": "short",
@@ -420,7 +521,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=pxQ1cFNY8xc",
-    "id": "pxQ1cFNY8xc"
+    "id": "pxQ1cFNY8xc",
+    "pubdate": "Jul 21, 2026"
   },
   {
     "title": "太陽の塔「なぜ、この塔が半世紀以上も大阪の空に立ち続けているのか！1970年、大阪万博のために岡本太郎がデザインした太陽の塔。万博が終わっても壊されることはなかった圧倒的な存在感がここにあります！」",
@@ -431,7 +533,8 @@ const VIDEOS = [
       "公園・テーマパーク"
     ],
     "url": "https://www.youtube.com/watch?v=GdYP6Kihmnw",
-    "id": "GdYP6Kihmnw"
+    "id": "GdYP6Kihmnw",
+    "pubdate": "Jul 20, 2026"
   },
   {
     "title": "雲仙地獄「雲仙温泉を代表する観光名所！しかし400年前、島原藩主の命により、キリシタンに対する拷問の場としてこの雲仙地獄が選ばれました。信仰を捨てさせるために行われた重い史実を今に伝えています。」",
@@ -442,7 +545,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=5jKJBz1u1bo",
-    "id": "5jKJBz1u1bo"
+    "id": "5jKJBz1u1bo",
+    "pubdate": "Jul 19, 2026"
   },
   {
     "title": "鬼ノ城「文献などには一切の記録がない謎の山城！全周約2.8kmにわたって山の上に巡る城壁！いつ誰がこの城を造ったのか！そんな謎の城を歩きます！」",
@@ -453,7 +557,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=gigAnzZqIJ4",
-    "id": "gigAnzZqIJ4"
+    "id": "gigAnzZqIJ4",
+    "pubdate": "Jul 16, 2026"
   },
   {
     "title": "谷瀬の吊り橋「川面からの高さは54メートル！長さ297.7メートル！生活用としては日本一の長さを誇る個の吊り橋。今日もスリルを求めてこの山の奥までたくさんの人がやってきます！」",
@@ -464,7 +569,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=y4ctt4yjunc",
-    "id": "y4ctt4yjunc"
+    "id": "y4ctt4yjunc",
+    "pubdate": "Jul 15, 2026"
   },
   {
     "title": "歴史書には一文字も記録がない謎の巨大城郭！【岡山県・鬼ノ城】ーSUKIMA TOURSー岡山県総社市黒尾",
@@ -476,7 +582,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=-Jl7WKfbfwU",
-    "id": "-Jl7WKfbfwU"
+    "id": "-Jl7WKfbfwU",
+    "pubdate": "Jul 14, 2026"
   },
   {
     "title": "子供たちが2年かけて掘った巨大防空壕！【無窮洞・長崎県】SUKIMA TOURSー長崎県佐世保市城間町",
@@ -488,10 +595,11 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=w3FgPRTKHqw",
-    "id": "w3FgPRTKHqw"
+    "id": "w3FgPRTKHqw",
+    "pubdate": "Jul 12, 2026"
   },
   {
-    "title": "奥祖谷二重かずら橋「秘境中の秘境！徳島県・奥祖谷に架かる「二重かずら橋」。定番の祖谷のかずら橋から、さらに1時間以上も山奥へ入ったガチの山中にその聖域はあります！」",
+    "title": "奥祖谷二重かずら橋「秘境中の秘境！徳島県・奥祖谷に架かる「二重かずら橋」。定番の祖谷のかずら橋から、さらに1時間以上も山奥へ入ったガチの山中にその聖域はあります！」",
     "pref": "徳島県",
     "region": "四国",
     "type": "short",
@@ -499,10 +607,11 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=7UOKyMJNmyk",
-    "id": "7UOKyMJNmyk"
+    "id": "7UOKyMJNmyk",
+    "pubdate": "Jul 10, 2026"
   },
   {
-    "title": "祖谷のかずら橋「秘境とよばれる祖谷の絶景スポット！祖谷川に架かる長さ45メートルの植物を編み込んで作られた橋！スリルあるその橋は渡る事ができるのです！」",
+    "title": "祖谷のかずら橋「秘境とよばれる祖谷の絶景スポット！祖谷川に架かる長さ45メートルの植物を編み込んで作られた橋！スリルあるその橋は渡る事ができるのです！」",
     "pref": "徳島県",
     "region": "四国",
     "type": "short",
@@ -510,7 +619,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=kr-o8YVSGjQ",
-    "id": "kr-o8YVSGjQ"
+    "id": "kr-o8YVSGjQ",
+    "pubdate": "Jul 9, 2026"
   },
   {
     "title": "花の窟神社「日本書紀にもある日本最古の神社です。社殿はなく、高さ約45ｍの巨大な岩窟がご神体となっているのです。ご祭神は伊弉冊尊（イザナミノミコト）と、その子供、軻遇突智尊（カグツチノミコト）です」",
@@ -522,7 +632,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=kABaSHh8Ylo",
-    "id": "kABaSHh8Ylo"
+    "id": "kABaSHh8Ylo",
+    "pubdate": "Jul 8, 2026"
   },
   {
     "title": "片島魚雷発射試験場跡「大正から昭和の戦局を裏で支え続けた小さな島。国防の要であった魚雷の、最終的な実戦能力を決定づけた最重要拠点がここにあったのです」",
@@ -534,7 +645,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=_Z-9alWkmwg",
-    "id": "_Z-9alWkmwg"
+    "id": "_Z-9alWkmwg",
+    "pubdate": "Jul 5, 2026"
   },
   {
     "title": "針尾送信所「１００年以上前に大正時代に建てられた3本の電波塔！ここからニイタカヤマノボレの暗号信号が送信されたのだ！」",
@@ -545,7 +657,8 @@ const VIDEOS = [
       "戦争遺構"
     ],
     "url": "https://www.youtube.com/watch?v=CMpUCrXdI8s",
-    "id": "CMpUCrXdI8s"
+    "id": "CMpUCrXdI8s",
+    "pubdate": "Jul 3, 2026"
   },
   {
     "title": "荒波と風雨が数万年かけて削った天然の岸壁！【鬼ヶ城】SUKIMA TOURS 近畿ー三重県熊野市木本町",
@@ -556,7 +669,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=IcmarLVY-xc",
-    "id": "IcmarLVY-xc"
+    "id": "IcmarLVY-xc",
+    "pubdate": "Jul 2, 2026"
   },
   {
     "title": "本願寺伝道院「伝統的な京都の町家に突如現れる赤レンガの怪しい洋館。世界の宗教建築を融合させた、巨匠・伊東忠太の妖怪愛に溢れた異形の建造物を訪ねます。",
@@ -568,7 +682,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=tGm_pgpMrFY",
-    "id": "tGm_pgpMrFY"
+    "id": "tGm_pgpMrFY",
+    "pubdate": "Jul 1, 2026"
   },
   {
     "title": "御輿来海岸「広い干潟に広がる三日月型の波の模様。夕暮れ時には水溜まりが鏡のように空を映し出します。日本の渚百選、日本の夕陽百選にも選べれています」",
@@ -579,7 +694,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=pJ0YKwVmTlc",
-    "id": "pJ0YKwVmTlc"
+    "id": "pJ0YKwVmTlc",
+    "pubdate": "Jun 30, 2026"
   },
   {
     "title": "100年前の姿のまま残る高さ136mの無線塔！【針尾送信所・長崎県】SUKIMA TOURSー長崎県佐世保市針尾中町",
@@ -590,7 +706,8 @@ const VIDEOS = [
       "戦争遺構"
     ],
     "url": "https://www.youtube.com/watch?v=VYDHqiUJK1A",
-    "id": "VYDHqiUJK1A"
+    "id": "VYDHqiUJK1A",
+    "pubdate": "Jun 29, 2026"
   },
   {
     "title": "玄武洞「柱状節理の最高傑作！そして地球の磁場反転の証明地でもあり、江戸時代は採石場跡だった。さらに「玄武岩」の名はここから付けられたのです！」",
@@ -602,10 +719,11 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=LK2osRi1E7A",
-    "id": "LK2osRi1E7A"
+    "id": "LK2osRi1E7A",
+    "pubdate": "Jun 28, 2026"
   },
   {
-    "title": "有田ポーセリンパーク「ドイツのツヴィンガー宮殿を完全再現！建築費は数十億円！パスポートなし！しかも無料で味わえる異国感！」",
+    "title": "有田ポーセリンパーク「ドイツのツヴィンガー宮殿を完全再現！建築費は数十億円！パスポートなし！しかも無料で味わえる異国感！」",
     "pref": "佐賀県",
     "region": "九州・沖縄",
     "type": "short",
@@ -613,7 +731,8 @@ const VIDEOS = [
       "公園・テーマパーク"
     ],
     "url": "https://www.youtube.com/watch?v=uqpQYi-6UjU",
-    "id": "uqpQYi-6UjU"
+    "id": "uqpQYi-6UjU",
+    "pubdate": "Jun 25, 2026"
   },
   {
     "title": "鬼ヶ城「鬼ヶ城は三重県熊野市にある全長1.2㎞に及ぶ断崖絶壁！奇岩怪石！奇観の台地です！そこは昔の人が鬼が住む城と伝えた荒涼とした光景！息を呑むほどの自然の驚異！」",
@@ -625,7 +744,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=6hPTY1NvQ40",
-    "id": "6hPTY1NvQ40"
+    "id": "6hPTY1NvQ40",
+    "pubdate": "Jun 24, 2026"
   },
   {
     "title": "石舞台古墳「江戸時代にはすでに観光名所として知られていた石舞台古墳！巨石30個を積み上げて造られた石舞台古墳。その総重量は2,300トン！天井石だけでも約77トンもあります！」",
@@ -636,7 +756,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=WjcY1D42d5w",
-    "id": "WjcY1D42d5w"
+    "id": "WjcY1D42d5w",
+    "pubdate": "Jun 23, 2026"
   },
   {
     "title": "武家屋敷「島原城に近い武家屋敷町は、通りの中央を流れる湧水の小川も当時の面影を残しています！」",
@@ -648,7 +769,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=O46hiBKjk7w",
-    "id": "O46hiBKjk7w"
+    "id": "O46hiBKjk7w",
+    "pubdate": "Jun 22, 2026"
   },
   {
     "title": "日本で唯一の古代イスラエル式神社？山奥に隠された謎の石垣遺跡！【徳島】磐境神明神社　　ーSUKIMA TOURSー徳島県美馬市穴吹町",
@@ -660,7 +782,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=8HI1OULpZu0",
-    "id": "8HI1OULpZu0"
+    "id": "8HI1OULpZu0",
+    "pubdate": "Jun 19, 2026"
   },
   {
     "title": "垂水遺跡「山寺の原点、名僧・円仁が山寺を建立する前に籠もった原点の場所！」",
@@ -672,7 +795,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=lXnPAhRzu60",
-    "id": "lXnPAhRzu60"
+    "id": "lXnPAhRzu60",
+    "pubdate": "Jun 16, 2026"
   },
   {
     "title": "現存１２天守「日本人なら一度は訪れたい、江戸時代より以前に建てられ、戦火も地震も乗り越え、400年以上生き残った奇跡の12天守！日本にたった12しか残らなかった本物の天守、その全てを巡ります！」",
@@ -683,7 +807,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=XjX9Y_l4JLA",
-    "id": "XjX9Y_l4JLA"
+    "id": "XjX9Y_l4JLA",
+    "pubdate": "Jun 14, 2026"
   },
   {
     "title": "生き木地蔵「切り出していない生の木に彫刻された珍しいお地蔵さま！平家の落ち武者伝説が今も色濃く残る県境の山の中。そんな山中の一本の木に彫られているお地蔵さま。何故こんな山奥の木に彫られたのか！」",
@@ -694,7 +819,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=rmz0DBkK3Ec",
-    "id": "rmz0DBkK3Ec"
+    "id": "rmz0DBkK3Ec",
+    "pubdate": "Jun 12, 2026"
   },
   {
     "title": "山奥の断崖に張り出す懸造りの本殿！【石川県】赤瀬那殿観音　ーSUKIMA TOURSー石川県小松市赤瀬町",
@@ -705,7 +831,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=3sdSce1rc6k",
-    "id": "3sdSce1rc6k"
+    "id": "3sdSce1rc6k",
+    "pubdate": "Jun 11, 2026"
   },
   {
     "title": "承教寺「狛犬ならぬ狛件(くだん)がいるお寺が港区にあった！」",
@@ -716,7 +843,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=OvEXLPHJG8o",
-    "id": "OvEXLPHJG8o"
+    "id": "OvEXLPHJG8o",
+    "pubdate": "Jun 10, 2026"
   },
   {
     "title": "大谷第一墳「まさにピラミッド！岡山の山奥に階段式古墳があった！」",
@@ -727,7 +855,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=JpokJumG7N8",
-    "id": "JpokJumG7N8"
+    "id": "JpokJumG7N8",
+    "pubdate": "Jun 9, 2026"
   },
   {
     "title": "奈良の石舞台に匹敵する吉備三大巨石墳の内部に潜入！【こうもり塚古墳／牟佐大塚古墳・岡山】ーSUKIMA TOURSー岡山県総社市上林/岡山県岡山市北区牟佐",
@@ -739,10 +868,11 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=RKNmMHmbaMA",
-    "id": "RKNmMHmbaMA"
+    "id": "RKNmMHmbaMA",
+    "pubdate": "Jun 7, 2026"
   },
   {
-    "title": "ハニべ巌窟院「石川県が誇る珍スポットの横綱！」",
+    "title": "ハニべ巌窟院「石川県が誇る珍スポットの横綱！」",
     "pref": "石川県",
     "region": "中部",
     "type": "short",
@@ -750,7 +880,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=38IxNI630pU",
-    "id": "38IxNI630pU"
+    "id": "38IxNI630pU",
+    "pubdate": "Jun 4, 2026"
   },
   {
     "title": "雄橋「世界三大天然橋の一つ！その雄大な天然橋を見よ！",
@@ -761,7 +892,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=w4zqTaBLdfs",
-    "id": "w4zqTaBLdfs"
+    "id": "w4zqTaBLdfs",
+    "pubdate": "Jun 3, 2026"
   },
   {
     "title": "越前大仏「日本一大きい坐像の大仏さま！福井の実業家が私財を投じて建立した清大寺越前大仏！その額なんと380億円！日本一を誇る巨大な大仏さまは必見です！」",
@@ -772,7 +904,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=S7jSrOQ4558",
-    "id": "S7jSrOQ4558"
+    "id": "S7jSrOQ4558",
+    "pubdate": "Jun 2, 2026"
   },
   {
     "title": "橋杭岩「巨岩の柱が並ぶ不思議な絶景！」",
@@ -783,7 +916,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=0cyyV6Idh8E",
-    "id": "0cyyV6Idh8E"
+    "id": "0cyyV6Idh8E",
+    "pubdate": "Jun 1, 2026"
   },
   {
     "title": "紀淡海峡を防備するために作られた明治の要塞！【兵庫】由良要塞　SUKIMA TOURS　兵庫県洲本市由良町",
@@ -794,7 +928,8 @@ const VIDEOS = [
       "遺跡・遺構"
     ],
     "url": "https://www.youtube.com/watch?v=MpuuSV4hyMc",
-    "id": "MpuuSV4hyMc"
+    "id": "MpuuSV4hyMc",
+    "pubdate": "May 31, 2026"
   },
   {
     "title": "桃太郎神社「桃太郎の墓はここにある！犬キジ猿の墓も！おじいさんおばあさんまで！」",
@@ -805,10 +940,11 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=G2y7IXMNEyg",
-    "id": "G2y7IXMNEyg"
+    "id": "G2y7IXMNEyg",
+    "pubdate": "May 29, 2026"
   },
   {
-    "title": "会津さざえ堂「世界唯一木造二重螺旋構造！」",
+    "title": "会津さざえ堂「世界唯一木造二重螺旋構造！」",
     "pref": "福島県",
     "region": "東北",
     "type": "short",
@@ -816,7 +952,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=gyhE33Zz8HQ",
-    "id": "gyhE33Zz8HQ"
+    "id": "gyhE33Zz8HQ",
+    "pubdate": "May 26, 2026"
   },
   {
     "title": "旧倉吉線廃線跡「日本一美しいと言われる廃線跡！」",
@@ -828,7 +965,8 @@ const VIDEOS = [
       "廃墟・廃線"
     ],
     "url": "https://www.youtube.com/watch?v=Say3EkXyhKg",
-    "id": "Say3EkXyhKg"
+    "id": "Say3EkXyhKg",
+    "pubdate": "May 25, 2026"
   },
   {
     "title": "ニコニコ岩「ニッコリ笑っているように見える岩が岡山にあった！」",
@@ -839,7 +977,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=3qZq60kOyaI",
-    "id": "3qZq60kOyaI"
+    "id": "3qZq60kOyaI",
+    "pubdate": "May 20, 2026"
   },
   {
     "title": "高さ50m以上の巨大な岩塊がご神体！【岡山】石畳神社ーSUKIMA TOURSー岡山県総社市秦",
@@ -851,7 +990,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=bz7HcS5HBCg",
-    "id": "bz7HcS5HBCg"
+    "id": "bz7HcS5HBCg",
+    "pubdate": "May 15, 2026"
   },
   {
     "title": "アフロ地蔵「ネットで話題のアフロ地蔵は「地蔵」ではありません！」",
@@ -862,7 +1002,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=bfOBmOhpsZY",
-    "id": "bfOBmOhpsZY"
+    "id": "bfOBmOhpsZY",
+    "pubdate": "May 14, 2026"
   },
   {
     "title": "空滝大不動尊「滝上に鎮座する不動明王はゆるキャラチックな愛らしいお姿でした！」",
@@ -874,7 +1015,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=kz-TgWOT1fQ",
-    "id": "kz-TgWOT1fQ"
+    "id": "kz-TgWOT1fQ",
+    "pubdate": "May 13, 2026"
   },
   {
     "title": "松代象山 地下壕「太平洋戦争末期、日本の政府中枢機能を長野の山の中に移転する計画があった！」",
@@ -885,7 +1027,8 @@ const VIDEOS = [
       "戦争遺構"
     ],
     "url": "https://www.youtube.com/watch?v=WN2PLzsB7ug",
-    "id": "WN2PLzsB7ug"
+    "id": "WN2PLzsB7ug",
+    "pubdate": "May 11, 2026"
   },
   {
     "title": "美しい柱状節理が織りなす壮大な眺め！そして地球の磁場反転の証明地でもある！【兵庫県】玄武洞　ーSUKIMA TOURSー兵庫県豊岡市赤石",
@@ -896,7 +1039,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=w9w5LHRHvdU",
-    "id": "w9w5LHRHvdU"
+    "id": "w9w5LHRHvdU",
+    "pubdate": "May 10, 2026"
   },
   {
     "title": "広兼邸「映画八つ墓村の田治見家は岡山の山の中にあった！」",
@@ -907,7 +1051,8 @@ const VIDEOS = [
       "小説・ロケ・アニメ"
     ],
     "url": "https://www.youtube.com/watch?v=dULxEc-tb14",
-    "id": "dULxEc-tb14"
+    "id": "dULxEc-tb14",
+    "pubdate": "Apr 23, 2026"
   },
   {
     "title": "安土城跡「たった3年で焼け落ちた幻の城！信長の夢のあと！」",
@@ -918,7 +1063,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=vB4jX4bKE-Y",
-    "id": "vB4jX4bKE-Y"
+    "id": "vB4jX4bKE-Y",
+    "pubdate": "Apr 22, 2026"
   },
   {
     "title": "阿佐海岸鉄道「世界初！鉄道とバスのハイブリッド！」",
@@ -929,7 +1075,8 @@ const VIDEOS = [
       "乗り物・交通"
     ],
     "url": "https://www.youtube.com/watch?v=0iPYjE4ZvNE",
-    "id": "0iPYjE4ZvNE"
+    "id": "0iPYjE4ZvNE",
+    "pubdate": "Apr 21, 2026"
   },
   {
     "title": "大津島「回天の島！人間魚雷の訓練基地が今も残る！」",
@@ -941,7 +1088,8 @@ const VIDEOS = [
       "戦争遺跡"
     ],
     "url": "https://www.youtube.com/watch?v=6RgwRFVd-1A",
-    "id": "6RgwRFVd-1A"
+    "id": "6RgwRFVd-1A",
+    "pubdate": "Apr 20, 2026"
   },
   {
     "title": "紫電改保存館「国内で唯一現存する紫電改がみられる！」",
@@ -952,7 +1100,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=IWeqhVL9Ijw",
-    "id": "IWeqhVL9Ijw"
+    "id": "IWeqhVL9Ijw",
+    "pubdate": "Apr 19, 2026"
   },
   {
     "title": "壁一面に13,000体のお地蔵様！真山の万体仏【秋田県】　ーSUKIMA TOURSー秋田県男鹿市北浦真山",
@@ -963,7 +1112,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=M-yC-eYr2To",
-    "id": "M-yC-eYr2To"
+    "id": "M-yC-eYr2To",
+    "pubdate": "Apr 16, 2026"
   },
   {
     "title": "第五福竜丸「水爆実験で被爆したマグロ漁船が東京夢の島に展示されています！」",
@@ -975,18 +1125,20 @@ const VIDEOS = [
       "戦争遺跡"
     ],
     "url": "https://www.youtube.com/watch?v=WnQJq4G05V8",
-    "id": "WnQJq4G05V8"
+    "id": "WnQJq4G05V8",
+    "pubdate": "Apr 15, 2026"
   },
   {
     "title": "猿橋「日本三奇橋のひとつ！橋脚がない橋が渓谷を渡る」",
     "pref": "山梨県",
-    "region": "関東",
+    "region": "中部",
     "type": "short",
     "tags": [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=55v44DhLYnM",
-    "id": "55v44DhLYnM"
+    "id": "55v44DhLYnM",
+    "pubdate": "Apr 14, 2026"
   },
   {
     "title": "頭塔「奈良にあった階段式ピラミッド！この謎の塔の正体はなんだ！」",
@@ -997,10 +1149,11 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=tBGURNAU_KI",
-    "id": "tBGURNAU_KI"
+    "id": "tBGURNAU_KI",
+    "pubdate": "Apr 13, 2026"
   },
   {
-    "title": "ハニべ巌窟院【SUKIMA TOURS】石川県小松市立明寺町",
+    "title": "ハニべ巌窟院【SUKIMA TOURS】石川県小松市立明寺町",
     "pref": "石川県",
     "region": "中部",
     "type": "long",
@@ -1008,7 +1161,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=5OIpHRBsNso",
-    "id": "5OIpHRBsNso"
+    "id": "5OIpHRBsNso",
+    "pubdate": "Apr 12, 2026"
   },
   {
     "title": "海上保安資料館横浜館「銃撃戦を繰り広げたのち自爆して沈没した北朝鮮の不審船が横浜に展示されていました！」",
@@ -1020,7 +1174,8 @@ const VIDEOS = [
       "戦争遺跡"
     ],
     "url": "https://www.youtube.com/watch?v=U1cfthgvwww",
-    "id": "U1cfthgvwww"
+    "id": "U1cfthgvwww",
+    "pubdate": "Apr 11, 2026"
   },
   {
     "title": "立山防空壕「太平洋戦争時に長崎県防空本部が置かれた場所。原爆投下後の救援救護や応急対応はここで指揮されました！」",
@@ -1031,7 +1186,8 @@ const VIDEOS = [
       "戦争遺構"
     ],
     "url": "https://www.youtube.com/watch?v=ZQqNt_LsLho",
-    "id": "ZQqNt_LsLho"
+    "id": "ZQqNt_LsLho",
+    "pubdate": "Apr 9, 2026"
   },
   {
     "title": "脇町「うだつが上がるのうだつって何？その答えはこの町にありました！」",
@@ -1042,10 +1198,11 @@ const VIDEOS = [
       "町歩き"
     ],
     "url": "https://www.youtube.com/watch?v=bVisWB3pzPw",
-    "id": "bVisWB3pzPw"
+    "id": "bVisWB3pzPw",
+    "pubdate": "Apr 8, 2026"
   },
   {
-    "title": "鼻ぐり塚「その数なんと７００万以上！牛の鼻輪が山となった供養塚！」",
+    "title": "鼻ぐり塚「その数なんと７００万以上！牛の鼻輪が山となった供養塚！」",
     "pref": "岡山県",
     "region": "中国",
     "type": "short",
@@ -1053,7 +1210,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=8A1NALuO8Cw",
-    "id": "8A1NALuO8Cw"
+    "id": "8A1NALuO8Cw",
+    "pubdate": "Apr 7, 2026"
   },
   {
     "title": "埋没鳥居「桜島の大噴火で埋まってしまった鳥居が現在まで残されて居ました！」",
@@ -1065,7 +1223,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=avbDQreVks0",
-    "id": "avbDQreVks0"
+    "id": "avbDQreVks0",
+    "pubdate": "Apr 6, 2026"
   },
   {
     "title": "旧日立航空機株式会社変電所「西の原爆ドーム、東の変電所」とも称される戦争遺跡！",
@@ -1077,7 +1236,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=rkMtrQf-oPI",
-    "id": "rkMtrQf-oPI"
+    "id": "rkMtrQf-oPI",
+    "pubdate": "Apr 5, 2026"
   },
   {
     "title": "峠古墳群【SUKIMA TOURS】岡山県総社市清音三因",
@@ -1089,7 +1249,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=cTYM_QTJDxU",
-    "id": "cTYM_QTJDxU"
+    "id": "cTYM_QTJDxU",
+    "pubdate": "Apr 2, 2026"
   },
   {
     "title": "階段国道「日本でココだけ！階段の国道があった！」",
@@ -1100,7 +1261,8 @@ const VIDEOS = [
       "乗り物・交通"
     ],
     "url": "https://www.youtube.com/watch?v=969m2DgTFvU",
-    "id": "969m2DgTFvU"
+    "id": "969m2DgTFvU",
+    "pubdate": "Apr 1, 2026"
   },
   {
     "title": "集合体恐怖症は注意！穴だらけの巨大岩壁！【高池の虫喰岩・和歌山県】　ーSUKIMA TOURSー和歌山県東牟婁郡古座川町",
@@ -1111,7 +1273,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=zCrNCrpcxsA",
-    "id": "zCrNCrpcxsA"
+    "id": "zCrNCrpcxsA",
+    "pubdate": "Mar 31, 2026"
   },
   {
     "title": "八九郎温泉「ビニールハウスの極上温泉が秋田にあった！」",
@@ -1122,7 +1285,8 @@ const VIDEOS = [
       "温泉・宿"
     ],
     "url": "https://www.youtube.com/watch?v=X1PBXCIM4o8",
-    "id": "X1PBXCIM4o8"
+    "id": "X1PBXCIM4o8",
+    "pubdate": "Mar 30, 2026"
   },
   {
     "title": "田倉牛神社「30万の牛の焼き物がご神体！」",
@@ -1133,7 +1297,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=sVKaV8D_gD4",
-    "id": "sVKaV8D_gD4"
+    "id": "sVKaV8D_gD4",
+    "pubdate": "Mar 28, 2026"
   },
   {
     "title": "一本足の家「一本足で立つ不思議な家が滋賀の高島市にありました！」",
@@ -1144,7 +1309,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=riQu8zbmgec",
-    "id": "riQu8zbmgec"
+    "id": "riQu8zbmgec",
+    "pubdate": "Mar 25, 2026"
   },
   {
     "title": "高池の虫喰岩「集合体恐怖症は行かないで！タフォニ好きは是非！」",
@@ -1155,7 +1321,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=n_ZVixCNy8Q",
-    "id": "n_ZVixCNy8Q"
+    "id": "n_ZVixCNy8Q",
+    "pubdate": "Mar 24, 2026"
   },
   {
     "title": "新開の森「織田信長の処刑場だった伝説が残る畑の中の小さな森！」",
@@ -1166,10 +1333,11 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=doTVA9fommM",
-    "id": "doTVA9fommM"
+    "id": "doTVA9fommM",
+    "pubdate": "Mar 23, 2026"
   },
   {
-    "title": "敦賀シンボルロード「宇宙戦艦ヤマトと銀河鉄道999のキャラクターが28体も並んでいる！」",
+    "title": "敦賀シンボルロード「宇宙戦艦ヤマトと銀河鉄道999のキャラクターが28体も並んでいる！」",
     "pref": "福井県",
     "region": "中部",
     "type": "short",
@@ -1177,7 +1345,8 @@ const VIDEOS = [
       "乗り物・交通"
     ],
     "url": "https://www.youtube.com/watch?v=3j7u3ug3JEg",
-    "id": "3j7u3ug3JEg"
+    "id": "3j7u3ug3JEg",
+    "pubdate": "Mar 22, 2026"
   },
   {
     "title": "ぶつぶつ川「日本一短い川はたったの13.5ｍ！」",
@@ -1188,7 +1357,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=xWpePW4RzO0",
-    "id": "xWpePW4RzO0"
+    "id": "xWpePW4RzO0",
+    "pubdate": "Mar 17, 2026"
   },
   {
     "title": "まるでピラミッドのような一号墳！そして巨大な石室と、棺に刻まれた謎の文字！【大谷･定古墳群・岡山県】SUKIMA TOURSー岡山県真庭市上中津井",
@@ -1199,7 +1369,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=QMk_wszzSLo",
-    "id": "QMk_wszzSLo"
+    "id": "QMk_wszzSLo",
+    "pubdate": "Mar 16, 2026"
   },
   {
     "title": "金田一耕助ミステリー遊歩道「ブロンズ像の驚愕の共通点とは⁉︎」",
@@ -1210,7 +1381,8 @@ const VIDEOS = [
       "町歩き"
     ],
     "url": "https://www.youtube.com/watch?v=3TsN27lvbyw",
-    "id": "3TsN27lvbyw"
+    "id": "3TsN27lvbyw",
+    "pubdate": "Mar 15, 2026"
   },
   {
     "title": "明日香の奇石群「飛鳥時代の謎多き石造物が多数点在している奈良の明日香村！」",
@@ -1221,7 +1393,8 @@ const VIDEOS = [
       "遺跡・遺構"
     ],
     "url": "https://www.youtube.com/watch?v=b5mprDjsddE",
-    "id": "b5mprDjsddE"
+    "id": "b5mprDjsddE",
+    "pubdate": "Mar 13, 2026"
   },
   {
     "title": "法隆寺「現存する世界最古の木造建築！」",
@@ -1232,7 +1405,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=LwGzHxpg1zA",
-    "id": "LwGzHxpg1zA"
+    "id": "LwGzHxpg1zA",
+    "pubdate": "Mar 12, 2026"
   },
   {
     "title": "学童看板「朽ち果てた学生の看板がなぜか人気者に！」",
@@ -1243,7 +1417,8 @@ const VIDEOS = [
       "町歩き"
     ],
     "url": "https://www.youtube.com/watch?v=GW7esL8DVVk",
-    "id": "GW7esL8DVVk"
+    "id": "GW7esL8DVVk",
+    "pubdate": "Mar 11, 2026"
   },
   {
     "title": "広兼邸「映画八つ墓村の田治見家は岡山の山の中にあった！」",
@@ -1254,7 +1429,8 @@ const VIDEOS = [
       "小説・ロケ・アニメ"
     ],
     "url": "https://www.youtube.com/watch?v=0WEKjdJboGU",
-    "id": "0WEKjdJboGU"
+    "id": "0WEKjdJboGU",
+    "pubdate": "Mar 8, 2026"
   },
   {
     "title": "現存１２天守「江戸時代から奇跡的に残る天守１２城をご覧あれ！」",
@@ -1265,10 +1441,11 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=4guT-sVwnMo",
-    "id": "4guT-sVwnMo"
+    "id": "4guT-sVwnMo",
+    "pubdate": "Mar 6, 2026"
   },
   {
-    "title": "尾去沢(おさりざわ)鉱山【SUKIMA TOURS】秋田県鹿角市尾去沢",
+    "title": "尾去沢(おさりざわ)鉱山【SUKIMA TOURS】秋田県鹿角市尾去沢",
     "pref": "秋田県",
     "region": "東北",
     "type": "long",
@@ -1276,7 +1453,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=nH7Ura1PoV4",
-    "id": "nH7Ura1PoV4"
+    "id": "nH7Ura1PoV4",
+    "pubdate": "Mar 5, 2026"
   },
   {
     "title": "友ヶ島「和歌山県に浮かぶ無人島。そこは、現実にある「ラピュタ」の世界！」",
@@ -1287,7 +1465,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=NU-pLBC8US0",
-    "id": "NU-pLBC8US0"
+    "id": "NU-pLBC8US0",
+    "pubdate": "Mar 4, 2026"
   },
   {
     "title": "屯鶴峯「奈良に広がる白い異世界！謎の絶景どんづるぼうとは？」",
@@ -1298,7 +1477,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=aeteskSbEGE",
-    "id": "aeteskSbEGE"
+    "id": "aeteskSbEGE",
+    "pubdate": "Mar 3, 2026"
   },
   {
     "title": "岐阜大仏「奈良、鎌倉と並ぶ日本三大大仏！それが岐阜大仏なのだ！」",
@@ -1309,7 +1489,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=J0PFJimwKDg",
-    "id": "J0PFJimwKDg"
+    "id": "J0PFJimwKDg",
+    "pubdate": "Mar 2, 2026"
   },
   {
     "title": "大久野島「地図から消された毒ガスの島！」",
@@ -1321,7 +1502,8 @@ const VIDEOS = [
       "戦争遺跡"
     ],
     "url": "https://www.youtube.com/watch?v=bGXEGQbxRH0",
-    "id": "bGXEGQbxRH0"
+    "id": "bGXEGQbxRH0",
+    "pubdate": "Mar 1, 2026"
   },
   {
     "title": "石清尾山古墳群【SUKIMA TOURS】香川県高松市",
@@ -1332,7 +1514,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=Nj1PxojERYc",
-    "id": "Nj1PxojERYc"
+    "id": "Nj1PxojERYc",
+    "pubdate": "Feb 27, 2026"
   },
   {
     "title": "鳴り石の浜「波に合わせてカラコロと音が鳴る珍しい海岸！」",
@@ -1343,7 +1526,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=HA2R-CJJgEc",
-    "id": "HA2R-CJJgEc"
+    "id": "HA2R-CJJgEc",
+    "pubdate": "Feb 26, 2026"
   },
   {
     "title": "黄泉比良坂「伊弉諾と伊奘冉、悲劇の場所が島根の松江にあった！」",
@@ -1354,7 +1538,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=3cP4G2bvW6c",
-    "id": "3cP4G2bvW6c"
+    "id": "3cP4G2bvW6c",
+    "pubdate": "Feb 25, 2026"
   },
   {
     "title": "安土城跡「たった3年で焼け落ちた幻の城！信長の夢のあと！」",
@@ -1365,7 +1550,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=HpJmZi2WtBU",
-    "id": "HpJmZi2WtBU"
+    "id": "HpJmZi2WtBU",
+    "pubdate": "Feb 24, 2026"
   },
   {
     "title": "国道駅「９０年以上も前から変わらぬ姿！昭和ノスタルジックな駅が横浜にあった！」",
@@ -1377,7 +1563,8 @@ const VIDEOS = [
       "乗り物・交通"
     ],
     "url": "https://www.youtube.com/watch?v=x_rToH9Rg9c",
-    "id": "x_rToH9Rg9c"
+    "id": "x_rToH9Rg9c",
+    "pubdate": "Feb 23, 2026"
   },
   {
     "title": "舞洲工場「超芸術的な建物はゴミ焼却場だった！」",
@@ -1388,7 +1575,8 @@ const VIDEOS = [
       "公共施設"
     ],
     "url": "https://www.youtube.com/watch?v=KnhRM81dZCU",
-    "id": "KnhRM81dZCU"
+    "id": "KnhRM81dZCU",
+    "pubdate": "Feb 22, 2026"
   },
   {
     "title": "天保山渡船場「水の都･大阪には無料の渡し船が８つもあるんです！」",
@@ -1399,7 +1587,8 @@ const VIDEOS = [
       "乗り物・交通"
     ],
     "url": "https://www.youtube.com/watch?v=vEgvo-75244",
-    "id": "vEgvo-75244"
+    "id": "vEgvo-75244",
+    "pubdate": "Feb 20, 2026"
   },
   {
     "title": "カーレーター「日本一乗り心地のワルい乗り物！」",
@@ -1410,7 +1599,8 @@ const VIDEOS = [
       "公園・テーマパーク"
     ],
     "url": "https://www.youtube.com/watch?v=WSNxHTtYT30",
-    "id": "WSNxHTtYT30"
+    "id": "WSNxHTtYT30",
+    "pubdate": "Feb 19, 2026"
   },
   {
     "title": "一度乗れば二度と戻れない特攻兵器「回天」の訓練基地跡！【大津島(回天の島)・山口県】　ーSUKIMA TOURSー山口県周南市",
@@ -1422,7 +1612,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=na7d24fHVS8",
-    "id": "na7d24fHVS8"
+    "id": "na7d24fHVS8",
+    "pubdate": "Feb 18, 2026"
   },
   {
     "title": "安閑神社「文字なのか絵なのか、謎の紋様が描かれた石が滋賀にあった！」",
@@ -1433,7 +1624,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=hn8cS2_X6lE",
-    "id": "hn8cS2_X6lE"
+    "id": "hn8cS2_X6lE",
+    "pubdate": "Feb 16, 2026"
   },
   {
     "title": "桑の川の鳥居「まさに天然の鳥居！奇跡の眺めがここに！」",
@@ -1445,7 +1637,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=cAHj2BkL10c",
-    "id": "cAHj2BkL10c"
+    "id": "cAHj2BkL10c",
+    "pubdate": "Feb 15, 2026"
   },
   {
     "title": "大津島「回天の島！人間魚雷の訓練基地が今も残る！」",
@@ -1457,7 +1650,8 @@ const VIDEOS = [
       "戦争遺跡"
     ],
     "url": "https://www.youtube.com/watch?v=1pw52oru5mQ",
-    "id": "1pw52oru5mQ"
+    "id": "1pw52oru5mQ",
+    "pubdate": "Feb 13, 2026"
   },
   {
     "title": "鎌八幡宮「ご神木に無数の鎌が刺さる！」",
@@ -1468,7 +1662,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=0Z8ojx8bB4E",
-    "id": "0Z8ojx8bB4E"
+    "id": "0Z8ojx8bB4E",
+    "pubdate": "Feb 11, 2026"
   },
   {
     "title": "尾去沢鉱山「もう直ぐ一般公開終了！日本最大の鉱山跡！」",
@@ -1479,7 +1674,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=raq_9fWH9lc",
-    "id": "raq_9fWH9lc"
+    "id": "raq_9fWH9lc",
+    "pubdate": "Feb 10, 2026"
   },
   {
     "title": "姫路モノレール「たった８年で廃止となった幻の路線！でもその名残は今でも街に残っているのです！」",
@@ -1490,7 +1686,8 @@ const VIDEOS = [
       "乗り物・交通"
     ],
     "url": "https://www.youtube.com/watch?v=fB9xF_wgbiE",
-    "id": "fB9xF_wgbiE"
+    "id": "fB9xF_wgbiE",
+    "pubdate": "Feb 8, 2026"
   },
   {
     "title": "牛久大仏「その高さは世界一！ギネスも認めた大仏さま！」",
@@ -1501,7 +1698,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=XW2aSPLCivQ",
-    "id": "XW2aSPLCivQ"
+    "id": "XW2aSPLCivQ",
+    "pubdate": "Feb 6, 2026"
   },
   {
     "title": "小泉稲荷神社「200基以上の鳥居がずらりと並ぶ神社！」",
@@ -1512,7 +1710,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=MbuCf5Ue-IY",
-    "id": "MbuCf5Ue-IY"
+    "id": "MbuCf5Ue-IY",
+    "pubdate": "Feb 4, 2026"
   },
   {
     "title": "シ多曲屈「日本最古の道路標識！」",
@@ -1523,7 +1722,8 @@ const VIDEOS = [
       "乗り物・交通"
     ],
     "url": "https://www.youtube.com/watch?v=t39jOeDsGX8",
-    "id": "t39jOeDsGX8"
+    "id": "t39jOeDsGX8",
+    "pubdate": "Feb 3, 2026"
   },
   {
     "title": "紫電改展示館「国内で唯一現存する紫電改がみられる！」",
@@ -1534,7 +1734,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=7lL66nTcDD4",
-    "id": "7lL66nTcDD4"
+    "id": "7lL66nTcDD4",
+    "pubdate": "Jan 31, 2026"
   },
   {
     "title": "阿佐海岸鉄道「世界初！鉄道とバスのハイブリッド！」",
@@ -1545,7 +1746,8 @@ const VIDEOS = [
       "乗り物・交通"
     ],
     "url": "https://www.youtube.com/watch?v=WQtqG7nnKQI",
-    "id": "WQtqG7nnKQI"
+    "id": "WQtqG7nnKQI",
+    "pubdate": "Jan 30, 2026"
   },
   {
     "title": "板東俘虜収容所【SUKIMA TOURS】徳島県鳴門市大麻町",
@@ -1556,7 +1758,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=6UcdcHhAgmo",
-    "id": "6UcdcHhAgmo"
+    "id": "6UcdcHhAgmo",
+    "pubdate": "Jan 30, 2026"
   },
   {
     "title": "蓬莱橋「世界一長い木造の橋は静岡にあり！」",
@@ -1567,7 +1770,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=XzkwbGq2TBI",
-    "id": "XzkwbGq2TBI"
+    "id": "XzkwbGq2TBI",
+    "pubdate": "Jan 28, 2026"
   },
   {
     "title": "人魚を食べ800年生きた女性が最後に辿り着いた町！【小浜西組・福井県】SUKIMA TOURSー福井県小浜市",
@@ -1578,7 +1782,8 @@ const VIDEOS = [
       "町歩き"
     ],
     "url": "https://www.youtube.com/watch?v=UCnditPbatE",
-    "id": "UCnditPbatE"
+    "id": "UCnditPbatE",
+    "pubdate": "Jan 27, 2026"
   },
   {
     "title": "西生寺「雷獣のミイラ！日本最古の即身仏！」",
@@ -1589,7 +1794,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=PqF20vR0J9A",
-    "id": "PqF20vR0J9A"
+    "id": "PqF20vR0J9A",
+    "pubdate": "Jan 26, 2026"
   },
   {
     "title": "志賀の大仏「滋賀の大津に優しい顔の大仏様がいた！」",
@@ -1600,7 +1806,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=EXMjKiCTRns",
-    "id": "EXMjKiCTRns"
+    "id": "EXMjKiCTRns",
+    "pubdate": "Jan 25, 2026"
   },
   {
     "title": "石の島に残る圧巻の採石場跡！【北木島・岡山県】SUKIMA TOURSー岡山県笠岡市北木島町",
@@ -1612,7 +1819,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=jVNaRLWXPVU",
-    "id": "jVNaRLWXPVU"
+    "id": "jVNaRLWXPVU",
+    "pubdate": "Jan 21, 2026"
   },
   {
     "title": "別府タワー「タワー６兄弟の三男坊は別府のシンボルなのです！」",
@@ -1623,7 +1831,8 @@ const VIDEOS = [
       "公園・テーマパーク"
     ],
     "url": "https://www.youtube.com/watch?v=6oStKaFg0pY",
-    "id": "6oStKaFg0pY"
+    "id": "6oStKaFg0pY",
+    "pubdate": "Jan 20, 2026"
   },
   {
     "title": "案山子公園「畑の中に巨大聖徳太子が！」",
@@ -1634,7 +1843,8 @@ const VIDEOS = [
       "公園・テーマパーク"
     ],
     "url": "https://www.youtube.com/watch?v=R8J03X71PoQ",
-    "id": "R8J03X71PoQ"
+    "id": "R8J03X71PoQ",
+    "pubdate": "Jan 18, 2026"
   },
   {
     "title": "鷺湯公園「別名ウメボシ公園！そこには巨大な梅干しがあるのです！」",
@@ -1645,10 +1855,11 @@ const VIDEOS = [
       "公園・テーマパーク"
     ],
     "url": "https://www.youtube.com/watch?v=TH818QLD0rk",
-    "id": "TH818QLD0rk"
+    "id": "TH818QLD0rk",
+    "pubdate": "Jan 13, 2026"
   },
   {
-    "title": "都電おもいで広場「懐かしい都電の車両が無料展示されているよ」",
+    "title": "都電おもいで広場「懐かしい都電の車両が無料展示されているよ」",
     "pref": "東京都",
     "region": "関東",
     "type": "short",
@@ -1656,7 +1867,8 @@ const VIDEOS = [
       "公園・テーマパーク"
     ],
     "url": "https://www.youtube.com/watch?v=SJB8w15qins",
-    "id": "SJB8w15qins"
+    "id": "SJB8w15qins",
+    "pubdate": "Jan 12, 2026"
   },
   {
     "title": "木造駅「遮光器土偶のシャコちゃんが駅舎になった！」",
@@ -1667,7 +1879,8 @@ const VIDEOS = [
       "廃墟・廃線"
     ],
     "url": "https://www.youtube.com/watch?v=l6Lmjz9D2R0",
-    "id": "l6Lmjz9D2R0"
+    "id": "l6Lmjz9D2R0",
+    "pubdate": "Jan 11, 2026"
   },
   {
     "title": "高屋神社「天空の鳥居！瀬戸内の海と浜辺を見下ろす絶景」",
@@ -1679,7 +1892,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=Txg_-9oyd-E",
-    "id": "Txg_-9oyd-E"
+    "id": "Txg_-9oyd-E",
+    "pubdate": "Jan 9, 2026"
   },
   {
     "title": "現存１２天守「江戸時代から奇跡的に残る天守１２城をご覧あれ！」",
@@ -1690,7 +1904,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=QNqLa-IBh1Q",
-    "id": "QNqLa-IBh1Q"
+    "id": "QNqLa-IBh1Q",
+    "pubdate": "Jan 7, 2026"
   },
   {
     "title": "亀甲駅「亀の姿をした駅舎が岡山にあったのだ！」",
@@ -1701,7 +1916,8 @@ const VIDEOS = [
       "廃墟・廃線"
     ],
     "url": "https://www.youtube.com/watch?v=HcjwnwdbgsY",
-    "id": "HcjwnwdbgsY"
+    "id": "HcjwnwdbgsY",
+    "pubdate": "Jan 5, 2026"
   },
   {
     "title": "白川郷「合掌作りが有名な世界遺産にも登録された集落」",
@@ -1712,7 +1928,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=CnkLtgyyN54",
-    "id": "CnkLtgyyN54"
+    "id": "CnkLtgyyN54",
+    "pubdate": "Jan 4, 2026"
   },
   {
     "title": "上野大仏「顔だけの大仏が上野の森にあった！」",
@@ -1723,7 +1940,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=KG72ul-_iRk",
-    "id": "KG72ul-_iRk"
+    "id": "KG72ul-_iRk",
+    "pubdate": "Jan 2, 2026"
   },
   {
     "title": "塩津山墳墓群【SUKIMA TOURS】島根県安来市久白町",
@@ -1734,7 +1952,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=qoAX0SNOwj8",
-    "id": "qoAX0SNOwj8"
+    "id": "qoAX0SNOwj8",
+    "pubdate": "Jan 2, 2026"
   },
   {
     "title": "スターフェリー「香港島と九龍半島を結ぶ120年以上の歴史があるフェリー！」",
@@ -1745,7 +1964,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=P2QsccCY-XI",
-    "id": "P2QsccCY-XI"
+    "id": "P2QsccCY-XI",
+    "pubdate": "Jan 1, 2026"
   },
   {
     "title": "聖天宮「埼玉にある台湾！本格的台湾寺院に行こう！」",
@@ -1756,10 +1976,11 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=sfUSQJr-SOA",
-    "id": "sfUSQJr-SOA"
+    "id": "sfUSQJr-SOA",
+    "pubdate": "Dec 31, 2025"
   },
   {
-    "title": "ピクミンテラス「宮島SAにあるピクミンテラス！もう少しで終了ですって」",
+    "title": "ピクミンテラス「宮島SAにあるピクミンテラス！もう少しで終了ですって」",
     "pref": "広島県",
     "region": "中国",
     "type": "short",
@@ -1767,7 +1988,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=wixwouJiDFg",
-    "id": "wixwouJiDFg"
+    "id": "wixwouJiDFg",
+    "pubdate": "Dec 30, 2025"
   },
   {
     "title": "石鳥居「1000年前から立っている鳥居が山形にあった！しかも二つも！」",
@@ -1778,7 +2000,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=EmD4XklwHtw",
-    "id": "EmD4XklwHtw"
+    "id": "EmD4XklwHtw",
+    "pubdate": "Dec 28, 2025"
   },
   {
     "title": "承教寺「狛犬ならぬ狛件(くだん)がいるお寺が港区にあった！」",
@@ -1789,7 +2012,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=i6P2bNFBcrY",
-    "id": "i6P2bNFBcrY"
+    "id": "i6P2bNFBcrY",
+    "pubdate": "Dec 27, 2025"
   },
   {
     "title": "銭形砂絵「この砂絵を見ると一生お金に困らない⁉︎」",
@@ -1800,18 +2024,20 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=w13Kw_4OlUI",
-    "id": "w13Kw_4OlUI"
+    "id": "w13Kw_4OlUI",
+    "pubdate": "Dec 26, 2025"
   },
   {
     "title": "首大仏「首だけの大仏様が和歌山にあるよ！」",
     "pref": "和歌山県",
-    "region": "中国",
+    "region": "関西",
     "type": "short",
     "tags": [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=3rdubV5XeaI",
-    "id": "3rdubV5XeaI"
+    "id": "3rdubV5XeaI",
+    "pubdate": "Dec 25, 2025"
   },
   {
     "title": "保呂の虫喰岩【SUKIMA TOURS】和歌山県西牟婁郡白浜町",
@@ -1822,7 +2048,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=UrtB6x8e5KU",
-    "id": "UrtB6x8e5KU"
+    "id": "UrtB6x8e5KU",
+    "pubdate": "Dec 12, 2025"
   },
   {
     "title": "高鉢山風穴【SUKIMA TOURS】香川県綾歌郡綾川町西分",
@@ -1833,7 +2060,8 @@ const VIDEOS = [
       "遺跡・遺構"
     ],
     "url": "https://www.youtube.com/watch?v=TUj_w3vA-aI",
-    "id": "TUj_w3vA-aI"
+    "id": "TUj_w3vA-aI",
+    "pubdate": "Dec 10, 2025"
   },
   {
     "title": "磐境の遺跡【SUKIMA TOURS】岡山県岡山市北区京山",
@@ -1844,7 +2072,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=Zy-_M4arHhE",
-    "id": "Zy-_M4arHhE"
+    "id": "Zy-_M4arHhE",
+    "pubdate": "Dec 5, 2025"
   },
   {
     "title": "上塩冶築山古墳／今市大念寺古墳【SUKIMA TOURS】島根県出雲市",
@@ -1856,7 +2085,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=Mem7zAlI30U",
-    "id": "Mem7zAlI30U"
+    "id": "Mem7zAlI30U",
+    "pubdate": "Dec 1, 2025"
   },
   {
     "title": "安芸の小京都と呼ばれる美しい町並み！【竹原・広島県】SUKIMA TOURSー広島県竹原市",
@@ -1867,10 +2097,11 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=jmDRK8LH6qs",
-    "id": "jmDRK8LH6qs"
+    "id": "jmDRK8LH6qs",
+    "pubdate": "Nov 26, 2025"
   },
   {
-    "title": "シャレコーベミュージアム「世界でココだけ！ドクロの博物館！」",
+    "title": "シャレコーベミュージアム「世界でココだけ！ドクロの博物館！」",
     "pref": "兵庫県",
     "region": "関西",
     "type": "short",
@@ -1878,7 +2109,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=Bi6goiU-waU",
-    "id": "Bi6goiU-waU"
+    "id": "Bi6goiU-waU",
+    "pubdate": "Nov 17, 2025"
   },
   {
     "title": "佐柳島「瀬戸内海に浮かぶネコの島！」",
@@ -1889,10 +2121,11 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=9DsjdnbPPwg",
-    "id": "9DsjdnbPPwg"
+    "id": "9DsjdnbPPwg",
+    "pubdate": "Nov 16, 2025"
   },
   {
-    "title": "関ヶ原ウォーランド「２００を超えるコンクリート像で関ヶ原の合戦を充実に再現！」",
+    "title": "関ヶ原ウォーランド「２００を超えるコンクリート像で関ヶ原の合戦を充実に再現！」",
     "pref": "岐阜県",
     "region": "中部",
     "type": "short",
@@ -1900,7 +2133,8 @@ const VIDEOS = [
       "公園・テーマパーク"
     ],
     "url": "https://www.youtube.com/watch?v=WXv-gooBghM",
-    "id": "WXv-gooBghM"
+    "id": "WXv-gooBghM",
+    "pubdate": "Nov 8, 2025"
   },
   {
     "title": "常昌院「木製の兵隊さんが２００体以上！その謎に迫る！」",
@@ -1911,7 +2145,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=rlAC3sdzAuQ",
-    "id": "rlAC3sdzAuQ"
+    "id": "rlAC3sdzAuQ",
+    "pubdate": "Nov 5, 2025"
   },
   {
     "title": "阪堺電車「大阪を走るチンチン電車！乗ってみた！」",
@@ -1922,7 +2157,8 @@ const VIDEOS = [
       "町歩き"
     ],
     "url": "https://www.youtube.com/watch?v=YfUR62yyyjw",
-    "id": "YfUR62yyyjw"
+    "id": "YfUR62yyyjw",
+    "pubdate": "Nov 4, 2025"
   },
   {
     "title": "福崎町「町のいたる所に妖怪が潜んでいるという妖怪だらけの町が兵庫県にありました！」",
@@ -1933,7 +2169,8 @@ const VIDEOS = [
       "町歩き"
     ],
     "url": "https://www.youtube.com/watch?v=LbRE44QI3y4",
-    "id": "LbRE44QI3y4"
+    "id": "LbRE44QI3y4",
+    "pubdate": "Oct 31, 2025"
   },
   {
     "title": "八角トンネル「映えると人気の廃線跡のトンネルだ！」",
@@ -1945,7 +2182,8 @@ const VIDEOS = [
       "廃墟・廃線"
     ],
     "url": "https://www.youtube.com/watch?v=xhON9wOo3YU",
-    "id": "xhON9wOo3YU"
+    "id": "xhON9wOo3YU",
+    "pubdate": "Oct 30, 2025"
   },
   {
     "title": "吉見百穴「山の斜面に無数の穴！これは小人の住まいか！」",
@@ -1956,7 +2194,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=83jT4z_GNAo",
-    "id": "83jT4z_GNAo"
+    "id": "83jT4z_GNAo",
+    "pubdate": "Oct 29, 2025"
   },
   {
     "title": "土塔「大阪にも階段ピラミッドがあった！」",
@@ -1967,7 +2206,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=g7TPx8XtU-g",
-    "id": "g7TPx8XtU-g"
+    "id": "g7TPx8XtU-g",
+    "pubdate": "Oct 28, 2025"
   },
   {
     "title": "阿波の土柱「雨と土が創り出した自然の芸術！世界三大土柱の一つ！」",
@@ -1978,7 +2218,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=TDo5o6eZlGg",
-    "id": "TDo5o6eZlGg"
+    "id": "TDo5o6eZlGg",
+    "pubdate": "Oct 27, 2025"
   },
   {
     "title": "五郎山古墳【SUKIMA TOURS】福岡県筑紫野市原田",
@@ -1989,7 +2230,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=gF7MtvOd3yo",
-    "id": "gF7MtvOd3yo"
+    "id": "gF7MtvOd3yo",
+    "pubdate": "Oct 27, 2025"
   },
   {
     "title": "銅閣寺「金閣寺銀閣寺があるなら当然次は銅閣寺！」",
@@ -2000,7 +2242,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=e-JaiTx39qs",
-    "id": "e-JaiTx39qs"
+    "id": "e-JaiTx39qs",
+    "pubdate": "Oct 25, 2025"
   },
   {
     "title": "盛岡天満宮「なんだこの狛犬は！ヘンテコ狛犬発見！」",
@@ -2011,7 +2254,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=Du9TYUfm5mE",
-    "id": "Du9TYUfm5mE"
+    "id": "Du9TYUfm5mE",
+    "pubdate": "Oct 25, 2025"
   },
   {
     "title": "熊山遺跡「岡山にもあった⁉︎階段ピラミッド！」",
@@ -2022,7 +2266,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=cwHPgnchuII",
-    "id": "cwHPgnchuII"
+    "id": "cwHPgnchuII",
+    "pubdate": "Oct 23, 2025"
   },
   {
     "title": "旧志免鉱業所竪坑櫓【SUKIMA TOURS】福岡県糟屋郡志免町",
@@ -2033,7 +2278,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=X-8QCTr_BNk",
-    "id": "X-8QCTr_BNk"
+    "id": "X-8QCTr_BNk",
+    "pubdate": "Oct 22, 2025"
   },
   {
     "title": "キリストの墓「日本にキリストの墓があった⁉️」",
@@ -2044,7 +2290,8 @@ const VIDEOS = [
       "遺跡・遺構"
     ],
     "url": "https://www.youtube.com/watch?v=JV2Jiu18_tU",
-    "id": "JV2Jiu18_tU"
+    "id": "JV2Jiu18_tU",
+    "pubdate": "Oct 21, 2025"
   },
   {
     "title": "難波八阪神社「難波に巨大な獅子頭があるのだ！」",
@@ -2055,10 +2302,11 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=OhoiBrDGq1I",
-    "id": "OhoiBrDGq1I"
+    "id": "OhoiBrDGq1I",
+    "pubdate": "Oct 20, 2025"
   },
   {
-    "title": "水木しげるロード「妖怪たちが１７８体も！」",
+    "title": "水木しげるロード「妖怪たちが１７８体も！」",
     "pref": "鳥取県",
     "region": "中国",
     "type": "short",
@@ -2066,7 +2314,8 @@ const VIDEOS = [
       "町歩き"
     ],
     "url": "https://www.youtube.com/watch?v=Sr39YUcKxI0",
-    "id": "Sr39YUcKxI0"
+    "id": "Sr39YUcKxI0",
+    "pubdate": "Oct 19, 2025"
   },
   {
     "title": "三徳山三佛寺投入堂！「日本一見に行くのが危険な国宝！」",
@@ -2077,18 +2326,20 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=lHc-AYhQlIw",
-    "id": "lHc-AYhQlIw"
+    "id": "lHc-AYhQlIw",
+    "pubdate": "Oct 18, 2025"
   },
   {
     "title": "恋山形駅「恋愛成就のピンク駅！」",
     "pref": "山形県",
-    "region": "中国",
+    "region": "東北",
     "type": "short",
     "tags": [
       "廃墟・廃線"
     ],
     "url": "https://www.youtube.com/watch?v=Hf6YxOp-Eoo",
-    "id": "Hf6YxOp-Eoo"
+    "id": "Hf6YxOp-Eoo",
+    "pubdate": "Oct 17, 2025"
   },
   {
     "title": "大岩神社「堂本印象デザインの鳥居がある！」",
@@ -2100,7 +2351,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=xOMJkbDRFyM",
-    "id": "xOMJkbDRFyM"
+    "id": "xOMJkbDRFyM",
+    "pubdate": "Oct 16, 2025"
   },
   {
     "title": "白蛇山岩陰遺跡【SUKIMA TOURS】佐賀県伊万里市",
@@ -2112,7 +2364,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=-AIwR2imtPw",
-    "id": "-AIwR2imtPw"
+    "id": "-AIwR2imtPw",
+    "pubdate": "Oct 16, 2025"
   },
   {
     "title": "安治川トンネル　「大阪にある日本初の沈埋トンネル！」",
@@ -2123,7 +2376,8 @@ const VIDEOS = [
       "廃墟・廃線"
     ],
     "url": "https://www.youtube.com/watch?v=YXEHT8K3mQc",
-    "id": "YXEHT8K3mQc"
+    "id": "YXEHT8K3mQc",
+    "pubdate": "Oct 15, 2025"
   },
   {
     "title": "生駒ケーブル「日本一古いケーブルカー！」",
@@ -2134,7 +2388,8 @@ const VIDEOS = [
       "乗り物・交通"
     ],
     "url": "https://www.youtube.com/watch?v=5OmO3oLZs2c",
-    "id": "5OmO3oLZs2c"
+    "id": "5OmO3oLZs2c",
+    "pubdate": "Oct 14, 2025"
   },
   {
     "title": "筑後川昇開橋【SUKIMA TOURS】福岡県大川市向島/佐賀県佐賀市諸富町",
@@ -2145,7 +2400,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=F5kYj_2ZUzU",
-    "id": "F5kYj_2ZUzU"
+    "id": "F5kYj_2ZUzU",
+    "pubdate": "Oct 14, 2025"
   },
   {
     "title": "ラバーダック！",
@@ -2156,7 +2412,8 @@ const VIDEOS = [
       "町歩き"
     ],
     "url": "https://www.youtube.com/watch?v=gto4pBt0SJc",
-    "id": "gto4pBt0SJc"
+    "id": "gto4pBt0SJc",
+    "pubdate": "Oct 11, 2025"
   },
   {
     "title": "しってんさん【SUKIMA TOURS】佐賀県佐賀市大和町",
@@ -2167,7 +2424,8 @@ const VIDEOS = [
       "遺跡・遺構"
     ],
     "url": "https://www.youtube.com/watch?v=AAAM-1xUe34",
-    "id": "AAAM-1xUe34"
+    "id": "AAAM-1xUe34",
+    "pubdate": "Oct 9, 2025"
   },
   {
     "title": "仁淀ブルー！高知の仁淀川",
@@ -2178,7 +2436,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=SIW0qALduvw",
-    "id": "SIW0qALduvw"
+    "id": "SIW0qALduvw",
+    "pubdate": "Oct 8, 2025"
   },
   {
     "title": "麦わらの一味！熊本に集結！",
@@ -2189,7 +2448,8 @@ const VIDEOS = [
       "小説・ロケ・アニメ"
     ],
     "url": "https://www.youtube.com/watch?v=JpKuE7opkA0",
-    "id": "JpKuE7opkA0"
+    "id": "JpKuE7opkA0",
+    "pubdate": "Oct 7, 2025"
   },
   {
     "title": "カッパの造り酒屋さん「松浦一酒造」",
@@ -2200,7 +2460,8 @@ const VIDEOS = [
       "町歩き"
     ],
     "url": "https://www.youtube.com/watch?v=CJjcty1tldE",
-    "id": "CJjcty1tldE"
+    "id": "CJjcty1tldE",
+    "pubdate": "Oct 5, 2025"
   },
   {
     "title": "ロズウェル・ＵＦＯ博物館",
@@ -2211,7 +2472,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=zrtO9nlVp0k",
-    "id": "zrtO9nlVp0k"
+    "id": "zrtO9nlVp0k",
+    "pubdate": "Oct 3, 2025"
   },
   {
     "title": "総天然色！弘法大師像",
@@ -2222,7 +2484,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=V1Yf0bdZBYM",
-    "id": "V1Yf0bdZBYM"
+    "id": "V1Yf0bdZBYM",
+    "pubdate": "Oct 2, 2025"
   },
   {
     "title": "大室古墳群【SUKIMA TOURS】長野県長野市松代町",
@@ -2233,7 +2496,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=JZ2AlzvvMdk",
-    "id": "JZ2AlzvvMdk"
+    "id": "JZ2AlzvvMdk",
+    "pubdate": "Oct 2, 2025"
   },
   {
     "title": "小金塚古墳",
@@ -2244,7 +2508,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=iCauJGV4bQo",
-    "id": "iCauJGV4bQo"
+    "id": "iCauJGV4bQo",
+    "pubdate": "Oct 1, 2025"
   },
   {
     "title": "三瓶温泉「亀の湯」",
@@ -2255,7 +2520,8 @@ const VIDEOS = [
       "温泉・宿"
     ],
     "url": "https://www.youtube.com/watch?v=VSmBKgvzK3c",
-    "id": "VSmBKgvzK3c"
+    "id": "VSmBKgvzK3c",
+    "pubdate": "Oct 1, 2025"
   },
   {
     "title": "有福大仏",
@@ -2266,7 +2532,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=EOjsZGmIu3Q",
-    "id": "EOjsZGmIu3Q"
+    "id": "EOjsZGmIu3Q",
+    "pubdate": "Oct 1, 2025"
   },
   {
     "title": "千葉都市モノレール",
@@ -2277,7 +2544,8 @@ const VIDEOS = [
       "乗り物・交通"
     ],
     "url": "https://www.youtube.com/watch?v=OR1J2l0cWKc",
-    "id": "OR1J2l0cWKc"
+    "id": "OR1J2l0cWKc",
+    "pubdate": "Sep 29, 2025"
   },
   {
     "title": "金田一耕助ミステリー遊歩道",
@@ -2289,7 +2557,8 @@ const VIDEOS = [
       "小説・ロケ・アニメ"
     ],
     "url": "https://www.youtube.com/watch?v=al1-qz3LxJ4",
-    "id": "al1-qz3LxJ4"
+    "id": "al1-qz3LxJ4",
+    "pubdate": "Sep 29, 2025"
   },
   {
     "title": "鳥取の名湯「三朝温泉」！",
@@ -2300,7 +2569,8 @@ const VIDEOS = [
       "温泉・宿"
     ],
     "url": "https://www.youtube.com/watch?v=Znzw_50UQ-I",
-    "id": "Znzw_50UQ-I"
+    "id": "Znzw_50UQ-I",
+    "pubdate": "Sep 29, 2025"
   },
   {
     "title": "豊稔池堰堤【SUKIMA TOURS】香川県観音寺市大野原町",
@@ -2311,7 +2581,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=hTJqqHlZ5Kc",
-    "id": "hTJqqHlZ5Kc"
+    "id": "hTJqqHlZ5Kc",
+    "pubdate": "Sep 27, 2025"
   },
   {
     "title": "蓬莱橋【SUKIMA TOURS】静岡県島田市南",
@@ -2322,7 +2593,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=YLsI11taMdk",
-    "id": "YLsI11taMdk"
+    "id": "YLsI11taMdk",
+    "pubdate": "Sep 11, 2025"
   },
   {
     "title": "箭田大塚(やたおおつか)古墳【SUKIMA TOURS】岡山県倉敷市真備町箭田",
@@ -2333,7 +2605,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=OoBokJOGdxM",
-    "id": "OoBokJOGdxM"
+    "id": "OoBokJOGdxM",
+    "pubdate": "Sep 3, 2025"
   },
   {
     "title": "八乙女の水路橋【SUKIMA TOURS】長野県上伊那郡箕輪町",
@@ -2344,7 +2617,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=aIT9zGEyZe4",
-    "id": "aIT9zGEyZe4"
+    "id": "aIT9zGEyZe4",
+    "pubdate": "Aug 27, 2025"
   },
   {
     "title": "福光石の石切り場【SUKIMA TOURS】島根県大田市温泉津町",
@@ -2355,7 +2629,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=vZY9yl1mlEY",
-    "id": "vZY9yl1mlEY"
+    "id": "vZY9yl1mlEY",
+    "pubdate": "Aug 21, 2025"
   },
   {
     "title": "赤山地下壕【SUKIMA TOURS】千葉県館山市宮城",
@@ -2366,7 +2641,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=PhQ8uvsvDds",
-    "id": "PhQ8uvsvDds"
+    "id": "PhQ8uvsvDds",
+    "pubdate": "Aug 19, 2025"
   },
   {
     "title": "松代象山地下壕【SUKIMA TOURS】長野県長野市松代町",
@@ -2377,7 +2653,8 @@ const VIDEOS = [
       "戦争遺構"
     ],
     "url": "https://www.youtube.com/watch?v=whf1j5xC5Kg",
-    "id": "whf1j5xC5Kg"
+    "id": "whf1j5xC5Kg",
+    "pubdate": "Aug 14, 2025"
   },
   {
     "title": "皇子山古墳【SUKIMA TOURS】滋賀県大津市錦織",
@@ -2388,7 +2665,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=KxjPDDvnvTQ",
-    "id": "KxjPDDvnvTQ"
+    "id": "KxjPDDvnvTQ",
+    "pubdate": "Jul 26, 2025"
   },
   {
     "title": "猿島【SUKIMA TOURS】神奈川県横須賀市",
@@ -2399,7 +2677,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=WIS4HtoIZ5o",
-    "id": "WIS4HtoIZ5o"
+    "id": "WIS4HtoIZ5o",
+    "pubdate": "Jul 18, 2025"
   },
   {
     "title": "紫電改展示館【SUKIMA TOURS】愛媛県南宇和郡愛南町",
@@ -2410,7 +2689,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=rrSj74K4khE",
-    "id": "rrSj74K4khE"
+    "id": "rrSj74K4khE",
+    "pubdate": "Jul 14, 2025"
   },
   {
     "title": "旧豊後森機関庫【SUKIMA TOURS】大分県玖珠郡玖珠町",
@@ -2421,7 +2701,8 @@ const VIDEOS = [
       "公園・テーマパーク"
     ],
     "url": "https://www.youtube.com/watch?v=S6_JVivehoo",
-    "id": "S6_JVivehoo"
+    "id": "S6_JVivehoo",
+    "pubdate": "Jun 29, 2025"
   },
   {
     "title": "ホケノ山古墳【SUKIMA TOURS】奈良県桜井市箸中",
@@ -2432,7 +2713,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=azXPnnG-qqw",
-    "id": "azXPnnG-qqw"
+    "id": "azXPnnG-qqw",
+    "pubdate": "Jun 26, 2025"
   },
   {
     "title": "大立洞窟／日向洞窟【SUKIMA TOURS】山形県東置賜郡高畠町",
@@ -2443,7 +2725,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=pw8gGjrordo",
-    "id": "pw8gGjrordo"
+    "id": "pw8gGjrordo",
+    "pubdate": "Jun 21, 2025"
   },
   {
     "title": "常昌院【SUKIMA TOURS】静岡県藤枝市岡部町",
@@ -2454,7 +2737,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=5_hn_1IWaks",
-    "id": "5_hn_1IWaks"
+    "id": "5_hn_1IWaks",
+    "pubdate": "Jun 11, 2025"
   },
   {
     "title": "志賀の大仏【SUKIMA TOURS】滋賀県大津市滋賀里町",
@@ -2465,7 +2749,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=samQqWXjT7Y",
-    "id": "samQqWXjT7Y"
+    "id": "samQqWXjT7Y",
+    "pubdate": "Jun 8, 2025"
   },
   {
     "title": "岩橋千塚古墳群【SUKIMA TOURS】和歌山県和歌山市岩橋",
@@ -2477,7 +2762,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=B45IvLjG1gQ",
-    "id": "B45IvLjG1gQ"
+    "id": "B45IvLjG1gQ",
+    "pubdate": "Jun 6, 2025"
   },
   {
     "title": "源宗坊寺【SUKIMA TOURS】広島県呉市清水",
@@ -2489,7 +2775,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=L8bG9EHtQwk",
-    "id": "L8bG9EHtQwk"
+    "id": "L8bG9EHtQwk",
+    "pubdate": "May 31, 2025"
   },
   {
     "title": "脇町【SUKIMA TOURS】徳島県美馬市脇町",
@@ -2500,7 +2787,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=zfdTderEefc",
-    "id": "zfdTderEefc"
+    "id": "zfdTderEefc",
+    "pubdate": "May 17, 2025"
   },
   {
     "title": "垂水遺跡【SUKIMA TOURS】山形県山形市山寺",
@@ -2512,7 +2800,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=c3U7JQxVfBA",
-    "id": "c3U7JQxVfBA"
+    "id": "c3U7JQxVfBA",
+    "pubdate": "May 9, 2025"
   },
   {
     "title": "鬼塚古墳【SUKIMA TOURS】大分県玖珠郡玖珠町小田",
@@ -2523,7 +2812,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=O8p4QWAtgNk",
-    "id": "O8p4QWAtgNk"
+    "id": "O8p4QWAtgNk",
+    "pubdate": "May 6, 2025"
   },
   {
     "title": "瓜割石庭公園【SUKIMA TOURS】山形県東置賜郡高畠町",
@@ -2534,10 +2824,11 @@ const VIDEOS = [
       "遺跡・遺構"
     ],
     "url": "https://www.youtube.com/watch?v=o70iaipX0B0",
-    "id": "o70iaipX0B0"
+    "id": "o70iaipX0B0",
+    "pubdate": "May 2, 2025"
   },
   {
-    "title": "石貫ナギノ横穴群／石貫穴観音横穴【SUKIMA TOURS】熊本県玉名市石貫",
+    "title": "石貫ナギノ横穴群／石貫穴観音横穴【SUKIMA TOURS】熊本県玉名市石貫",
     "pref": "熊本県",
     "region": "九州・沖縄",
     "type": "long",
@@ -2545,7 +2836,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=QQiDz8Czf-I",
-    "id": "QQiDz8Czf-I"
+    "id": "QQiDz8Czf-I",
+    "pubdate": "Apr 19, 2025"
   },
   {
     "title": "浮浪滝【SUKIMA TOURS】島根県出雲市別所町",
@@ -2556,7 +2848,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=sRLdjB6L0NA",
-    "id": "sRLdjB6L0NA"
+    "id": "sRLdjB6L0NA",
+    "pubdate": "Apr 5, 2025"
   },
   {
     "title": "段の塚穴【SUKIMA TOURS】徳島県美馬市美馬町",
@@ -2568,7 +2861,8 @@ const VIDEOS = [
       "遺跡・遺構"
     ],
     "url": "https://www.youtube.com/watch?v=0zGAHe9krVI",
-    "id": "0zGAHe9krVI"
+    "id": "0zGAHe9krVI",
+    "pubdate": "Mar 25, 2025"
   },
   {
     "title": "チブサン古墳／オブサン古墳【SUKIMA TOURS】熊本県山鹿市城",
@@ -2579,7 +2873,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=W_P_LVrwY-c",
-    "id": "W_P_LVrwY-c"
+    "id": "W_P_LVrwY-c",
+    "pubdate": "Mar 18, 2025"
   },
   {
     "title": "御手洗－伝統的建造物群保存地区ー【SUKIMA TOURS】広島県呉市豊町御手洗",
@@ -2590,7 +2885,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=iYJpdhzgk8M",
-    "id": "iYJpdhzgk8M"
+    "id": "iYJpdhzgk8M",
+    "pubdate": "Mar 11, 2025"
   },
   {
     "title": "岩舟古墳【SUKIMA TOURS】島根県安来市岩舟町",
@@ -2602,7 +2898,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=AzyVCH0t0TA",
-    "id": "AzyVCH0t0TA"
+    "id": "AzyVCH0t0TA",
+    "pubdate": "Mar 3, 2025"
   },
   {
     "title": "雄橋【SUKIMA TOURS】広島県庄原市東城町",
@@ -2614,7 +2911,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=gbi9XbGzfcc",
-    "id": "gbi9XbGzfcc"
+    "id": "gbi9XbGzfcc",
+    "pubdate": "Feb 15, 2025"
   },
   {
     "title": "吉見百穴【SUKIMA TOURS】埼玉県比企郡吉見町",
@@ -2625,7 +2923,8 @@ const VIDEOS = [
       "遺跡・遺構"
     ],
     "url": "https://www.youtube.com/watch?v=rOy3R7z6szk",
-    "id": "rOy3R7z6szk"
+    "id": "rOy3R7z6szk",
+    "pubdate": "Feb 10, 2025"
   },
   {
     "title": "三津の渡し【SUKIMA TOURS】愛媛県松山市三津",
@@ -2636,7 +2935,8 @@ const VIDEOS = [
       "町歩き"
     ],
     "url": "https://www.youtube.com/watch?v=cg3bZ5XDAQc",
-    "id": "cg3bZ5XDAQc"
+    "id": "cg3bZ5XDAQc",
+    "pubdate": "Feb 7, 2025"
   },
   {
     "title": "八九郎温泉【SUKIMA TOURS】秋田県鹿角郡小坂町",
@@ -2647,7 +2947,8 @@ const VIDEOS = [
       "温泉・宿"
     ],
     "url": "https://www.youtube.com/watch?v=SLnRsTdLkYY",
-    "id": "SLnRsTdLkYY"
+    "id": "SLnRsTdLkYY",
+    "pubdate": "Feb 2, 2025"
   },
   {
     "title": "尾市一号古墳【SUKIMA TOURS】広島県福山市新市町",
@@ -2659,7 +2960,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=DKnl36laGj4",
-    "id": "DKnl36laGj4"
+    "id": "DKnl36laGj4",
+    "pubdate": "Jan 29, 2025"
   },
   {
     "title": "池子石の採石場跡【SUKIMA TOURS】神奈川県逗子市池子",
@@ -2670,7 +2972,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=V3Sv_NChj08",
-    "id": "V3Sv_NChj08"
+    "id": "V3Sv_NChj08",
+    "pubdate": "Jan 12, 2025"
   },
   {
     "title": "横浜市電保存館【SUKIMA TOURS】神奈川県横浜市磯子区",
@@ -2681,7 +2984,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=8JSqdvIG8SE",
-    "id": "8JSqdvIG8SE"
+    "id": "8JSqdvIG8SE",
+    "pubdate": "Dec 24, 2024"
   },
   {
     "title": "新沢千塚古墳群【SUKIMA TOURS】奈良県橿原市北越智町/川西町",
@@ -2692,7 +2996,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=8hoGZ36ZGtc",
-    "id": "8hoGZ36ZGtc"
+    "id": "8hoGZ36ZGtc",
+    "pubdate": "Dec 11, 2024"
   },
   {
     "title": "地蔵寺五百羅漢【SUKIMA TOURS】徳島県板野郡板野町",
@@ -2704,7 +3009,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=heGLw6aYrFo",
-    "id": "heGLw6aYrFo"
+    "id": "heGLw6aYrFo",
+    "pubdate": "Dec 3, 2024"
   },
   {
     "title": "阿光坊古墳群【SUKIMA TOURS】青森県上北郡おいらせ町",
@@ -2715,7 +3021,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=BDRfZddPAUg",
-    "id": "BDRfZddPAUg"
+    "id": "BDRfZddPAUg",
+    "pubdate": "Nov 27, 2024"
   },
   {
     "title": "石見銀山・龍源寺間歩【SUKIMA TOURS】島根県太田市",
@@ -2727,7 +3034,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=2yQytXTlnoQ",
-    "id": "2yQytXTlnoQ"
+    "id": "2yQytXTlnoQ",
+    "pubdate": "Nov 21, 2024"
   },
   {
     "title": "五島列島の教会群【SUKIMA TOURS】長崎県五島市",
@@ -2738,7 +3046,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=xHCUI5M0x7Q",
-    "id": "xHCUI5M0x7Q"
+    "id": "xHCUI5M0x7Q",
+    "pubdate": "Nov 17, 2024"
   },
   {
     "title": "大野原古墳群【SUKIMA TOURS】香川県観音寺市大野原町",
@@ -2750,7 +3059,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=fYL-BjZ6UB8",
-    "id": "fYL-BjZ6UB8"
+    "id": "fYL-BjZ6UB8",
+    "pubdate": "Nov 5, 2024"
   },
   {
     "title": "キリストの墓【SUKIMA TOURS】青森県三戸郡新郷村",
@@ -2761,7 +3071,8 @@ const VIDEOS = [
       "公園・テーマパーク"
     ],
     "url": "https://www.youtube.com/watch?v=XfnLAy7A4kE",
-    "id": "XfnLAy7A4kE"
+    "id": "XfnLAy7A4kE",
+    "pubdate": "Nov 1, 2024"
   },
   {
     "title": "階段国道【SUKIMA TOURS】青森県東津軽郡外ヶ浜",
@@ -2772,7 +3083,8 @@ const VIDEOS = [
       "乗り物・交通"
     ],
     "url": "https://www.youtube.com/watch?v=-J5q_i9URCo",
-    "id": "-J5q_i9URCo"
+    "id": "-J5q_i9URCo",
+    "pubdate": "Oct 25, 2024"
   },
   {
     "title": "両宮山古墳【SUKIMA TOURS】岡山県赤磐市穂崎",
@@ -2783,7 +3095,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=wvjFXBXR6nc",
-    "id": "wvjFXBXR6nc"
+    "id": "wvjFXBXR6nc",
+    "pubdate": "Oct 19, 2024"
   },
   {
     "title": "オランダ堰堤【SUKIMA TOURS】滋賀県大津市上田上",
@@ -2794,7 +3107,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=CDRm2Nx5Tzc",
-    "id": "CDRm2Nx5Tzc"
+    "id": "CDRm2Nx5Tzc",
+    "pubdate": "Oct 15, 2024"
   },
   {
     "title": "水泥古墳【SUKIMA TOURS】奈良県御所市古瀬",
@@ -2805,7 +3119,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=c-IHwhxJ0t4",
-    "id": "c-IHwhxJ0t4"
+    "id": "c-IHwhxJ0t4",
+    "pubdate": "Oct 10, 2024"
   },
   {
     "title": "明日香村の奇石群【SUKIMA TOURS】奈良県高市郡明日香村",
@@ -2816,7 +3131,8 @@ const VIDEOS = [
       "遺跡・遺構"
     ],
     "url": "https://www.youtube.com/watch?v=ADTIQk21d6I",
-    "id": "ADTIQk21d6I"
+    "id": "ADTIQk21d6I",
+    "pubdate": "Oct 5, 2024"
   },
   {
     "title": "有福大仏【SUKIMA TOURS】江津市有福温泉町",
@@ -2827,7 +3143,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=gfKYINUym2g",
-    "id": "gfKYINUym2g"
+    "id": "gfKYINUym2g",
+    "pubdate": "Sep 25, 2024"
   },
   {
     "title": "津山まなびの鉄道館【SUKIMA TOURS】岡山県津山市大谷",
@@ -2839,7 +3156,8 @@ const VIDEOS = [
       "乗り物・交通"
     ],
     "url": "https://www.youtube.com/watch?v=VR5VhOhOtAo",
-    "id": "VR5VhOhOtAo"
+    "id": "VR5VhOhOtAo",
+    "pubdate": "Sep 16, 2024"
   },
   {
     "title": "作山古墳群【SUKIMA TOURS】京都府与謝郡与謝野町",
@@ -2850,7 +3168,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=9GfL7prbbhI",
-    "id": "9GfL7prbbhI"
+    "id": "9GfL7prbbhI",
+    "pubdate": "Sep 11, 2024"
   },
   {
     "title": "うのこの滝【SUKIMA TOURS】宮崎県西臼杵郡五ケ瀬町",
@@ -2861,7 +3180,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=ghdQj_OaJYo",
-    "id": "ghdQj_OaJYo"
+    "id": "ghdQj_OaJYo",
+    "pubdate": "Sep 4, 2024"
   },
   {
     "title": "妻木晩田遺跡【SUKIMA TOURS】鳥取県西伯郡大山町",
@@ -2872,7 +3192,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=jnGlxG-gUnA",
-    "id": "jnGlxG-gUnA"
+    "id": "jnGlxG-gUnA",
+    "pubdate": "Aug 31, 2024"
   },
   {
     "title": "銅閣寺【SUKIMA TOURS】京都府京都市東山区",
@@ -2883,7 +3204,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=Gvmjj_XDSB4",
-    "id": "Gvmjj_XDSB4"
+    "id": "Gvmjj_XDSB4",
+    "pubdate": "Aug 27, 2024"
   },
   {
     "title": "武蔵府中熊野神社古墳【SUKIMA TOURS】東京都府中市",
@@ -2895,7 +3217,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=101Sm1waQ6E",
-    "id": "101Sm1waQ6E"
+    "id": "101Sm1waQ6E",
+    "pubdate": "Aug 23, 2024"
   },
   {
     "title": "三佛寺投入堂【SUKIMA TOURS】鳥取県東伯郡三朝町",
@@ -2906,7 +3229,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=WfBWP6HURrI",
-    "id": "WfBWP6HURrI"
+    "id": "WfBWP6HURrI",
+    "pubdate": "Aug 15, 2024"
   },
   {
     "title": "須磨浦カーレーター【SUKIMA TOURS】兵庫県神戸市須磨区",
@@ -2917,7 +3241,8 @@ const VIDEOS = [
       "公園・テーマパーク"
     ],
     "url": "https://www.youtube.com/watch?v=5z2IhrVFu6g",
-    "id": "5z2IhrVFu6g"
+    "id": "5z2IhrVFu6g",
+    "pubdate": "Aug 9, 2024"
   },
   {
     "title": "石のカラト古墳【SUKIMA TOURS】奈良県奈良市神功/京都府木津川市兜台",
@@ -2928,7 +3253,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=TXW78hDaUO0",
-    "id": "TXW78hDaUO0"
+    "id": "TXW78hDaUO0",
+    "pubdate": "Aug 4, 2024"
   },
   {
     "title": "八栗ケーブル【SUKIMA TOURS】香川県高松市牟礼",
@@ -2939,7 +3265,8 @@ const VIDEOS = [
       "乗り物・交通"
     ],
     "url": "https://www.youtube.com/watch?v=7ljKDtPmpUY",
-    "id": "7ljKDtPmpUY"
+    "id": "7ljKDtPmpUY",
+    "pubdate": "Jul 29, 2024"
   },
   {
     "title": "シャレコーベミュージアム【SUKIMA TOURS】兵庫県尼崎市",
@@ -2950,7 +3277,8 @@ const VIDEOS = [
       "公園・テーマパーク"
     ],
     "url": "https://www.youtube.com/watch?v=fC6RWsHpPfQ",
-    "id": "fC6RWsHpPfQ"
+    "id": "fC6RWsHpPfQ",
+    "pubdate": "Jul 25, 2024"
   },
   {
     "title": "三瓶温泉 亀の湯【SUKIMA TOURS】島根県大田市三瓶町",
@@ -2961,7 +3289,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=lIISApl-SSU",
-    "id": "lIISApl-SSU"
+    "id": "lIISApl-SSU",
+    "pubdate": "Jul 15, 2024"
   },
   {
     "title": "牽牛子塚古墳【SUKIMA TOURS】奈良県高市郡明日香村",
@@ -2972,7 +3301,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=rrRhQ0RMaTI",
-    "id": "rrRhQ0RMaTI"
+    "id": "rrRhQ0RMaTI",
+    "pubdate": "Jul 4, 2024"
   },
   {
     "title": "高松塚古墳【SUKIMA TOURS】奈良県高市郡明日香村",
@@ -2983,7 +3313,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=cIyAwCRoXL0",
-    "id": "cIyAwCRoXL0"
+    "id": "cIyAwCRoXL0",
+    "pubdate": "Jun 28, 2024"
   },
   {
     "title": "伊尾木洞【SUKIMA TOURS】高知県安芸市",
@@ -2994,7 +3325,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=DG_dx9izaNg",
-    "id": "DG_dx9izaNg"
+    "id": "DG_dx9izaNg",
+    "pubdate": "Jun 21, 2024"
   },
   {
     "title": "市ヶ尾横穴古墳群【SUKIMA TOURS】神奈川県横浜市青葉区",
@@ -3005,7 +3337,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=uPBz2YFCwIA",
-    "id": "uPBz2YFCwIA"
+    "id": "uPBz2YFCwIA",
+    "pubdate": "Jun 14, 2024"
   },
   {
     "title": "関ケ原ウォーランド【SUKIMA TOURS】岐阜県不破郡関ケ原町",
@@ -3016,7 +3349,8 @@ const VIDEOS = [
       "公園・テーマパーク"
     ],
     "url": "https://www.youtube.com/watch?v=TGdcfd-oOJU",
-    "id": "TGdcfd-oOJU"
+    "id": "TGdcfd-oOJU",
+    "pubdate": "Jun 10, 2024"
   },
   {
     "title": "三ツ城古墳【SUKIMA TOURS】広島県東広島市",
@@ -3028,7 +3362,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=K0ofNnYuvRU",
-    "id": "K0ofNnYuvRU"
+    "id": "K0ofNnYuvRU",
+    "pubdate": "May 31, 2024"
   },
   {
     "title": "岐阜大仏【SUKIMA TOURS】岐阜県岐阜市大仏町",
@@ -3039,7 +3374,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=hymrQ-e37aE",
-    "id": "hymrQ-e37aE"
+    "id": "hymrQ-e37aE",
+    "pubdate": "May 23, 2024"
   },
   {
     "title": "全興寺【SUKIMA TOURS】大阪府大阪市平野区",
@@ -3050,7 +3386,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=8dfJHZaxIeg",
-    "id": "8dfJHZaxIeg"
+    "id": "8dfJHZaxIeg",
+    "pubdate": "May 10, 2024"
   },
   {
     "title": "鳴門の渦潮【SUKIMA TOURS】兵庫県南あわじ市/徳島県鳴門市",
@@ -3061,7 +3398,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=adeOPrzqRpI",
-    "id": "adeOPrzqRpI"
+    "id": "adeOPrzqRpI",
+    "pubdate": "Apr 26, 2024"
   },
   {
     "title": "今城塚古墳【SUKIMA TOURS】大阪府高槻市",
@@ -3072,7 +3410,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=OxigIPmttTg",
-    "id": "OxigIPmttTg"
+    "id": "OxigIPmttTg",
+    "pubdate": "Apr 18, 2024"
   },
   {
     "title": "久井の岩海【SUKIMA TOURS】広島県三原市",
@@ -3083,7 +3422,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=E-DbpJ3_Qzs",
-    "id": "E-DbpJ3_Qzs"
+    "id": "E-DbpJ3_Qzs",
+    "pubdate": "Apr 6, 2024"
   },
   {
     "title": "高井田横穴群【SUKIMA TOURS】大阪府柏原市",
@@ -3094,7 +3434,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=LcMJnG1JwLs",
-    "id": "LcMJnG1JwLs"
+    "id": "LcMJnG1JwLs",
+    "pubdate": "Mar 28, 2024"
   },
   {
     "title": "銭形砂絵【SUKIMA TOURS】香川県観音寺市",
@@ -3105,7 +3446,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=kg7iVeXBXws",
-    "id": "kg7iVeXBXws"
+    "id": "kg7iVeXBXws",
+    "pubdate": "Mar 22, 2024"
   },
   {
     "title": "一畑薬師【SUKIMA TOURS】島根県出雲市",
@@ -3116,7 +3458,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=boD_Nfllna4",
-    "id": "boD_Nfllna4"
+    "id": "boD_Nfllna4",
+    "pubdate": "Mar 15, 2024"
   },
   {
     "title": "八幡山古墳【SUKIMA TOURS】埼玉県行田市",
@@ -3127,7 +3470,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=rfy-EnBYFpQ",
-    "id": "rfy-EnBYFpQ"
+    "id": "rfy-EnBYFpQ",
+    "pubdate": "Mar 7, 2024"
   },
   {
     "title": "広兼邸【SUKIMA TOURS】岡山県高梁市",
@@ -3138,7 +3482,8 @@ const VIDEOS = [
       "小説・ロケ・アニメ"
     ],
     "url": "https://www.youtube.com/watch?v=IFq0cQm-klU",
-    "id": "IFq0cQm-klU"
+    "id": "IFq0cQm-klU",
+    "pubdate": "Feb 29, 2024"
   },
   {
     "title": "舞洲工場【SUKIMA TOURS】大阪府大阪市此花区",
@@ -3149,7 +3494,8 @@ const VIDEOS = [
       "町歩き"
     ],
     "url": "https://www.youtube.com/watch?v=Zs5SFyOl9aA",
-    "id": "Zs5SFyOl9aA"
+    "id": "Zs5SFyOl9aA",
+    "pubdate": "Feb 22, 2024"
   },
   {
     "title": "薮塚石切り場跡【SUKIMA TOURS】群馬県太田市藪塚町",
@@ -3160,7 +3506,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=Va-7knQ6KUs",
-    "id": "Va-7knQ6KUs"
+    "id": "Va-7knQ6KUs",
+    "pubdate": "Feb 15, 2024"
   },
   {
     "title": "玉手山古墳群【SUKIMA TOURS】大阪府柏原市",
@@ -3171,7 +3518,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=FcX9vVdTO1o",
-    "id": "FcX9vVdTO1o"
+    "id": "FcX9vVdTO1o",
+    "pubdate": "Feb 8, 2024"
   },
   {
     "title": "どんづるぼう【SUKIMA TOURS】奈良県香芝市",
@@ -3182,7 +3530,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=sFW1vo1nO6A",
-    "id": "sFW1vo1nO6A"
+    "id": "sFW1vo1nO6A",
+    "pubdate": "Feb 1, 2024"
   },
   {
     "title": "河内風穴【SUKIMA TOURS】滋賀県犬上郡多賀町",
@@ -3193,7 +3542,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=Vd0z7rCjKjY",
-    "id": "Vd0z7rCjKjY"
+    "id": "Vd0z7rCjKjY",
+    "pubdate": "Jan 25, 2024"
   },
   {
     "title": "茶すり山古墳【SUKIMA TOURS】兵庫県朝来市和田山町",
@@ -3204,7 +3554,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=r2rNbZthVo8",
-    "id": "r2rNbZthVo8"
+    "id": "r2rNbZthVo8",
+    "pubdate": "Jan 18, 2024"
   },
   {
     "title": "安福寺横穴群【SUKIMA TOURS】大阪府柏原市",
@@ -3215,7 +3566,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=Cpjy5hYDWHA",
-    "id": "Cpjy5hYDWHA"
+    "id": "Cpjy5hYDWHA",
+    "pubdate": "Jan 11, 2024"
   },
   {
     "title": "歩いてみたイエメン　Just Walked YEMEN 2013",
@@ -3226,7 +3578,8 @@ const VIDEOS = [
       "町歩き"
     ],
     "url": "https://www.youtube.com/watch?v=K_Pjputp_6E",
-    "id": "K_Pjputp_6E"
+    "id": "K_Pjputp_6E",
+    "pubdate": "Jan 7, 2024"
   },
   {
     "title": "ただ歩いてみたマカオ　Just Walked MACAU",
@@ -3237,7 +3590,8 @@ const VIDEOS = [
       "未分類"
     ],
     "url": "https://www.youtube.com/watch?v=Kj50d0vT83U",
-    "id": "Kj50d0vT83U"
+    "id": "Kj50d0vT83U",
+    "pubdate": "Jan 5, 2024"
   },
   {
     "title": "笹畝坑道【SUKIMA TOURS】岡山県高梁市成羽町",
@@ -3248,7 +3602,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=T_TzrxI3J40",
-    "id": "T_TzrxI3J40"
+    "id": "T_TzrxI3J40",
+    "pubdate": "Jan 3, 2024"
   },
   {
     "title": "ただ歩いてみた香港　Just Walked Hongkong !",
@@ -3259,7 +3614,8 @@ const VIDEOS = [
       "未分類"
     ],
     "url": "https://www.youtube.com/watch?v=peAbBPR92rw",
-    "id": "peAbBPR92rw"
+    "id": "peAbBPR92rw",
+    "pubdate": "Jan 1, 2024"
   },
   {
     "title": "別府タワー【SUKIMA TOURS】大分県別府市北浜",
@@ -3270,7 +3626,8 @@ const VIDEOS = [
       "町歩き"
     ],
     "url": "https://www.youtube.com/watch?v=GXW_c6Eq2k0",
-    "id": "GXW_c6Eq2k0"
+    "id": "GXW_c6Eq2k0",
+    "pubdate": "Dec 20, 2023"
   },
   {
     "title": "かやぶきの里【SUKIMA TOURS】京都府南丹市美山町",
@@ -3281,7 +3638,8 @@ const VIDEOS = [
       "公園・テーマパーク"
     ],
     "url": "https://www.youtube.com/watch?v=_4hRt4Y7y1g",
-    "id": "_4hRt4Y7y1g"
+    "id": "_4hRt4Y7y1g",
+    "pubdate": "Dec 15, 2023"
   },
   {
     "title": "三津屋古墳【SUKIMA TOURS】群馬県北群馬郡吉岡町",
@@ -3292,7 +3650,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=e3zkUaqwkj4",
-    "id": "e3zkUaqwkj4"
+    "id": "e3zkUaqwkj4",
+    "pubdate": "Dec 7, 2023"
   },
   {
     "title": "猿田洞【SUKIMA TOURS】高知県日高村",
@@ -3303,7 +3662,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=tlGysnSgfI0",
-    "id": "tlGysnSgfI0"
+    "id": "tlGysnSgfI0",
+    "pubdate": "Nov 30, 2023"
   },
   {
     "title": "不動院岩屋堂【SUKIMA TOURS】鳥取県八頭郡若桜町",
@@ -3315,7 +3675,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=FzBhCEV_iFc",
-    "id": "FzBhCEV_iFc"
+    "id": "FzBhCEV_iFc",
+    "pubdate": "Nov 23, 2023"
   },
   {
     "title": "京都タワー【SUKIMA TOURS】京都府京都市",
@@ -3326,7 +3687,8 @@ const VIDEOS = [
       "町歩き"
     ],
     "url": "https://www.youtube.com/watch?v=Krz1UQwV8KA",
-    "id": "Krz1UQwV8KA"
+    "id": "Krz1UQwV8KA",
+    "pubdate": "Nov 9, 2023"
   },
   {
     "title": "屋島ケーブル【SUKIMA TOURS】香川県高松市",
@@ -3337,7 +3699,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=T6kiE9S7_r0",
-    "id": "T6kiE9S7_r0"
+    "id": "T6kiE9S7_r0",
+    "pubdate": "Nov 2, 2023"
   },
   {
     "title": "少彦名神社【SUKIMA TOURS】愛媛県大洲市",
@@ -3348,7 +3711,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=9OMhBEFL1E0",
-    "id": "9OMhBEFL1E0"
+    "id": "9OMhBEFL1E0",
+    "pubdate": "Oct 26, 2023"
   },
   {
     "title": "生野銀山【SUKIMA TOURS】兵庫県朝来市",
@@ -3359,7 +3723,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=fD86TWzUMqE",
-    "id": "fD86TWzUMqE"
+    "id": "fD86TWzUMqE",
+    "pubdate": "Oct 20, 2023"
   },
   {
     "title": "龍岩寺奥院礼堂【SUKIMA TOURS】大分県宇佐市",
@@ -3371,7 +3736,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=V98jnSHDQmw",
-    "id": "V98jnSHDQmw"
+    "id": "V98jnSHDQmw",
+    "pubdate": "Oct 12, 2023"
   },
   {
     "title": "石手寺【SUKIMA TOURS】愛媛県松山市",
@@ -3382,7 +3748,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=EXxbULaAUN0",
-    "id": "EXxbULaAUN0"
+    "id": "EXxbULaAUN0",
+    "pubdate": "Oct 5, 2023"
   },
   {
     "title": "第五福竜丸展示館【SUKIMA TOURS】東京都江東区",
@@ -3393,7 +3760,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=7jDDSrKyhkU",
-    "id": "7jDDSrKyhkU"
+    "id": "7jDDSrKyhkU",
+    "pubdate": "Sep 29, 2023"
   },
   {
     "title": "生石神社【SUKIMA TOURS】兵庫県高砂市",
@@ -3404,7 +3772,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=NwYOEeizDOA",
-    "id": "NwYOEeizDOA"
+    "id": "NwYOEeizDOA",
+    "pubdate": "Sep 20, 2023"
   },
   {
     "title": "石油の里【SUKIMA TOURS】新潟県新潟市秋葉区",
@@ -3415,7 +3784,8 @@ const VIDEOS = [
       "町歩き"
     ],
     "url": "https://www.youtube.com/watch?v=jSlUP_YpfiY",
-    "id": "jSlUP_YpfiY"
+    "id": "jSlUP_YpfiY",
+    "pubdate": "Sep 14, 2023"
   },
   {
     "title": "岩谷観音堂やぐら群【SUKIMA TOURS】千葉県富津市",
@@ -3427,7 +3797,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=8D3EQGdYYqQ",
-    "id": "8D3EQGdYYqQ"
+    "id": "8D3EQGdYYqQ",
+    "pubdate": "Sep 7, 2023"
   },
   {
     "title": "安治川隧道【SUKIMA TOURS】大阪府大阪市",
@@ -3438,7 +3809,8 @@ const VIDEOS = [
       "町歩き"
     ],
     "url": "https://www.youtube.com/watch?v=hV9dUxfd97w",
-    "id": "hV9dUxfd97w"
+    "id": "hV9dUxfd97w",
+    "pubdate": "Aug 31, 2023"
   },
   {
     "title": "楯築遺跡【SUKIMA TOURS】岡山県倉敷市",
@@ -3449,7 +3821,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=jL166TQEzCY",
-    "id": "jL166TQEzCY"
+    "id": "jL166TQEzCY",
+    "pubdate": "Aug 24, 2023"
   },
   {
     "title": "富田茶臼山古墳【SUKIMA TOURS】香川県さぬき市",
@@ -3460,7 +3833,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=K6KRTRnlwzU",
-    "id": "K6KRTRnlwzU"
+    "id": "K6KRTRnlwzU",
+    "pubdate": "Jul 13, 2023"
   },
   {
     "title": "内子座【SUKIMA TOURS】愛媛県喜多郡内子町",
@@ -3471,7 +3845,8 @@ const VIDEOS = [
       "町歩き"
     ],
     "url": "https://www.youtube.com/watch?v=8fYLf3Qri9c",
-    "id": "8fYLf3Qri9c"
+    "id": "8fYLf3Qri9c",
+    "pubdate": "Jul 6, 2023"
   },
   {
     "title": "別子銅山【SUKIMA TOURS】愛媛県新居浜市",
@@ -3482,7 +3857,8 @@ const VIDEOS = [
       "遺跡・遺構"
     ],
     "url": "https://www.youtube.com/watch?v=wWw_Bk4h3Ak",
-    "id": "wWw_Bk4h3Ak"
+    "id": "wWw_Bk4h3Ak",
+    "pubdate": "Jun 29, 2023"
   },
   {
     "title": "造山古墳【SUKIMA TOURS】岡山県岡山市北区",
@@ -3493,7 +3869,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=lq7t2sN2iBE",
-    "id": "lq7t2sN2iBE"
+    "id": "lq7t2sN2iBE",
+    "pubdate": "Jun 22, 2023"
   },
   {
     "title": "鼻ぐり塚【SUKIMA TOURS】岡山県岡山市北区",
@@ -3504,7 +3881,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=Pw5kymHVwFw",
-    "id": "Pw5kymHVwFw"
+    "id": "Pw5kymHVwFw",
+    "pubdate": "Jun 15, 2023"
   },
   {
     "title": "関門トンネル【SUKIMA TOURS】山口県下関市/福岡県北九州市",
@@ -3515,7 +3893,8 @@ const VIDEOS = [
       "廃墟・廃線"
     ],
     "url": "https://www.youtube.com/watch?v=GJU_Ts12wiM",
-    "id": "GJU_Ts12wiM"
+    "id": "GJU_Ts12wiM",
+    "pubdate": "Jun 8, 2023"
   },
   {
     "title": "HTMSメークロン号【SUKIMA TOURS】タイ・バンコク",
@@ -3526,7 +3905,8 @@ const VIDEOS = [
       "未分類"
     ],
     "url": "https://www.youtube.com/watch?v=eQ4SXHCTxtA",
-    "id": "eQ4SXHCTxtA"
+    "id": "eQ4SXHCTxtA",
+    "pubdate": "Jun 3, 2023"
   },
   {
     "title": "ラオスタイ国境越え【SUKIMA TOURS】ビエンチャン：ノンカイ",
@@ -3537,7 +3917,8 @@ const VIDEOS = [
       "未分類"
     ],
     "url": "https://www.youtube.com/watch?v=5zuPhMlcrxw",
-    "id": "5zuPhMlcrxw"
+    "id": "5zuPhMlcrxw",
+    "pubdate": "May 25, 2023"
   },
   {
     "title": "フアランポーン駅【SUKIMA TOURS】タイ･バンコク",
@@ -3548,7 +3929,8 @@ const VIDEOS = [
       "廃墟・廃線"
     ],
     "url": "https://www.youtube.com/watch?v=OBQD2B_3GYw",
-    "id": "OBQD2B_3GYw"
+    "id": "OBQD2B_3GYw",
+    "pubdate": "May 25, 2023"
   },
   {
     "title": "弁天山【SUKIMA TOURS】徳島県徳島市",
@@ -3559,7 +3941,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=FVLMLItp7Ig",
-    "id": "FVLMLItp7Ig"
+    "id": "FVLMLItp7Ig",
+    "pubdate": "May 17, 2023"
   },
   {
     "title": "頭塔【SUKIMA TOURS】奈良県奈良市",
@@ -3570,7 +3953,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=tur0gMa4v94",
-    "id": "tur0gMa4v94"
+    "id": "tur0gMa4v94",
+    "pubdate": "May 11, 2023"
   },
   {
     "title": "東京タワー【SUKIMA TOURS】東京都港区",
@@ -3581,7 +3965,8 @@ const VIDEOS = [
       "町歩き"
     ],
     "url": "https://www.youtube.com/watch?v=fVdC-r0p4d0",
-    "id": "fVdC-r0p4d0"
+    "id": "fVdC-r0p4d0",
+    "pubdate": "Apr 28, 2023"
   },
   {
     "title": "高屋神社【SUKIMA TOURS】香川県観音寺市",
@@ -3592,7 +3977,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=E1oPEkKWTjM",
-    "id": "E1oPEkKWTjM"
+    "id": "E1oPEkKWTjM",
+    "pubdate": "Apr 20, 2023"
   },
   {
     "title": "江戸東京たてもの園【SUKIMA TOURS】東京都小金井市",
@@ -3603,7 +3989,8 @@ const VIDEOS = [
       "公園・テーマパーク"
     ],
     "url": "https://www.youtube.com/watch?v=0MU-OiLPCaE",
-    "id": "0MU-OiLPCaE"
+    "id": "0MU-OiLPCaE",
+    "pubdate": "Apr 14, 2023"
   },
   {
     "title": "築地本願寺【SUKIMA TOURS】東京都",
@@ -3614,7 +4001,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=MRsF9F9lMo0",
-    "id": "MRsF9F9lMo0"
+    "id": "MRsF9F9lMo0",
+    "pubdate": "Apr 7, 2023"
   },
   {
     "title": "伊根の舟屋【SUKIMA TOURS】京都府与謝郡",
@@ -3625,7 +4013,8 @@ const VIDEOS = [
       "町歩き"
     ],
     "url": "https://www.youtube.com/watch?v=QQTcjvEw_K8",
-    "id": "QQTcjvEw_K8"
+    "id": "QQTcjvEw_K8",
+    "pubdate": "Mar 31, 2023"
   },
   {
     "title": "土塔【SUKIMA TOURS】大阪府堺市",
@@ -3636,7 +4025,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=8lKYrMYkleg",
-    "id": "8lKYrMYkleg"
+    "id": "8lKYrMYkleg",
+    "pubdate": "Mar 26, 2023"
   },
   {
     "title": "東大寺大仏殿【SUKIMA TOURS】奈良県奈良市",
@@ -3647,7 +4037,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=xgCpv1s6AT0",
-    "id": "xgCpv1s6AT0"
+    "id": "xgCpv1s6AT0",
+    "pubdate": "Mar 23, 2023"
   },
   {
     "title": "暗峠【SUKIMA TOURS】奈良県/大阪府",
@@ -3658,7 +4049,8 @@ const VIDEOS = [
       "町歩き"
     ],
     "url": "https://www.youtube.com/watch?v=VltWAsAmhu4",
-    "id": "VltWAsAmhu4"
+    "id": "VltWAsAmhu4",
+    "pubdate": "Mar 19, 2023"
   },
   {
     "title": "海上自衛隊呉史料館  てつのくじら館【SUKIMA TOURS】広島県呉市",
@@ -3670,7 +4062,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=sB9aAMNdRlw",
-    "id": "sB9aAMNdRlw"
+    "id": "sB9aAMNdRlw",
+    "pubdate": "Mar 16, 2023"
   },
   {
     "title": "猿橋【SUKIMA TOURS】山梨県大月市",
@@ -3681,7 +4074,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=t6-urtbxvSI",
-    "id": "t6-urtbxvSI"
+    "id": "t6-urtbxvSI",
+    "pubdate": "Mar 12, 2023"
   },
   {
     "title": "埋没鳥居【SUKIMA TOURS】鹿児島県",
@@ -3693,7 +4087,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=i3ENPwz4v1Y",
-    "id": "i3ENPwz4v1Y"
+    "id": "i3ENPwz4v1Y",
+    "pubdate": "Mar 8, 2023"
   },
   {
     "title": "太陽の塔【SUKIMA TOURS】大阪府吹田市",
@@ -3704,7 +4099,8 @@ const VIDEOS = [
       "公園・テーマパーク"
     ],
     "url": "https://www.youtube.com/watch?v=F5fJmGV74yw",
-    "id": "F5fJmGV74yw"
+    "id": "F5fJmGV74yw",
+    "pubdate": "Mar 5, 2023"
   },
   {
     "title": "湯島聖堂【SUKIMA TOURS】東京都文京区",
@@ -3716,7 +4112,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=xzmHtNXcnpA",
-    "id": "xzmHtNXcnpA"
+    "id": "xzmHtNXcnpA",
+    "pubdate": "Mar 2, 2023"
   },
   {
     "title": "八倉比賣神社【SUKIMA TOURS】徳島県徳島市",
@@ -3728,7 +4125,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=GE31vNRvvVo",
-    "id": "GE31vNRvvVo"
+    "id": "GE31vNRvvVo",
+    "pubdate": "Feb 26, 2023"
   },
   {
     "title": "旧閑谷学校【SUKIMA TOURS】岡山県備前市",
@@ -3739,7 +4137,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=Ps-PlAdHdAI",
-    "id": "Ps-PlAdHdAI"
+    "id": "Ps-PlAdHdAI",
+    "pubdate": "Feb 22, 2023"
   },
   {
     "title": "生駒ケーブル【SUKIMA TOURS】奈良県生駒市",
@@ -3750,7 +4149,8 @@ const VIDEOS = [
       "乗り物・交通"
     ],
     "url": "https://www.youtube.com/watch?v=qjDoCkp-C8o",
-    "id": "qjDoCkp-C8o"
+    "id": "qjDoCkp-C8o",
+    "pubdate": "Feb 19, 2023"
   },
   {
     "title": "お岩稲荷【SUKIMA TOURS】東京都新宿区",
@@ -3761,7 +4161,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=aJbIHxuUpRA",
-    "id": "aJbIHxuUpRA"
+    "id": "aJbIHxuUpRA",
+    "pubdate": "Feb 15, 2023"
   },
   {
     "title": "本願寺伝道院【SUKIMA TOURS】京都府京都市",
@@ -3772,7 +4173,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=h8AFcaQHk2A",
-    "id": "h8AFcaQHk2A"
+    "id": "h8AFcaQHk2A",
+    "pubdate": "Feb 12, 2023"
   },
   {
     "title": "瀬戸大橋【SUKIMA TOURS】香川県坂出市－岡山県倉敷市",
@@ -3783,7 +4185,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=km7jC9xC-BI",
-    "id": "km7jC9xC-BI"
+    "id": "km7jC9xC-BI",
+    "pubdate": "Feb 8, 2023"
   },
   {
     "title": "国道駅【SUKIMA TOURS】神奈川県横浜市鶴見区",
@@ -3795,7 +4198,8 @@ const VIDEOS = [
       "乗り物・交通"
     ],
     "url": "https://www.youtube.com/watch?v=Onw8B_5q_lw",
-    "id": "Onw8B_5q_lw"
+    "id": "Onw8B_5q_lw",
+    "pubdate": "Feb 6, 2023"
   },
   {
     "title": "白川郷【SUKIMA TOURS】岐阜県大野郡白川村    Shirakawa-go - 29/Jan/2023  Winter",
@@ -3807,7 +4211,8 @@ const VIDEOS = [
       "自然絶景"
     ],
     "url": "https://www.youtube.com/watch?v=RivooRukZes",
-    "id": "RivooRukZes"
+    "id": "RivooRukZes",
+    "pubdate": "Feb 1, 2023"
   },
   {
     "title": "哲学堂公園【SUKIMA TOURS】東京都中野区",
@@ -3818,7 +4223,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=VsKcSoi9DGg",
-    "id": "VsKcSoi9DGg"
+    "id": "VsKcSoi9DGg",
+    "pubdate": "Jan 29, 2023"
   },
   {
     "title": "沖島【SUKIMA TOURS】滋賀県近江八幡市",
@@ -3829,7 +4235,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=a3ltExYqaE8",
-    "id": "a3ltExYqaE8"
+    "id": "a3ltExYqaE8",
+    "pubdate": "Jan 26, 2023"
   },
   {
     "title": "旧日立航空機立川変電所【SUKIMA TOURS】東京都東大和市",
@@ -3840,7 +4247,8 @@ const VIDEOS = [
       "戦争遺構"
     ],
     "url": "https://www.youtube.com/watch?v=gt95XbZ52iM",
-    "id": "gt95XbZ52iM"
+    "id": "gt95XbZ52iM",
+    "pubdate": "Jan 22, 2023"
   },
   {
     "title": "佐柳島【SUKIMA TOURS】香川県仲多度郡",
@@ -3851,7 +4259,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=20pxZCnrrBw",
-    "id": "20pxZCnrrBw"
+    "id": "20pxZCnrrBw",
+    "pubdate": "Jan 17, 2023"
   },
   {
     "title": "奥祖谷二重かずら橋　【SUKIMA TOURS】　徳島県三好市",
@@ -3862,7 +4271,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=KkRcm7zcuBQ",
-    "id": "KkRcm7zcuBQ"
+    "id": "KkRcm7zcuBQ",
+    "pubdate": "Jan 12, 2023"
   },
   {
     "title": "友ヶ島　【SUKIMA TOURS】　和歌山県和歌山市",
@@ -3873,7 +4283,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=RFzFb593JDQ",
-    "id": "RFzFb593JDQ"
+    "id": "RFzFb593JDQ",
+    "pubdate": "Jan 5, 2023"
   },
   {
     "title": "熊山遺跡　【SUKIMA TOURS】　岡山県赤磐市",
@@ -3884,7 +4295,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=4mbbUL2iLQg",
-    "id": "4mbbUL2iLQg"
+    "id": "4mbbUL2iLQg",
+    "pubdate": "Jan 1, 2023"
   },
   {
     "title": "金刀比羅宮【SUKIMA TOURS】香川県仲多度郡",
@@ -3895,7 +4307,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=onzSbsEIU_I",
-    "id": "onzSbsEIU_I"
+    "id": "onzSbsEIU_I",
+    "pubdate": "Jan 1, 2023"
   },
   {
     "title": "立山防空壕　【SUKIMA TOURS】　長崎県長崎市",
@@ -3906,7 +4319,8 @@ const VIDEOS = [
       "戦争遺構"
     ],
     "url": "https://www.youtube.com/watch?v=u0prAxtq37Q",
-    "id": "u0prAxtq37Q"
+    "id": "u0prAxtq37Q",
+    "pubdate": "Dec 29, 2022"
   },
   {
     "title": "東京都慰霊堂　【SUKIMA TOURS】　東京都墨田区",
@@ -3917,7 +4331,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=oLn0cu6N0IY",
-    "id": "oLn0cu6N0IY"
+    "id": "oLn0cu6N0IY",
+    "pubdate": "Dec 28, 2022"
   },
   {
     "title": "石垣の里 外泊　【SUKIMA TOURS】　愛媛県南宇和郡",
@@ -3928,7 +4343,8 @@ const VIDEOS = [
       "町歩き"
     ],
     "url": "https://www.youtube.com/watch?v=2kX8YujVSPw",
-    "id": "2kX8YujVSPw"
+    "id": "2kX8YujVSPw",
+    "pubdate": "Dec 27, 2022"
   },
   {
     "title": "山犬嶽　【SUKIMA TOURS】　徳島県勝浦郡",
@@ -3939,7 +4355,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=f4afPi38oh0",
-    "id": "f4afPi38oh0"
+    "id": "f4afPi38oh0",
+    "pubdate": "Dec 25, 2022"
   },
   {
     "title": "大久野島　【SUKIMA TOURS】　広島県竹原市",
@@ -3950,7 +4367,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=JOXOZiyha68",
-    "id": "JOXOZiyha68"
+    "id": "JOXOZiyha68",
+    "pubdate": "Dec 25, 2022"
   },
   {
     "title": "聖神社　【SUKIMA TOURS】　高知県高岡郡越智町",
@@ -3961,7 +4379,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=ZiP-ECXEKsU",
-    "id": "ZiP-ECXEKsU"
+    "id": "ZiP-ECXEKsU",
+    "pubdate": "Dec 23, 2022"
   },
   {
     "title": "姫路モノレール　【SUKIMA TOURS】　兵庫県姫路市",
@@ -3972,7 +4391,8 @@ const VIDEOS = [
       "乗り物・交通"
     ],
     "url": "https://www.youtube.com/watch?v=cPURXpwimso",
-    "id": "cPURXpwimso"
+    "id": "cPURXpwimso",
+    "pubdate": "Dec 21, 2022"
   },
   {
     "title": "唐人駄馬巨石群【SUKIMA TOURS】高知県土佐清水市",
@@ -3983,7 +4403,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=4MMp5jyxMto",
-    "id": "4MMp5jyxMto"
+    "id": "4MMp5jyxMto",
+    "pubdate": "Dec 19, 2022"
   },
   {
     "title": "牧野植物園　【SUKIMA TOURS】　高知県高知市",
@@ -3994,7 +4415,8 @@ const VIDEOS = [
       "公園・テーマパーク"
     ],
     "url": "https://www.youtube.com/watch?v=4rHjw24HJtM",
-    "id": "4rHjw24HJtM"
+    "id": "4rHjw24HJtM",
+    "pubdate": "Dec 18, 2022"
   },
   {
     "title": "日本ピラミッド　【SUKIMA TOURS】　広島県庄原市",
@@ -4005,7 +4427,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=D-iXHar8DYo",
-    "id": "D-iXHar8DYo"
+    "id": "D-iXHar8DYo",
+    "pubdate": "Dec 15, 2022"
   },
   {
     "title": "津嶋神社　【SUKIMA TOURS】　香川県三豊市三野町",
@@ -4016,7 +4439,8 @@ const VIDEOS = [
       "神社仏閣"
     ],
     "url": "https://www.youtube.com/watch?v=NPlW8Kkt4QU",
-    "id": "NPlW8Kkt4QU"
+    "id": "NPlW8Kkt4QU",
+    "pubdate": "Dec 12, 2022"
   },
   {
     "title": "高開の石積み　【SUKIMA TOURS】　徳島県吉野川市",
@@ -4027,7 +4451,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=MydJjKTYfxk",
-    "id": "MydJjKTYfxk"
+    "id": "MydJjKTYfxk",
+    "pubdate": "Dec 9, 2022"
   },
   {
     "title": "海上保安資料館　【SUKIMA TOURS】　神奈川県横浜市中区",
@@ -4039,7 +4464,8 @@ const VIDEOS = [
       "戦争遺跡"
     ],
     "url": "https://www.youtube.com/watch?v=NaLZBSLnJMI",
-    "id": "NaLZBSLnJMI"
+    "id": "NaLZBSLnJMI",
+    "pubdate": "Dec 4, 2022"
   },
   {
     "title": "有岡古墳群　【SUKIMA TOURS】　香川県善通寺市",
@@ -4051,7 +4477,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=DnKBXgE2KiA",
-    "id": "DnKBXgE2KiA"
+    "id": "DnKBXgE2KiA",
+    "pubdate": "Dec 3, 2022"
   },
   {
     "title": "スカイレール　【SUKIMA TOURS】　広島県広島市安芸区",
@@ -4062,7 +4489,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=DhUH73osWps",
-    "id": "DhUH73osWps"
+    "id": "DhUH73osWps",
+    "pubdate": "Nov 28, 2022"
   },
   {
     "title": "国道１７４号線　【SUKIMA TOURS】　兵庫県神戸市",
@@ -4073,7 +4501,8 @@ const VIDEOS = [
       "乗り物・交通"
     ],
     "url": "https://www.youtube.com/watch?v=RorRUk7HzPU",
-    "id": "RorRUk7HzPU"
+    "id": "RorRUk7HzPU",
+    "pubdate": "Oct 26, 2022"
   },
   {
     "title": "佐倉城址　【SUKIMA TOURS】 千葉県",
@@ -4084,7 +4513,8 @@ const VIDEOS = [
       "城・史跡"
     ],
     "url": "https://www.youtube.com/watch?v=7ItLlQEOSPE",
-    "id": "7ItLlQEOSPE"
+    "id": "7ItLlQEOSPE",
+    "pubdate": "Apr 13, 2022"
   },
   {
     "title": "阿波の土柱　【SUKIMA TOURS】　徳島県阿波市",
@@ -4095,7 +4525,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=ApCSVlbt0LI",
-    "id": "ApCSVlbt0LI"
+    "id": "ApCSVlbt0LI",
+    "pubdate": "Mar 21, 2022"
   },
   {
     "title": "安居渓谷　【SUKIMA TOURS】　高知県",
@@ -4106,7 +4537,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=qTKXmzulxLw",
-    "id": "qTKXmzulxLw"
+    "id": "qTKXmzulxLw",
+    "pubdate": "Mar 18, 2022"
   },
   {
     "title": "三鷹跨線人道橋　【SUKIMA TOURS】東京都",
@@ -4117,7 +4549,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=4kwbn5wEmbc",
-    "id": "4kwbn5wEmbc"
+    "id": "4kwbn5wEmbc",
+    "pubdate": "Mar 3, 2022"
   },
   {
     "title": "遊子水荷浦の段畑【SUKIMA TOURS】愛媛県宇和島市遊子水荷浦町",
@@ -4128,7 +4561,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=YrYbtPfWv9c",
-    "id": "YrYbtPfWv9c"
+    "id": "YrYbtPfWv9c",
+    "pubdate": "Feb 16, 2022"
   },
   {
     "title": "横浜の秘境「陣ヶ下渓谷」 【SUKIMA TOURS】神奈川県",
@@ -4139,7 +4573,8 @@ const VIDEOS = [
       "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=vbeXogvdGnQ",
-    "id": "vbeXogvdGnQ"
+    "id": "vbeXogvdGnQ",
+    "pubdate": "Feb 12, 2022"
   },
   {
     "title": "横浜市鶴見区の銭湯「安善湯」 【SUKIMA TOURS】神奈川県",
@@ -4150,7 +4585,8 @@ const VIDEOS = [
       "町歩き"
     ],
     "url": "https://www.youtube.com/watch?v=82OpHkSeFVI",
-    "id": "82OpHkSeFVI"
+    "id": "82OpHkSeFVI",
+    "pubdate": "Feb 10, 2022"
   },
   {
     "title": "長柄横穴群　【SUKIMA TOURS】千葉県長生郡　　　山の中の崖を掘って造った墓室がずらりと並ぶその光景は一見の価値あり！",
@@ -4161,7 +4597,8 @@ const VIDEOS = [
       "遺跡・遺構"
     ],
     "url": "https://www.youtube.com/watch?v=S4ep7nc0Emg",
-    "id": "S4ep7nc0Emg"
+    "id": "S4ep7nc0Emg",
+    "pubdate": "Feb 6, 2022"
   },
   {
     "title": "「東京･小平」を一日小旅　-OneDayTrip KODAIRA-",
@@ -4172,10 +4609,17 @@ const VIDEOS = [
       "町歩き"
     ],
     "url": "https://www.youtube.com/watch?v=rWnzMobDMvE",
-    "id": "rWnzMobDMvE"
+    "id": "rWnzMobDMvE",
+    "pubdate": "Dec 21, 2021"
   }
 ];
-VIDEOS.forEach((v,i)=>{ v.no = String(i+1).padStart(3,'0'); });
+VIDEOS.forEach((v,i)=>{
+  v.title = norm(v.title);
+  v.pref = norm(v.pref);
+  v.tags = v.tags.map(norm);
+  v.region = regionOf(v.pref);   // 地方は都道府県から常に再計算（台帳の地方列は無視）
+  v.no = String(i+1).padStart(3,'0');
+});
 
 const grid = document.getElementById('grid');
 const regionChipsEl = document.getElementById('regionChips');
@@ -4213,7 +4657,7 @@ function render(){
     const matchRegion = activeRegion==='すべて' || v.region===activeRegion;
     const matchPref = activePref==='すべて' || v.pref===activePref;
     const matchType = activeType==='all' || v.type===activeType;
-    const q = query.trim();
+    const q = norm(query.trim());
     const matchQuery = !q || v.title.includes(q) || v.tags.some(t=>t.includes(q)) || v.pref.includes(q) || v.region.includes(q);
     return matchRegion && matchPref && matchType && matchQuery;
   });
