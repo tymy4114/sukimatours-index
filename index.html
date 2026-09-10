@@ -268,7 +268,7 @@
 <div class="grid" id="grid"></div>
 <div class="empty" id="emptyMsg" style="display:none;">該当する記録が見つかりませんでした。条件を変えてお試しください。</div>
 
-<footer>SUKIMATOURS 全動画INDEX — 全355本を収録（公開日が新しい順）</footer>
+<footer>SUKIMATOURS 全動画INDEX — 全361本を収録（公開日が新しい順）</footer>
 
 <script>
 /* ▼▼▼ データ台帳。動画が増えたら1行追記するだけ。地方(region)は都道府県(pref)から常に自動判定されます（Excelの「地方」列に誤記があっても自動で正しい方に補正されます） ▼▼▼ */
@@ -294,10 +294,82 @@ function regionOf(pref){
 
 const VIDEOS = [
   {
+    "title": "【東洋のマチュピチュ】標高750mの山中に眠る「別子銅山」の廃墟美が凄すぎる｜愛媛・新居浜",
+    "pref": "愛媛県",
+    "region": "九州・沖縄",
+    "type": "short",
+    "tags": [
+      "遺跡・遺構"
+    ],
+    "url": "https://youtube.com/shorts/aYHIAzpy0P8",
+    "id": "aYHIAzpy0P8",
+    "pubdate": "Sep 10, 2026"
+  },
+  {
+    "title": "【滋賀の隠れた名所】清流と古い町並みが綺麗すぎる旧中山道「醒井宿」を知ってる？",
+    "pref": "滋賀県",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "町歩き"
+    ],
+    "url": "https://youtube.com/shorts/G7YPzSAE6f0",
+    "id": "G7YPzSAE6f0",
+    "pubdate": "Sep 09, 2026"
+  },
+  {
+    "title": "【日本一の巨木】樹齢1500年！巨大な楠の木が放つ存在感がヤバすぎる｜鹿児島・蒲生の大楠",
+    "pref": "鹿児島県",
+    "region": "九州・沖縄",
+    "type": "short",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://youtube.com/shorts/ZgGHwZIIQT8",
+    "id": "ZgGHwZIIQT8",
+    "pubdate": "Sep 07, 2026"
+  },
+  {
+    "title": "【日本唯一】石でも木でもない「有田焼の鳥居」が異彩を放つ神社｜佐賀・陶山神社",
+    "pref": "佐賀県",
+    "region": "九州・沖縄",
+    "type": "short",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://www.youtube.com/watch?v=APOpZWrLJ_o",
+    "id": "APOpZWrLJ_o",
+    "pubdate": "Sep 06, 2026"
+  },
+  {
+    "title": "知る人ぞ知る！四国の果てで出逢ったエメラルドグリーンの海と洞窟！｜松尾漁港・海老洞",
+    "pref": "高知県",
+    "region": "四国",
+    "type": "short",
+    "tags": [
+      "自然・絶景"
+    ],
+    "url": "https://youtube.com/shorts/VI2TAIjvIvg",
+    "id": "VI2TAIjvIvg",
+    "pubdate": "Sep 03, 2026"
+  },
+  {
+    "title": "車が来たら爆音で叩き起こす！昭和のヤバい交通安全人形の末路「目覚まし太郎」",
+    "pref": "高知県",
+    "region": "四国",
+    "type": "short",
+    "tags": [
+      "町歩き"
+    ],
+    "url": "https://youtube.com/shorts/R4_JaNUUs3A",
+    "id": "R4_JaNUUs3A",
+    "pubdate": "Aug 31, 2026"
+  },
+  {
     "title": "未完の巨大仏！30mの大仏の中に隠れるはずだった「黒い不動明王」の謎｜呉市・源宗坊寺",
     "pref": "広島県",
     "region": "中国",
-    "type": "long",
+    "type": "short",
     "tags": [
       "神社仏閣"
     ],
@@ -321,7 +393,7 @@ const VIDEOS = [
     "title": "福井の山奥にそびえる巨大な壁の正体とは⁉︎勝山黒谷の集落を守る高さ15メートルの壁！",
     "pref": "福井県",
     "region": "中部",
-    "type": "long",
+    "type": "short",
     "tags": [
       "未分類"
     ],
@@ -333,9 +405,9 @@ const VIDEOS = [
     "title": "驚愕のミステリー！あのモーゼが日本で没した！？能登に眠る「モーゼの墓」の謎！",
     "pref": "石川県",
     "region": "中部",
-    "type": "long",
+    "type": "short",
     "tags": [
-      "未分類"
+      "遺跡・遺構"
     ],
     "url": "https://www.youtube.com/watch?v=lZgm5B8fS0I",
     "id": "lZgm5B8fS0I",
@@ -345,7 +417,7 @@ const VIDEOS = [
     "title": "【実存するラピュタ】一度も撃たれなかった砲台！愛媛「小島」に眠る明治時代に造られた軍事要塞跡！",
     "pref": "愛媛県",
     "region": "四国",
-    "type": "long",
+    "type": "short",
     "tags": [
       "戦争遺跡"
     ],
@@ -357,7 +429,7 @@ const VIDEOS = [
     "title": "「日本一の美男」高岡大仏だけじゃない！青銅・木造・10万人の遺骨を包むコンクリート骨仏まで！富山に並ぶ「越中三大仏」の個性がスゴすぎる。",
     "pref": "富山県",
     "region": "中部",
-    "type": "long",
+    "type": "short",
     "tags": [
       "神社仏閣"
     ],
