@@ -268,7 +268,7 @@
 <div class="grid" id="grid"></div>
 <div class="empty" id="emptyMsg" style="display:none;">該当する記録が見つかりませんでした。条件を変えてお試しください。</div>
 
-<footer>SUKIMATOURS 全動画INDEX — 全380本を収録（公開日が新しい順）</footer>
+<footer>SUKIMATOURS 全動画INDEX — 全391本を収録（公開日が新しい順）</footer>
 
 <script>
 /* ▼▼▼ データ台帳。動画が増えたら1行追記するだけ。地方(region)は都道府県(pref)から常に自動判定されます（Excelの「地方」列に誤記があっても自動で正しい方に補正されます） ▼▼▼ */
@@ -294,12 +294,145 @@ function regionOf(pref){
 
 const VIDEOS = [
   {
+    "title": "【江戸の風情がそのまま残る島】瀬戸内海に浮かぶ奇跡の港町「御手洗」時代が止まったかのような美しき港町の路地を歩く！",
+    "pref": "広島県",
+    "region": "中国",
+    "type": "short",
+    "tags": [
+      "町歩き"
+    ],
+    "url": "https://youtube.com/shorts/PkUlb3ZHAd0",
+    "id": "PkUlb3ZHAd0",
+    "pubdate": "Oct 30, 2026"
+  },
+  {
+    "title": "【室温150度超え！？】奈良時代から現代に続く日本最古のガチすぎるサウナの正体とは！「塚原のから風呂」",
+    "pref": "香川県",
+    "region": "四国",
+    "type": "short",
+    "tags": [
+      "町歩き"
+    ],
+    "url": "https://youtube.com/shorts/ApzzGVSK48U",
+    "id": "ApzzGVSK48U",
+    "pubdate": "Oct 28, 2026"
+  },
+  {
+    "title": "【建物全体が松尾芭蕉の旅姿！？】芭蕉の故郷・伊賀に眠る美しき重要文化財「俳聖殿」。",
+    "pref": "三重県",
+    "region": "中国",
+    "type": "short",
+    "tags": [
+      "神社仏閣 城･史跡"
+    ],
+    "url": "https://youtube.com/shorts/wTwdzkSSxH4",
+    "id": "wTwdzkSSxH4",
+    "pubdate": "Oct 27, 2026"
+  },
+  {
+    "title": "【約一万体の招き猫が眠る聖地】主人の無念を晴らした愛猫の仇討ち伝承と、勝負の神として祀られる理由。徳島の「お松大権現」",
+    "pref": "徳島県",
+    "region": "四国",
+    "type": "short",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://youtube.com/shorts/_ayaVMGRd8c",
+    "id": "_ayaVMGRd8c",
+    "pubdate": "Oct 26, 2026"
+  },
+  {
+    "title": "【戦艦大和の主砲を試射した極秘施設】46センチ砲発射試験の衝撃で民家の障子紙が破れた！呉海軍の巨大要塞「亀ヶ首発射場跡」",
+    "pref": "広島県",
+    "region": "中国",
+    "type": "short",
+    "tags": [
+      "戦争遺構"
+    ],
+    "url": "https://youtube.com/shorts/-CeS2hLWEjY",
+    "id": "-CeS2hLWEjY",
+    "pubdate": "Oct 21, 2026"
+  },
+  {
+    "title": "【戦艦大和の46センチ主砲の性能テストをした極秘施設】亀ヶ首発射場跡の知られざる全貌！旧日本海軍の技術の粋が集結した「呉海軍工廠・亀ヶ首発射場跡」を巡る",
+    "pref": "広島県",
+    "region": "中国",
+    "type": "long",
+    "tags": [
+      "戦争遺構"
+    ],
+    "url": "https://youtu.be/Nmi0musBdxA",
+    "id": "Nmi0musBdxA",
+    "pubdate": "Oct 20, 2026"
+  },
+  {
+    "title": "【なぜ首だけの像が二体並ぶのか？】正体不明の古い首地蔵、昭和に継承された新しき像。宝塚の地に佇む神秘の石仏「首地蔵」！",
+    "pref": "兵庫県",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://youtube.com/shorts/_49QfYHyThs",
+    "id": "_49QfYHyThs",
+    "pubdate": "Oct 20, 2026"
+  },
+  {
+    "title": "【九州最後の炭鉱の島】2001年まで稼働したリアルな遺構。九州最後の炭鉱が残る長崎の離島「池島」",
+    "pref": "長崎県",
+    "region": "九州・沖縄",
+    "type": "short",
+    "tags": [
+      "遺跡・遺構"
+    ],
+    "url": "https://youtube.com/shorts/OUt4xpZrRjU",
+    "id": "OUt4xpZrRjU",
+    "pubdate": "Oct 16, 2026"
+  },
+  {
+    "title": "【日本一美しい円筒分水槽】直径9mの円筒から溢れる清流！片貝川の水を3つの用水路へ均等配分する昭和の土木遺産「東山円筒分水槽」",
+    "pref": "富山県",
+    "region": "中部",
+    "type": "short",
+    "tags": [
+      "城・史跡",
+      "自然・絶景"
+    ],
+    "url": "https://youtube.com/shorts/ig6OCHr4Q7s",
+    "id": "ig6OCHr4Q7s",
+    "pubdate": "Oct 14, 2026"
+  },
+  {
+    "title": "【津軽の地に佇む朱の龍】龍が躍動するような千本鳥居！龍神宮へ導く圧巻の絶景神社「高山稲荷神社」青森県つがる市",
+    "pref": "青森県",
+    "region": "東北",
+    "type": "short",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://youtube.com/shorts/jxSBK1dz4Ts",
+    "id": "jxSBK1dz4Ts",
+    "pubdate": "Oct 12, 2026"
+  },
+  {
+    "title": "【木彫で世界最大級】奈良の大仏より大きい！？巨大木彫三大佛が並ぶ兵庫の黄金大堂「但馬大佛」！",
+    "pref": "兵庫県",
+    "region": "関西",
+    "type": "short",
+    "tags": [
+      "神社仏閣"
+    ],
+    "url": "https://youtube.com/shorts/ICTfpJhs1kE",
+    "id": "ICTfpJhs1kE",
+    "pubdate": "Oct 09, 2026"
+  },
+  {
     "title": "【山陰最古の近代インフラ】コレラの恐怖から鳥取市民を救った山陰最古の近代水道「旧美歎水源地水道施設」。鳥取城の外堀から生還した100年前の最先端インフラ！",
     "pref": "鳥取県",
     "region": "中国",
     "type": "long",
     "tags": [
-      "城･史跡　公共施設"
+      "城･史跡 公共施設"
     ],
     "url": "https://youtu.be/-HzgjIUSkCI",
     "id": "-HzgjIUSkCI",
