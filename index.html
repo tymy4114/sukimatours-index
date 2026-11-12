@@ -104,6 +104,19 @@
     font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.15em;
     color:#9A8F72;
   }
+  .subscribe-wrap{ text-align:center; margin-top:36px; }
+  .subscribe-btn{
+    display:inline-block; background:var(--gold); color:#0B0A08;
+    font-family:'Zen Kaku Gothic New',sans-serif; font-weight:900; font-size:15px;
+    letter-spacing:.06em; text-decoration:none; padding:13px 30px; border-radius:999px;
+    box-shadow:0 4px 18px rgba(224,168,46,.35); transition:transform .15s, box-shadow .15s;
+  }
+  .subscribe-btn:hover{ transform:translateY(-2px); box-shadow:0 8px 24px rgba(224,168,46,.5); }
+  footer .foot-subscribe{
+    display:inline-block; margin-top:10px; color:var(--gold);
+    font-weight:700; text-decoration:none; letter-spacing:.08em;
+  }
+  footer .foot-subscribe:hover{ text-decoration:underline; }
   .tear{
     position:absolute; left:0; right:0; bottom:-2px; height:64px;
     background:var(--paper);
@@ -242,6 +255,9 @@
     <div class="stat"><b id="statPref">0</b><span>踏破 都道府県</span></div>
     <div class="stat"><b id="statTag">0</b><span>ジャンル数</span></div>
   </div>
+  <div class="subscribe-wrap">
+    <a class="subscribe-btn" href="https://www.youtube.com/@sukimatours?sub_confirmation=1" target="_blank" rel="noopener">▶ YouTubeでチャンネル登録</a>
+  </div>
   <div class="tear"></div>
 </div>
 
@@ -268,7 +284,8 @@
 <div class="grid" id="grid"></div>
 <div class="empty" id="emptyMsg" style="display:none;">該当する記録が見つかりませんでした。条件を変えてお試しください。</div>
 
-<footer>SUKIMATOURS 全動画INDEX — 全391本を収録（公開日が新しい順）</footer>
+<footer>SUKIMATOURS 全動画INDEX — 全391本を収録（公開日が新しい順）<br>
+<a class="foot-subscribe" href="https://www.youtube.com/@sukimatours?sub_confirmation=1" target="_blank" rel="noopener">▶ YouTubeチャンネル「スキマツアーズ」を登録する</a></footer>
 
 <script>
 /* ▼▼▼ データ台帳。動画が増えたら1行追記するだけ。地方(region)は都道府県(pref)から常に自動判定されます（Excelの「地方」列に誤記があっても自動で正しい方に補正されます） ▼▼▼ */
@@ -323,7 +340,8 @@ const VIDEOS = [
     "region": "中国",
     "type": "short",
     "tags": [
-      "神社仏閣 城･史跡"
+      "神社仏閣",
+      "城・史跡"
     ],
     "url": "https://youtube.com/shorts/wTwdzkSSxH4",
     "id": "wTwdzkSSxH4",
@@ -432,7 +450,8 @@ const VIDEOS = [
     "region": "中国",
     "type": "long",
     "tags": [
-      "城･史跡 公共施設"
+      "城・史跡",
+      "公共施設"
     ],
     "url": "https://youtu.be/-HzgjIUSkCI",
     "id": "-HzgjIUSkCI",
@@ -480,7 +499,7 @@ const VIDEOS = [
     "region": "中部",
     "type": "long",
     "tags": [
-      "城･史跡"
+      "城・史跡"
     ],
     "url": "https://youtu.be/J5XLVPXWpkE",
     "id": "J4XLVPXWpkE",
@@ -744,7 +763,7 @@ const VIDEOS = [
     "region": "四国",
     "type": "long",
     "tags": [
-      "戦争遺跡"
+      "戦争遺構"
     ],
     "url": "https://www.youtube.com/watch?v=GUxfOLbzudo",
     "id": "GUxfOLbzudo",
@@ -780,7 +799,7 @@ const VIDEOS = [
     "region": "四国",
     "type": "short",
     "tags": [
-      "戦争遺跡"
+      "戦争遺構"
     ],
     "url": "https://www.youtube.com/watch?v=gDT7SIUrKOU",
     "id": "gDT7SIUrKOU",
@@ -1518,7 +1537,7 @@ const VIDEOS = [
     "type": "short",
     "tags": [
       "自然・絶景",
-      "戦争遺跡"
+      "戦争遺構"
     ],
     "url": "https://www.youtube.com/watch?v=6RgwRFVd-1A",
     "id": "6RgwRFVd-1A",
@@ -1555,7 +1574,7 @@ const VIDEOS = [
     "type": "short",
     "tags": [
       "自然・絶景",
-      "戦争遺跡"
+      "戦争遺構"
     ],
     "url": "https://www.youtube.com/watch?v=WnQJq4G05V8",
     "id": "WnQJq4G05V8",
@@ -1604,7 +1623,7 @@ const VIDEOS = [
     "type": "short",
     "tags": [
       "城・史跡",
-      "戦争遺跡"
+      "戦争遺構"
     ],
     "url": "https://www.youtube.com/watch?v=U1cfthgvwww",
     "id": "U1cfthgvwww",
@@ -1932,7 +1951,7 @@ const VIDEOS = [
     "type": "short",
     "tags": [
       "自然・絶景",
-      "戦争遺跡"
+      "戦争遺構"
     ],
     "url": "https://www.youtube.com/watch?v=bGXEGQbxRH0",
     "id": "bGXEGQbxRH0",
@@ -2080,7 +2099,7 @@ const VIDEOS = [
     "type": "short",
     "tags": [
       "自然・絶景",
-      "戦争遺跡"
+      "戦争遺構"
     ],
     "url": "https://www.youtube.com/watch?v=1pw52oru5mQ",
     "id": "1pw52oru5mQ",
@@ -4641,7 +4660,7 @@ const VIDEOS = [
     "type": "long",
     "tags": [
       "町歩き",
-      "自然絶景"
+      "自然・絶景"
     ],
     "url": "https://www.youtube.com/watch?v=RivooRukZes",
     "id": "RivooRukZes",
@@ -4894,7 +4913,7 @@ const VIDEOS = [
     "type": "long",
     "tags": [
       "城・史跡",
-      "戦争遺跡"
+      "戦争遺構"
     ],
     "url": "https://www.youtube.com/watch?v=NaLZBSLnJMI",
     "id": "NaLZBSLnJMI",
